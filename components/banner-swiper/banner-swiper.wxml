@@ -1,0 +1,24 @@
+<template name="bannerSwiper">
+
+    <swiper class="banner-swiper" style="height: {{imgheights[index]}}rpx;"
+            indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}"
+            bindchange="{{bindchange}}"
+            circular="{{circular}}">
+
+        <block wx:for="{{banners}}">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image" mode="widthFix"
+                       bindload="{{imageLoad}}"
+                       bindtap="{{viewPic}}"
+                       data-index="{{index}}"
+                       data-current="{{item}}"
+                       data-urls="{{imgUrls}}">
+                </image>
+            </swiper-item>
+        </block>
+
+    </swiper>
+
+
+</template>

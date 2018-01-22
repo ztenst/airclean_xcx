@@ -1,0 +1,16 @@
+<import src="../../components/detail_content/detail_content.wxml"/>
+
+<view class="app article">
+
+        <view class="articleIndex-header">
+            <view class="title">{{articleInfo.title}}</view>
+            <view class="author-box box box-align-center box-pack-center" >
+                <text class="author">{{articleInfo.author}}</text>
+                <text class="bull" wx:if="{{articleInfo.author}}">·</text>
+                <text class="time">{{articleInfo.updated}}</text>
+            </view>
+        </view>
+        <template is="detailContent" data="{{ ...$detailContent.news }}"/>
+
+
+</view>

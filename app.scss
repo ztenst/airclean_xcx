@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+/**app.wxss**/
+
+@import "style/iconfont";
+@import "style/common";
+@import "style/main";
+
+
+//引入组件样式
+@import "components/tab_bar/tab_bar";
+@import "components/banner-swiper/banner-swiper";
+@import "components/image-viewer/image-viewer";
+@import "components/product_list/product_list";
+@import "components/product_list_single/product_list_single";
+@import "components/bbs_list/bbs_list";
+
+
+
+
+
+
+
+

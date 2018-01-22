@@ -1,0 +1,62 @@
+<import src="../../components/banner-swiper/banner-swiper.wxml"/>
+<import src="../../components/product_list/product_list.wxml"/>
+<import src="../../components/tab_bar/tab_bar.wxml"/>
+<import src="../../components/toast/toast.wxml"/>
+
+<template is="toast" data="{{ ...$toast }}"/>
+
+<view class="index">
+    <scroll-view class="overflow-scroll" scroll-y="true" lower-threshold="100" bindscrolltolower="requestList"
+                 scroll-with-animation="true">
+
+        <view class="index_search_bar bg-mianColor">
+            <view class="search-box">
+                <view bindtap="focus" wx:if="{{!focused}}" class="text-box">
+                    <text class="iconfont icon-search"></text>
+                    搜索商品
+                </view>
+
+                <view class="input-container container" hidden="{{!focused}}">
+                    <view>
+                        <text class="iconfont icon-sousuo"></text>
+                        <input type="text" confirm-type="search" focus="{{focused}}" placeholder-class="c-fff"
+                               bindconfirm="confirm" placeholder="请输入关键字"/>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!--banner轮播图组件-->
+        <template is="bannerSwiper" data="{{banners,...$bannerSwiper }}"></template>
+        <!--cate-->
+        <block class="ele-container">
+            <view class="index-nav ">
+                <view class="item" wx:for="{{cates}}" wx:key="id" bindtap="go_category" data-id="{{item.id}}">
+                    <image mode="scaleToFill" src="{{item.img}}"></image>
+                    <text>{{item.name}}</text>
+                </view>
+            </view>
+            <view class="blank20"></view>
+        </block>
+        <!--推荐位-->
+        <block class="ele-container">
+            <view class="cells_auto_fill box ">
+                <view class="item" wx:for="{{short_recoms}}" bindtap="go_detail" data-id="{{item.pid}}">
+                    <image src="{{item.img}}" mode="scaleToFill"></image>
+                </view>
+            </view>
+            <view class="cells_auto_fill">
+                <view class="body">
+                    <image src="{{long_recoms[0].img}}" mode="scaleToFill" bindtap="go_detail"
+                           data-id="{{index.long_recoms[0].pid}}"></image>
+                </view>
+            </view>
+            <view class="blank20"></view>
+        </block>
+        <!--列表-->
+        <template is="productList" data="{{list, ...$productList }}"></template>
+    </scroll-view>
+
+</view>
+
+<template is="tabBar" data="{{...$tabBar }}"></template>
+

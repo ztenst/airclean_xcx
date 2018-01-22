@@ -1,0 +1,70 @@
+<import src="../../components/tab_bar/tab_bar.wxml"/>
+<view class="page customer_manage">
+    <scroll-view class="overflow-scroll" scroll-y="true" lower-threshold="100" bindscrolltolower="requestList"
+                 scroll-with-animation="true">
+        <view class="list">
+            <view class="item">
+                <view class="hd">
+                    <view class="text-type">已下架</view>
+                </view>
+                <view class="bd">
+                    <view class="pic">
+                        <image src="../../images/220x150.png" mode="scaleToFill"></image>
+                    </view>
+                    <view class="info">
+                        <view class="namewp">
+                            <text class="name">青柠环境监测青柠环境监测青柠环境监测青柠环境监测青柠环境监测青柠环境监测青柠环境监测青柠环境监测</text>
+                            <text class="price">200元/点</text>
+                        </view>
+                        <view class="desc">检测：甲醛、苯、甲苯、二甲苯、TVOC等十 项污染物检测：甲醛、苯、甲苯、二甲苯、TVOC等十 项污染物检测：甲醛、苯、甲苯、二甲苯、TVOC等十
+                            项污染物
+                        </view>
+                        <view class="com">常州青柠环保科技有限公司常州青柠环保科技有限公司常州青柠环保科技有限公司</view>
+                    </view>
+                </view>
+                <view class="foot">
+                    <view class="foot-l">浏览量：9999</view>
+                    <view class="foot-r">
+                        <view class="btn btn-rz">认证</view>
+                        <view class="btn">编辑</view>
+                        <view class="btn btn-more">...</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="item">
+                <view class="hd">
+                    <view class="text-type">已下架</view>
+                </view>
+                <view class="bd">
+                    <view class="pic">
+                        <image src="../../images/220x150.png" mode="scaleToFill"></image>
+                    </view>
+                    <view class="info">
+                        <view class="namewp">
+                            <text class="name">青柠环境监测青柠环境监测青柠环境监测青柠环境监测青柠环境监测青柠环境监测青柠环境监测青柠环境监测</text>
+                            <text class="price">200元/点</text>
+                        </view>
+                        <view class="desc">检测：甲醛、苯、甲苯、二甲苯、TVOC等十 项污染物检测：甲醛、苯、甲苯、二甲苯、TVOC等十 项污染物检测：甲醛、苯、甲苯、二甲苯、TVOC等十
+                            项污染物
+                        </view>
+                        <view class="com">常州青柠环保科技有限公司常州青柠环保科技有限公司常州青柠环保科技有限公司</view>
+                    </view>
+                </view>
+                <view class="foot">
+                    <view class="foot-l">浏览量：9999</view>
+                    <view class="foot-r">
+                        <view class="btn btn-rz">认证</view>
+                        <view class="btn">编辑</view>
+                        <view class="btn btn-more">...</view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+
+    </scroll-view>
+</view>
+
+<template is="tabBar" data="{{...$tabBar }}"></template>

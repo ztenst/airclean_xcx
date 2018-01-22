@@ -1,0 +1,36 @@
+<import src="../../components/tab_bar/tab_bar.wxml"/>
+<view class="certification">
+   <view class="blank20"></view>
+    <view class="text_box">
+        <view class="Title">资质认证资质认证资质认证资质认证资质认证资质认证资质认证资质认证</view>
+        <view class="Desc">资质认证说明资质认证说明资质认证认证说明资质认证说明资质认证说明资质认证说明资质认证说明资质认证说明</view>
+    </view>
+    <view class="blank20"></view>
+    <view class="list">
+        <view class="item">
+            <view class="item-hd">
+                 <view class="hd-l">环保认证xxxx资质认证</view>
+                 <view class="hd-r">
+                     <text class="iconfont "></text>
+                 </view>
+            </view>
+            <view class="item-bd">
+                <image src="../../images/702x360.png"></image>
+            </view>
+            <view class="blank20"></view>
+        </view>
+        <view class="item">
+            <view class="item-hd">
+                <view class="hd-l">环保认证xxxx资质认证</view>
+                <view class="hd-r">
+                    <text class="iconfont icon-xia"></text>
+                </view>
+            </view>
+            <view class="item-bd">
+                <image src="../../images/702x360.png"></image>
+            </view>
+            <view class="blank20"></view>
+        </view>
+    </view>
+</view>
+<template is="tabBar" data="{{...$tabBar }}"></template>

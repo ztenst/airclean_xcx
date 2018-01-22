@@ -1,0 +1,122 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.6.4",
+	"appid": "wx19afb796cba063c0",
+	"projectname": "mall_beilai",
+	"host": "https://meat.madridwine.cn",
+	"version": "1.0.0",
+	"color_scheme": "#000",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 13,
+			"list": [
+				{
+					"id": -1,
+					"name": "category",
+					"pathName": "pages/category/category",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "bbs",
+					"pathName": "pages/bbs/bbs",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "case",
+					"pathName": "pages/case/case",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "my",
+					"pathName": "pages/my/my",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "detail",
+					"pathName": "pages/detail/detail",
+					"query": "id=1"
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "order",
+					"pathName": "pages/order/order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "collect",
+					"pathName": "pages/collect/collect",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "brief",
+					"pathName": "pages/brief/brief",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "article",
+					"pathName": "pages/article/article",
+					"query": "id=1"
+				},
+				{
+					"id": -1,
+					"name": "article",
+					"pathName": "pages/article/article",
+					"query": "id=29&type=find"
+				},
+				{
+					"id": -1,
+					"name": "post",
+					"pathName": "pages/post/post",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pub-product",
+					"pathName": "pages/pub-product/pub-product",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "certification",
+					"pathName": "pages/certification/certification",
+					"query": ""
+				},
+				{
+					"id": 14,
+					"name": "customer_manage",
+					"pathName": "pages/customer_manage/customer_manage",
+					"query": ""
+				}
+			]
+		}
+	}
+}

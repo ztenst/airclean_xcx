@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/category/category",
+    "pages/bbs/bbs",
+    "pages/my/my",
+    "pages/post/post",
+    "pages/pub-product/pub-product",
+    "pages/certification/certification",
+    "pages/customer_manage/customer_manage",
+
+    "pages/detail/detail",
+    "pages/collect/collect"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#181c1f",
+    "navigationBarTitleText": "空气净化专家",
+    "navigationBarTextStyle":"#fff"
+  }
+}

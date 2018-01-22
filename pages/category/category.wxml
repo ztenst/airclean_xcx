@@ -1,0 +1,17 @@
+<import src="../../components/search_filter/search_filter.wxml"/>
+<import src="../../components/product_list_single/product_list_single.wxml"/>
+
+<import src="../../components/tab_bar/tab_bar.wxml"/>
+<view class="page index">
+    <scroll-view class="overflow-scroll" scroll-y="true" lower-threshold="100" bindscrolltolower="requestList" scroll-with-animation="true">
+        <!--搜索筛选-->
+        <view class="search-top">
+            <template is="searchFilter" data="{{...$searchFilter }}"></template>
+        </view>
+        <!--列表-->
+        <template is="productListSingle" data="{{list,...$productListSingle}}"></template>
+
+    </scroll-view>
+</view>
+
+<template is="tabBar" data="{{...$tabBar }}"></template>

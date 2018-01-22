@@ -1,0 +1,93 @@
+<view class="post pub-product">
+    <view class="blank20"></view>
+    <view class="img-box clearfix">
+        <view class="item">
+            <image src="../../images/160x160.png"></image>
+            <view class="iconfont icon-delete"></view>
+        </view>
+        <view class="item">
+            <image src="../../images/160x160.png"></image>
+            <view class="iconfont icon-delete"></view>
+        </view>
+        <view class="item">
+            <image src="../../images/160x160.png"></image>
+            <view class="iconfont icon-delete"></view>
+        </view>
+        <view class="item">
+            <image src="../../images/160x160.png"></image>
+            <view class="iconfont icon-delete"></view>
+        </view>
+        <view class="item">
+            <image src="../../images/160x160.png"></image>
+            <view class="iconfont icon-delete"></view>
+        </view>
+        <view class="item">
+            <image src="../../images/160x160.png"></image>
+            <view class="iconfont icon-delete"></view>
+        </view>
+        <view class="item">
+            <image src="../../images/camera.png"></image>
+        </view>
+
+    </view>
+
+
+    <view class="m-cell">
+        <form action="">
+            <view class="cell-item">
+                <view class="cell-left ">
+                    选择产地
+                </view>
+                <view class="cell-right cell-arrow">
+                    <input type="number" pattern="[0-9]*" class="cell-input" placeholder-class="c-ccc"
+                           placeholder="请输入您的姓名" autocomplete="off"/>
+                </view>
+            </view>
+            <view class="cell-item">
+                <view class="cell-left">
+                    选择种类
+                </view>
+                <view class="cell-right ">
+                    <input type="number" pattern="[0-9]*" class="cell-input w120 cell-arrow" placeholder-class="c-ccc"
+                           placeholder="种类选择" autocomplete="off"/>
+                </view>
+            </view>
+            <view class="cell-item">
+                <view class="cell-left ">
+                    价格填写
+                </view>
+                <view class="cell-right">
+                    <input type="number" pattern="[0-9]*" class="cell-input cell-input-bd" placeholder-class="c-ccc"
+                           placeholder="0" autocomplete="off"/>
+                    <text class="blankLR20">-</text>
+                    <input type="number" pattern="[0-9]*" class=" cell-input cell-input-bd" placeholder-class="c-ccc"
+                           placeholder="1000" autocomplete="off" />
+                    <text class="blankLR20">元</text>
+                </view>
+            </view>
+            <view class="cell-item">
+                <view class="cell-left">
+                    选择功能
+                </view>
+                <view class="cell-right">
+                    <input type="number" pattern="[0-9]*" class="cell-input w120 cell-arrow" placeholder-class="c-ccc"
+                           placeholder="功能选择" autocomplete="off"/>
+                </view>
+            </view>
+            <view class="cell-item nobdm">
+                <view class="cell-left">
+                    作用材料
+                </view>
+                <view class="cell-right"></view>
+            </view>
+            <view class="cell-item nobdm">
+                <view class="cell-right">
+                    <textarea class="cell-textarea" placeholder="作用材料简述..." placeholder-class="c-ccc"></textarea>
+                </view>
+            </view>
+            <button class="btn-block btn-submit">立即报名</button>
+        </form>
+    </view>
+
+
+</view>

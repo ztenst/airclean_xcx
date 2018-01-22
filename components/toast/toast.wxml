@@ -1,0 +1,5 @@
+<template name="toast">
+    <view class="weui-toast" hidden="{{ !visible }}">
+        <view class="weui-toast__content">{{ text }}</view>
+    </view>
+</template>

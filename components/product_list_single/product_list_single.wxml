@@ -1,0 +1,21 @@
+<template name="productListSingle">
+    <block class="ele-container">
+        <view class="product_list_single">
+            <block wx:for="{{list}}" wx:key="id " >
+                <view class="item" bindtap="{{navigateDetail}}" data-id="{{item.id}}">
+                    <view class="pic">
+                        <image src="{{item.image}}" mode="scaleToFill"></image>
+                    </view>
+                    <view class="info">
+                        <view class="namewp">
+                            <text class="name">青柠环境监测青柠环境监测青柠环境监测青柠环境监测青柠环境监测青柠环境监测青柠环境监测青柠环境监测</text>
+                            <text class="price">200元/点</text>
+                        </view>
+                        <view class="desc">检测：甲醛、苯、甲苯、二甲苯、TVOC等十 项污染物检测：甲醛、苯、甲苯、二甲苯、TVOC等十 项污染物检测：甲醛、苯、甲苯、二甲苯、TVOC等十 项污染物</view>
+                        <view class="com">常州青柠环保科技有限公司常州青柠环保科技有限公司常州青柠环保科技有限公司</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </block>
+</template>

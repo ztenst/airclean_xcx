@@ -1,0 +1,78 @@
+<import src="../../components/banner-swiper/banner-swiper.wxml"/>
+<import src="../../components/detail_content/detail_content.wxml"/>
+<import src="../../components/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$toast }}"/>
+
+<view class="app detail">
+    <view class="ele-container" wx:if="{{productInfo.images}}">
+        <!--banner轮播图组件-->
+        <template is="bannerSwiper" data="{{imgUrls,...$bannerSwiper }}"></template>
+    </view>
+
+    <view class="ele-container">
+        <view class="titleView">
+            <view class="name">{{productInfo.name}}</view>
+            <view class="desc">
+                {{productInfo.shortdes}}
+            </view>
+            <view class="price">
+                {{productInfo.price}}元
+                <text class="old">{{productInfo.old_price}}元</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="blank20"></view>
+
+
+    <view class="ele-container">
+        <view class="descTabsView">
+            <view class="tabs box box-pack-between box-align-center">
+                <text class="tab {{tabIndex==1 ?'on':''}}" bindtap="tabFun" data-index="1">产品参数</text>
+                <text class="tab {{tabIndex==2 ?'on':''}}" bindtap="tabFun" data-index="2">图文详情</text>
+            </view>
+            <view class="tabs-views">
+
+                <view class="views"  wx:if="{{tabIndex==1&&productInfo.params.length>0}}">
+                    <view class="table">
+                        <view class="tbody">
+                            <view class="tr box box-pack-center box-align-center" wx:for="{{productInfo.params}}">
+                                <view class="th">
+                                    <text> {{item.label}}</text>
+
+                                </view>
+                                <view class="td">
+                                    <text>{{item.value}}</text>
+
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+
+                <view class="views" hidden="{{tabIndex==1}}">
+                    <view class="imgText_list">
+                        <!--引入detailcontent模板-->
+                        <template is="detailContent" data="{{ ...$detailContent.news }}"/>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="product-footer">
+        <view class="a" bindtap="addCollect" >
+            <view class="iconfont box box-align-center box-pack-center"  >
+                <image src="../../images/coll.png " wx:if="{{productInfo.is_save==0}}"></image>
+                <image src="../../images/hov-coll.png " wx:if="{{productInfo.is_save==1}}"></image>
+            </view>
+        </view>
+        <view class="btn contactShop"   bindtap="contactShop">
+            <view class="p">联系商家</view>
+        </view>
+        <view class="btn buyNow"  bindtap="addOrder"  data-id="{{productInfo.id}}">
+            <view class="p">提交订单</view>
+        </view>
+    </view>
+
+</view>

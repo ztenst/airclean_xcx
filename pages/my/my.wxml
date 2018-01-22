@@ -1,0 +1,94 @@
+<import src="../../components/tab_bar/tab_bar.wxml"/>
+
+<view class="my">
+    <view class="user-box">
+        <view class="bg">
+            <image src="../../images/bj.png"/>
+        </view>
+        <view class="user-info">
+            <view class="userimg box box-align-center box-pack-center">
+                <view class="logo">
+                    <image src="../../images/users.png"></image>
+                </view>
+            </view>
+            <view class="usename">
+                call me mama
+            </view>
+        </view>
+    </view>
+
+    <view class="card-box">
+        <view class="m-cell">
+            <view class="cell-item">
+                <view class="cell-left ">
+                    <view class="cell-icon w60">
+                        <image src="../../images/kehu.png"></image>
+                    </view>
+                    客户管理
+                </view>
+                <view class="cell-right cell-arrow"></view>
+            </view>
+            <view class="cell-item">
+                <view class="cell-left ">
+                    <view class="cell-icon w60">
+                        <image src="../../images/collection.png"></image>
+                    </view>
+                    我的收藏
+                </view>
+                <view class="cell-right cell-arrow"></view>
+            </view>
+            <view class="cell-item">
+                <view class="cell-left ">
+                    <view class="cell-icon w60">
+                        <image src="../../images/function.png"></image>
+                    </view>
+                    更多功能
+                </view>
+                <view class="cell-right cell-arrow"></view>
+            </view>
+        </view>
+        <view class="extend-box">
+            <view class="nav">
+                <view class="item">
+                    <image src="../../images/house.png"></image>
+                    <text>我的订阅</text>
+                </view>
+                <view class="item">
+                    <image src="../../images/mony.png"></image>
+                    <text>发布房源</text>
+                </view>
+                <view class="item">
+                    <image src="../../images/yanfang.png"></image>
+                    <text>特惠验房</text>
+                </view>
+                <view class="item">
+                    <image src="../../images/zhuanti.png"></image>
+                    <text>精彩专题</text>
+                </view>
+                <view class="item">
+                    <image src="../../images/diary.png"></image>
+                    <text>装修日记</text>
+                </view>
+                <view class="item">
+                    <image src="../../images/gonglue.png"></image>
+                    <text>装修攻略</text>
+                </view>
+                <view class="item">
+                    <image src="../../images/zx.png"></image>
+                    <text>装修公司</text>
+                </view>
+                <view class="item">
+                    <image src="../../images/jiancai.png"></image>
+                    <text>建材公司</text>
+                </view>
+
+            </view>
+        </view>
+
+    </view>
+</view>
+<template is="tabBar" data="{{...$tabBar }}"></template>
+
+
+
+

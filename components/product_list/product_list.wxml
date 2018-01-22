@@ -1,0 +1,24 @@
+<template name="productList">
+    <block class="ele-container" wx:if="{{list.length>0}}">
+        <view class="f-list box">
+            <block wx:for="{{list}}" wx:key="id" >
+                <view class="item" bindtap="{{navigateDetail}}" data-id="{{item.id}}">
+                    <view class="pic">
+                        <image src="{{item.image}}" mode="scaleToFill"></image>
+                        <view class="tag" wx:if="{{item.old_price-item.price>0}}">
+                            <text>立减{{item.old_price-item.price}}元</text>
+                        </view>
+                    </view>
+                    <view class="info">
+                        <view class="name ft-nowap">{{item.name}}</view>
+                        <view class="brief ft-nowap">{{item.ts}}</view>
+                        <view class="price">
+                            {{item.price}}元
+                            <text class="old">{{item.old_price}}元</text>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </block>
+</template>

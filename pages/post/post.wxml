@@ -1,0 +1,42 @@
+<view class="post">
+    <view class="textarea-box">
+        <textarea class="text-content" name="" id="" cols="30" rows="10"></textarea>
+        <view class="counter">88/200</view>
+    </view>
+    <view class="blank20"></view>
+    <view class="img-box">
+        <view class="item">
+            <image src="../../images/160x160.png"></image>
+            <view class="iconfont icon-delete"></view>
+        </view>
+        <view class="item">
+            <image src="../../images/160x160.png"></image>
+            <view class="iconfont icon-delete"></view>
+        </view>
+        <view class="item">
+            <image src="../../images/160x160.png"></image>
+            <view class="iconfont icon-delete"></view>
+        </view>
+        <view class="item">
+            <image src="../../images/160x160.png"></image>
+            <view class="iconfont icon-delete"></view>
+        </view>
+        <view class="item">
+            <image src="../../images/160x160.png"></image>
+            <view class="iconfont icon-delete"></view>
+        </view>
+        <view class="item">
+            <image src="../../images/160x160.png"></image>
+            <view class="iconfont icon-delete"></view>
+        </view>
+        <view class="item">
+            <image src="../../images/160x160.png"></image>
+            <view class="iconfont icon-delete"></view>
+        </view>
+
+        <view class="item">
+            <image src="../../images/160x160.png"></image>
+            <view class="iconfont icon-delete"></view>
+        </view>
+    </view>
+</view>

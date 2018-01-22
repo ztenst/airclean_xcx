@@ -1,0 +1,67 @@
+@charset "UTF-8";
+@import "../../style/args";
+.product_list_single{
+    .item{
+      padding:25rpx 24rpx;
+      position: relative;
+      border-top:1rpx solid $borderColorE6;
+      display: flex;
+      &:first-child{
+        border-top:0;
+      }
+      .pic{
+        width:200rpx;
+        height:150rpx;
+        line-height: 150rpx;
+        position: relative;
+        margin-right:20rpx;
+        text-align: center;
+        image{
+          width: 100%;
+          max-height: 100%;
+          vertical-align: top;
+        }
+      }
+      .info{
+        flex: 1;
+        min-width:0;
+        .namewp{
+          font-size:28rpx;
+          height:46rpx;
+          display: flex;
+          justify-content: space-between;
+          .name{
+            color:#333;
+            max-width:65%;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+          }
+          .price{
+            width:160rpx;
+            color:#ee674c;
+            text-align: right;
+          }
+        }
+        .desc{
+          font-size:24rpx;
+          color:#999;
+          line-height: 32rpx;
+          overflow:hidden;
+          text-overflow:ellipsis;
+          display:-webkit-box;
+          -webkit-box-orient:vertical;
+          -webkit-line-clamp:2;
+        }
+        .com{
+          margin-top:14rpx;
+          font-size: 24rpx;
+          color:#999;
+          max-width:100%;
+          overflow: hidden;
+          text-overflow:ellipsis;
+          white-space:nowrap
+        }
+      }
+    }
+}

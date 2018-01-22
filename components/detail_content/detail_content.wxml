@@ -1,0 +1,13 @@
+<import src="../../libs/wxParse/wxParse.wxml"/>
+<template name="detailContent">
+    <!-- text不能 换行 -->
+    <!--引入detailcover模板-->
+
+    <template is="wxParse" data="{{wxParseData:updateContent.nodes}}"/>
+
+</template>
+
+
+
+
+
