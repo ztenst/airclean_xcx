@@ -1,4 +1,3 @@
-<import src="../../components/banner-swiper/banner-swiper.wxml"/>
 <import src="../../components/product_list/product_list.wxml"/>
 <import src="../../components/tab_bar/tab_bar.wxml"/>
 <import src="../../components/toast/toast.wxml"/>
@@ -25,8 +24,14 @@
                 </view>
             </view>
         </view>
-        <!--banner轮播图组件-->
-        <template is="bannerSwiper" data="{{banners,...$bannerSwiper }}"></template>
+
+        <view class="index-banner">
+            <swiper class="swiper" indicator-dots="true" autoplay="true" >
+                <swiper-item wx:for="{{banners}}" wx:key="x" wx:for-item="x">
+                    <image src="{{x}}" data-src="{{x}}" bindtap="onImageTap" mode="widthFix"></image>
+                </swiper-item>
+            </swiper>
+        </view>
         <!--cate-->
         <block class="ele-container">
             <view class="index-nav ">

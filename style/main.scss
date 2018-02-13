@@ -45,11 +45,37 @@
 
   }
 
-  .banner {
+  .index-banner {
     height: 376rpx !important;
-    .slide-image {
-      height: 100%;
-      width: 100%
+    //swiper
+    .swiper{
+      width: 100%;
+      height: 376rpx!important;
+      image{
+        width:100%;
+        //height:100%;
+      }
+      .wx-swiper-dots.wx-swiper-dots-horizontal{
+        margin-bottom: 2rpx;
+      }
+      .wx-swiper-dot{
+        width:10rpx;
+        display: inline-flex;
+        height: 10rpx;
+        margin-left: 10rpx;
+        justify-content:space-between;
+        background:#fff;
+      }
+
+      .wx-swiper-dot-active{
+        width:26rpx;
+        display: inline-flex;
+        height: 10rpx;
+        justify-content:space-between;
+        content: '';
+        flex-grow: 1;
+        border-radius: 8rpx;
+      }
     }
   }
 
@@ -58,9 +84,12 @@
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
     .item {
       text-align: center;
-      float: left;
+      width:25%;
       image {
         width: 80rpx;
         height: 80rpx;

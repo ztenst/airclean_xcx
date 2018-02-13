@@ -1,11 +1,11 @@
 <template name="imageViewer">
     <view class="image-viewer {{ animateCss }}" wx:if="{{ visible }}">
         <swiper class="swiper" current="{{ current }}" bindchange="{{ bindchanges }}" hidden="{{ !urls.length }}">
-            <block wx:for="{{ urls }}" wx:key="{{ item }}">
-                <swiper-item>
-                    <view class="img" bindtap="{{ hide }}" style="background-image: url({{ item }})"></view>
-                </swiper-item>
-            </block>
-        </swiper>
+        <block wx:for="{{ urls }}" wx:key="{{ item }}">
+            <swiper-item>
+                <view class="img" bindtap="{{ hide }}" style="background-image: url({{ item }})"></view>
+            </swiper-item>
+        </block>
+    </swiper>
     </view>
 </template>

@@ -58,7 +58,7 @@ Page({
             }
         ],
         banners: [
-            "http://oofuaem2b.bkt.clouddn.com/2017/1204/15123675203706490596.png?imageView2/1/w/750/h/376/interlace/1/q/100",
+            "../../images/750x376.png",
             "http://oofuaem2b.bkt.clouddn.com/2017/1204/15123675220575404601.png?imageView2/1/w/750/h/376/interlace/1/q/100",
             "http://oofuaem2b.bkt.clouddn.com/2017/1204/15123675248215416547.png?imageView2/1/w/750/h/376/interlace/1/q/100",
             "http://oofuaem2b.bkt.clouddn.com/2017/1204/15123675271255150127.png?imageView2/1/w/750/h/376/interlace/1/q/100"
