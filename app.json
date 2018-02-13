@@ -8,6 +8,7 @@
     "pages/pub-product/pub-product",
     "pages/certification/certification",
     "pages/customer_manage/customer_manage",
+    "pages/article/article",
 
     "pages/detail/detail",
     "pages/collect/collect"

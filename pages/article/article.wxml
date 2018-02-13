@@ -5,8 +5,8 @@
         <view class="articleIndex-header">
             <view class="title">{{articleInfo.title}}</view>
             <view class="author-box box box-align-center box-pack-center" >
-                <text class="author">{{articleInfo.author}}</text>
-                <text class="bull" wx:if="{{articleInfo.author}}">·</text>
+                <text class="author">用户00004</text>
+                <text class="bull">·</text>
                 <text class="time">{{articleInfo.updated}}</text>
             </view>
         </view>

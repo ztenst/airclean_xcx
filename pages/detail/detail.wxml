@@ -6,7 +6,7 @@
 <view class="app detail">
     <view class="ele-container" wx:if="{{productInfo.images}}">
         <!--banner轮播图组件-->
-        <template is="bannerSwiper" data="{{imgUrls,...$bannerSwiper }}"></template>
+        <template is="bannerSwiper" data="{{banners,...$bannerSwiper }}"></template>
     </view>
 
     <view class="ele-container">
@@ -33,7 +33,7 @@
             </view>
             <view class="tabs-views">
 
-                <view class="views"  wx:if="{{tabIndex==1&&productInfo.params.length>0}}">
+                <view class="views"  wx:if="{{tabIndex==1}}">
                     <view class="table">
                         <view class="tbody">
                             <view class="tr box box-pack-center box-align-center" wx:for="{{productInfo.params}}">

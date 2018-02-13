@@ -1,0 +1,94 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.91",
+	"appid": "wx19afb796cba063c0",
+	"projectname": "airclean_xcx_new",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 8,
+			"list": [
+				{
+					"id": -1,
+					"name": "category",
+					"pathName": "pages/category/category",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bbs",
+					"pathName": "pages/bbs/bbs",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "my",
+					"pathName": "pages/my/my",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "detail",
+					"pathName": "pages/detail/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "post",
+					"pathName": "pages/post/post",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pub-product",
+					"pathName": "pages/pub-product/pub-product",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "certification",
+					"pathName": "pages/certification/certification",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "customer_manage",
+					"pathName": "pages/customer_manage/customer_manage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "collect",
+					"pathName": "pages/collect/collect",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "article",
+					"pathName": "pages/article/article",
+					"query": ""
+				}
+			]
+		}
+	}
+}

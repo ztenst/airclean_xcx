@@ -55,27 +55,6 @@
         width:100%;
         //height:100%;
       }
-      .wx-swiper-dots.wx-swiper-dots-horizontal{
-        margin-bottom: 2rpx;
-      }
-      .wx-swiper-dot{
-        width:10rpx;
-        display: inline-flex;
-        height: 10rpx;
-        margin-left: 10rpx;
-        justify-content:space-between;
-        background:#fff;
-      }
-
-      .wx-swiper-dot-active{
-        width:26rpx;
-        display: inline-flex;
-        height: 10rpx;
-        justify-content:space-between;
-        content: '';
-        flex-grow: 1;
-        border-radius: 8rpx;
-      }
     }
   }
 
@@ -519,9 +498,12 @@
         width: 100%;
         box-sizing: border-box;
         overflow: hidden;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: flex-start;
         .item {
           text-align: center;
-          float: left;
+          width:25%;
           image {
             width: 42rpx;
             height: 42rpx;
@@ -565,6 +547,13 @@
     color:#fff;
     &.btn-submit{
       background-color: $color_primary;
+      image{
+        width:32rpx;
+        height:34rpx;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10rpx;
+      }
     }
   }
 }
@@ -713,11 +702,13 @@
              border: 1rpx solid $borderColorE6;
              border-radius: 10rpx;
              margin-left:20rpx;
+             vertical-align: middle;
              &.btn-rz{
                color:$color_primary;
              }
              &.btn-more{
                //font-size:4rpx;
+               line-height: 1;
              }
            }
          }
@@ -743,7 +734,7 @@
     .price {
       display: inline-block;
       font-size: 30rpx;
-      color: $color_primary;
+      color: $color_primary_red;
       margin-top: 20rpx;
       position: relative;
       white-space: nowrap;
@@ -778,7 +769,7 @@
           border-right: 0;
         }
         &.on {
-          color: $color_primary;
+          color: $color_primary_red;
         }
       }
     }
@@ -857,10 +848,10 @@
       text-align: center;
       color: #fff;
       &.contactShop {
-        background-color: #f17d65;
+        background-color:$color_primary ;
       }
       &.buyNow {
-        background-color: $color_primary;
+        background-color: #27b8b8;
       }
     }
   }
@@ -1007,5 +998,58 @@
       }
     }
   }
+}
+
+.collect{
+  .header_box {
+    height: 110rpx;
+    border-bottom: 1px solid #eee;
+    padding: 24rpx;
+    box-sizing: border-box;
+    text-align: center;
+    .shopnavli{
+      //min-width: 4.2*100rpx;
+      display: inline-block;
+      border: 1px solid $color_scheme;
+      border-radius: .29*100rpx;
+      .item{
+        display: inline-block;
+        min-width:1.7*100rpx;
+        .text {
+          display:block;
+          text-align:center;
+          padding:0 .1*100rpx;
+          font-size: .3*100rpx;
+          color: $color_scheme;
+          text-decoration: none;;
+          height: .58*100rpx;
+          line-height: .58*100rpx;
+        }
+        &:first-child {
+          .text {
+            &.on {
+              background-color: $color_scheme;
+              color: #fff;
+              margin-left:-1px;
+              border-radius: .29*100rpx;
+            }
+          }
+        }
+        &:last-child {
+          .text {
+            &.on {
+              background-color: $color_scheme;
+              color: #fff;
+              margin-right:-1px;
+              border-radius: .29*100rpx;
+            }
+          }
+        }
+      }
+
+
+    }
+  }
+
 }
 

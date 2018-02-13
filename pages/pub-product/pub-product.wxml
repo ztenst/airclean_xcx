@@ -1,4 +1,9 @@
-<view class="post pub-product">
+<import src="../../components/search_filter/search_filter.wxml"/>
+<view class="post index pub-product">
+    <!--搜索筛选-->
+    <view class="search-top">
+        <template is="searchFilter" data="{{...$searchFilter }}"></template>
+    </view>
     <view class="blank20"></view>
     <view class="img-box clearfix">
         <view class="item">
@@ -40,7 +45,7 @@
                 </view>
                 <view class="cell-right cell-arrow">
                     <input type="number" pattern="[0-9]*" class="cell-input" placeholder-class="c-ccc"
-                           placeholder="请输入您的姓名" autocomplete="off"/>
+                           placeholder="产地选择" autocomplete="off"/>
                 </view>
             </view>
             <view class="cell-item">

@@ -1,7 +1,7 @@
-<view class="post">
+<view class="post pub-product">
     <view class="textarea-box">
-        <textarea class="text-content" name="" id="" cols="30" rows="10"></textarea>
-        <view class="counter">88/200</view>
+        <textarea class="text-content" placeholder="写点什么吧~" name="" id="" cols="30" rows="10"></textarea>
+        <view class="counter">至少输入10个字</view>
     </view>
     <view class="blank20"></view>
     <view class="img-box">
@@ -39,4 +39,6 @@
             <view class="iconfont icon-delete"></view>
         </view>
     </view>
+    <button class="btn-block btn-submit">
+        <view class="iconfont"><image src="../../images/icon-tijiao.png"></image></view>提交</button>
 </view>

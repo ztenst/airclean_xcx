@@ -22,7 +22,7 @@ export default {
     },
 
     init(opts = {}) {
-
+       console.log(opts)
         const options = Object.assign({}, this.setDefaults(), opts);
 
         const component = new Component({
