@@ -6,7 +6,7 @@
             bindchange="{{bindchange}}"
             circular="{{circular}}">
 
-        <block wx:for="{{banners}}">
+        <block wx:for="{{imgUrls}}">
             <swiper-item>
                 <image src="{{item}}" class="slide-image" mode="widthFix"
                        bindload="{{imageLoad}}"

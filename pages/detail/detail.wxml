@@ -6,7 +6,7 @@
 <view class="app detail">
     <view class="ele-container" wx:if="{{productInfo.images}}">
         <!--banner轮播图组件-->
-        <template is="bannerSwiper" data="{{banners,...$bannerSwiper }}"></template>
+        <template is="bannerSwiper" data="{{imgUrls,...$bannerSwiper }}"></template>
     </view>
 
     <view class="ele-container">

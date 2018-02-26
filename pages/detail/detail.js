@@ -12,68 +12,144 @@ const app = getApp();
 Page({
     data: {
         tabIndex: 1,
-        productInfo: {
-            id: "4",
-            name: "现代简约橱柜定制",
-            price: "3980.00",
-            old_price: "4880.00",
-            cid: "60",
-            image: "2017/1204/15123681600149461659.jpg",
-            shortdes: " 同城免费上门测量送货到户并安装",
-            content: "<p>套餐内容：</p><p>3米地柜+3米台面+1.5米吊柜</p><p><br/></p><p>套餐配置：</p><p>门板——纳米微晶门板（颜色任选）</p><p>柜体——实木多层板（平安树E0级）</p><p>台面——1.5公分超洁亮抑菌石英石（颜色任选）</p><p>五金——进口百隆阻尼铰链</p><p>￼</p><p><br/></p>",
-            data_conf: '{"field0":"59","field1":"75","field2":"77"}',
-            sort: "0",
-            deleted: "0",
-            created: "2017-12-04",
-            updated: "2017-12-04",
-            status: "1",
-            images: [
-                "http://oofuaem2b.bkt.clouddn.com/2017/1212/1513047964904987969.png",
-                "http://oofuaem2b.bkt.clouddn.com/2017/1212/1513047964463531762.png",
-                "http://oofuaem2b.bkt.clouddn.com/2017/1212/1513047964144106674.png",
-                "http://oofuaem2b.bkt.clouddn.com/2017/1212/1513047963663829190.png",
-                "http://oofuaem2b.bkt.clouddn.com/2017/1212/1513047961989493200.png",
-                "http://oofuaem2b.bkt.clouddn.com/2017/1212/1513047961462425909.png",
-                "http://oofuaem2b.bkt.clouddn.com/2017/1212/1513047960979705923.png",
-                "http://oofuaem2b.bkt.clouddn.com/2017/1212/1513047959952198574.png"
-            ],
-            is_save: 0,
-            params: {
-                风格标签: "现代简约",
-                材质标签: "实木多层",
-                尺寸标签: "3M地柜"
-            }
-        }
+        productInfo: {}
     },
     onLoad(options) {
-
         this.setData({
-            banners: this.data.productInfo.images,
-            [`productInfo.params`]:Util.objToArr( this.data.productInfo.params)//产品参数返回值格式转换
+            product_id: options.id,
         });
-        /**
-         * 初始化轮播图组件
-         */
-        $bannerSwiper.init({
-            banners: this.data.productInfo.images,
-            onFinishLoad() {
-                //隐藏加载logo
+    },
+    onShow () {
+        let product_id = this.data.product_id;
+        this.getProductDetail(product_id);
+    },
+    /**
+     * 产品详细页数据渲染
+     * @param product_id
+     */
+    getProductDetail(product_id) {
+        
+        api.getProductInfo({id: product_id}).then(res => {
+            let json = res.data;
+            if (json.status == 'success') {
+                //设置导航条标题
+                wx.setNavigationBarTitle({title: json.data.name});
+
                 this.setData({
-                    isFinished: true
+                    productInfo: json.data,
+                    imgUrls: json.data.images,
+                });
+
+                /**
+                 * 初始化轮播图组件
+                 */
+                $bannerSwiper.init({
+                    imgUrls: json.data.images,
+                    onFinishLoad() {
+                        //隐藏加载logo
+                        this.setData({
+                            isFinished: true
+                        })
+                    }
+                });
+
+                /**
+                 *初始化图文详情组件
+                 */
+                $detailContent.init('news', {
+                    content: json.data.content.trim()
+                });
+
+            } else {
+                wx.showToast({
+                    title: json.msg,
+                    icon: 'loading',
+                    duration: 1000,
                 })
+                setTimeout(() => {
+                    wx.navigateBack({
+                        delta: 1
+                    })
+                }, 1000);
             }
         });
-
-        /**
-         *初始化图文详情组件
-         */
-        $detailContent.init('news', {
-            content: this.data.productInfo.content.trim()
-        });
-    },
-    onShow: function () {
-
     },
 
+    /**
+     *tab(产品参数和图文详情)按钮切换
+     * @param e
+     */
+    tabFun(e) {
+        let  dataset = e.currentTarget.dataset;
+        this.setData({
+            tabIndex: dataset.index
+        })
+    },
+    /**
+     * 添加收藏
+     */
+    addCollect() {
+
+        let params = {
+            pid: this.data.product_id,
+            openid: app.globalData.wxData.open_id
+        }
+        api.addSave(params).then(res => {
+            let json = res.data;
+            $toast.show({
+                timer: 2e3,
+                text: json.msg
+            });
+            if (json.status == 'success') {
+                if (this.data.productInfo.is_save == 0) {
+                    this.setData({
+                        [`productInfo.is_save`]: 1
+                    });
+                } else if (this.data.productInfo.is_save == 1) {
+                    this.setData({
+                        [`productInfo.is_save`]: 0
+                    })
+                }
+            }
+        })
+    },
+    /**
+     * 提交订单
+     * @param e
+     */
+    addOrder(e) {
+        let dataset = e.currentTarget.dataset, url = '/pages/add_order/add_order';
+        app.goPage(url, {id: dataset.id}, false);
+
+    },
+    /**
+     * 联系商家
+     */
+    contactShop() {
+        api.getIndexConfig().then(res => {
+            let json = res.data;
+            console.log(json);
+            if (json.status == 'success') {
+                if (json.data.phone) {
+                    wx.makePhoneCall({
+                        phoneNumber: json.data.phone
+                    });
+                }
+            }
+        })
+    },
+
+    /**
+     * 产品详细页转发分享
+     * @param res
+     * @returns {{title: string, path: string}}
+     */
+    onShareAppMessage(res) {
+        
+        return {
+            title:this.data.productInfo.name,
+            path: 'pages/detail/detail?id='+this.data.productInfo.id
+        }
+    }
 
 });
