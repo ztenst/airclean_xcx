@@ -75,6 +75,8 @@ const api = {
         let url = `${config.host}/api/index/index`;
         return getRequest(url)
     },
+
+
     /*产品列表*/
     getProductList(params) {
         let url = `${config.host}/api/product/list`;

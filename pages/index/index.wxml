@@ -7,7 +7,7 @@
 <view class="index">
     <scroll-view class="overflow-scroll" scroll-y="true" lower-threshold="100" bindscrolltolower="requestList"
                  scroll-with-animation="true">
-
+        <!--search-->
         <view class="index_search_bar bg-mianColor">
             <view class="search-box">
                 <view bindtap="focus" wx:if="{{!focused}}" class="text-box">
@@ -25,23 +25,26 @@
             </view>
         </view>
 
+        <!--banner-->
         <view class="index-banner">
             <swiper class="swiper" indicator-dots="true" autoplay="true" >
-                <swiper-item wx:for="{{banners}}" wx:key="x" wx:for-item="x">
+                <swiper-item wx:for="{{index.imgs}}" wx:key="x" wx:for-item="x">
                     <image src="{{x}}" data-src="{{x}}" bindtap="onImageTap" mode="widthFix"></image>
                 </swiper-item>
             </swiper>
         </view>
+
         <!--cate-->
         <block class="ele-container">
             <view class="index-nav ">
-                <view class="item" wx:for="{{cates}}" wx:key="id" bindtap="go_category" data-id="{{item.id}}">
+                <view class="item" wx:for="{{index.cates}}" wx:key="id" bindtap="go_category" data-id="{{item.id}}">
                     <image mode="scaleToFill" src="{{item.img}}"></image>
                     <text>{{item.name}}</text>
                 </view>
             </view>
             <view class="blank20"></view>
         </block>
+
         <!--推荐位-->
         <block class="ele-container">
             <view class="cells_auto_fill box ">
@@ -59,6 +62,7 @@
         </block>
         <!--列表-->
         <template is="productList" data="{{list, ...$productList }}"></template>
+
     </scroll-view>
 
 </view>

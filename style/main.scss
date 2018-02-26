@@ -55,6 +55,27 @@
         width:100%;
         //height:100%;
       }
+      .wx-swiper-dots.wx-swiper-dots-horizontal{
+        margin-bottom: 2rpx;
+      }
+      .wx-swiper-dot{
+        width:10rpx;
+        display: inline-flex;
+        height: 10rpx;
+        margin-left: 10rpx;
+        justify-content:space-between;
+        background:#fff;
+      }
+
+      .wx-swiper-dot-active{
+        width:26rpx;
+        display: inline-flex;
+        height: 10rpx;
+        justify-content:space-between;
+        content: '';
+        flex-grow: 1;
+        border-radius: 8rpx;
+      }
     }
   }
 
