@@ -1,7 +1,10 @@
 <import src="../../components/tab_bar/tab_bar.wxml"/>
-<import src="../../components/toast/toast.wxml"/>
 
+<import src="../../components/toast/toast.wxml"/>
 <template is="toast" data="{{ ...$toast }}"/>
+
+<import src="../../components/dialog/dialog.wxml"/>
+<template is="dialog" data="{{ ...$dialog }}"/>
 
 <view class="index page" >
     <scroll-view class="overflow-scroll" scroll-y="true" scroll-with-animation="true">

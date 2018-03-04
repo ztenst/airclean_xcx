@@ -103,6 +103,14 @@ export default {
         let url = `${config.host}/api/index/setUser`
         return postRequest(url, params)
     },
+    getDecode(params) {
+        let url = `${config.host}/api/index/decode`
+        return postRequest(url, params)
+    },
+    xcxLogin(params) {
+        let url = `${config.host}/api/index/xcxLogin`
+        return postRequest(url, params)
+    },
     getIndex() {
         return getRequest(`${HOST}/api/index/index`)
     },

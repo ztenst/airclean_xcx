@@ -4,6 +4,7 @@ import WxValidate from './libs/wx-validate/WxValidate'
 import regeneratorRuntime from './libs/regenerator-runtime/runtime';
 
 App({
+
     async onLaunch() {
         await this.getUserOpenId();
     },
@@ -11,23 +12,41 @@ App({
      * 获取openid 
      * @returns {Promise}
      */
-    getUserOpenId() {
+    getUserOpenId: function (status) {
         var self = this;
+        //不要在30天后才更换openid-尽量提前10分钟更新 
         return new Promise((resolve, reject) => {
-            if (self.globalData.wxData) {
-                resolve(self.globalData.wxData)
-            } else {
+            //  console.log(Object.keys(self.globalData.userInfo).length != 0)
+            if (!self.globalData.isUser || status == 'fresh') {
                 wx.login({
-                    success(loginres) {
-                        api.getOpenId({code: loginres.code}).then(res => {
-                            self.globalData.wxData = res;
-                            resolve(res)
+                    success: function (loginres) {
+                        wx.getUserInfo({
+                            success: function (resuserinfo) {
+                                self.globalData.userInfo = resuserinfo.userInfo;
+                                api.getOpenId({code:loginres.code}).then(res => {
+                                    let data = res;
+                                    self.globalData.customInfo = data;
+                                    // console.log(data)
+                                    //如果没有open_id说明是新用户
+                                    if(!data.open_id){
+                                        self.globalData.customInfo = data;
+                                        self.globalData.isUser = true;
+
+                                    }else{
+                                        self.globalData.wxData=data;
+                                    }
+                                    resolve(data);
+                                })
+                            }
                         });
                     }
                 })
+            } else {
+                resolve(self.globalData);
             }
         });
     },
+
     /**
      * 获取个人信息
      * @returns {Promise}
@@ -90,7 +109,10 @@ App({
      */
     WxValidate: (rules, messages) => new WxValidate(rules, messages),
     globalData: {
-        userInfo: null,
-        wxData: null
+        userInfo: {},
+        customInfo:{},
+        isUser:false,
+        wxData: null,
+        phone:'',
     }
 })

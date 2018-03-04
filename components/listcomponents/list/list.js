@@ -39,7 +39,7 @@ Component({
         handleDianZan(e) {
             let params = {
                 cid: e.currentTarget.dataset.cid,
-                uid: app.globalData.wxData.uid,
+                uid: app.globalData.customInfo.id,
             };
             api.addPraise(params).then(res => {
                 let json = res;
@@ -49,7 +49,7 @@ Component({
         handleCollect(e) {
             let params = {
                 pid: e.currentTarget.dataset.pid,
-                uid: app.globalData.wxData.uid
+                uid: app.globalData.customInfo.id,
             };
             api.addSave(params).then(res => {
                 let json = res;
