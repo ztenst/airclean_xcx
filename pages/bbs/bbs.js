@@ -20,7 +20,7 @@ Page({
         this.setData({
             listOpts: {
                 listType: 'bbs',
-                ToTop: 90
+                ToTop: 112
             },
         });
     },
