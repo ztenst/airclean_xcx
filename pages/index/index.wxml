@@ -6,7 +6,7 @@
 <view class="index">
     <scroll-view class="overflow-scroll" scroll-y="true" scroll-with-animation="true">
         <!--search-->
-        <view class="index_search_bar bg-mianColor">
+        <view class="index_search_bar">
             <view class="search-box">
                 <view bindtap="focus" wx:if="{{!focused}}" class="text-box">
                     <text class="iconfont icon-search"></text>
