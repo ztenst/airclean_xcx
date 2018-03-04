@@ -3,7 +3,7 @@
 <import src="../../components/toast/toast.wxml"/>
 <template is="toast" data="{{ ...$toast }}"/>
 
-<view class="app detail">
+<view class="detail page">
     <view class="ele-container" wx:if="{{productInfo.images}}">
         <!--banner轮播图组件-->
         <template is="bannerSwiper" data="{{imgUrls,...$bannerSwiper }}"></template>

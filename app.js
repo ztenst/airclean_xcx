@@ -1,15 +1,15 @@
-//app.js
 import api from './common/api'
 import util from './common/util'
+import WxValidate from './libs/wx-validate/WxValidate'
 
 App({
-    onLaunch: function () {
+    onLaunch () {
     },
     /**
      * 获取openid 
      * @returns {Promise}
      */
-    getUserOpenId: function () {
+    getUserOpenId () {
         var self = this;
         return new Promise((resolve, reject) => {
             wx.login({
@@ -21,7 +21,7 @@ App({
                             api.getOpenId({code: loginres.code}).then(res => {
                                 let json = res;
                                 self.globalData.wxData = json;
-                                // console.log(json)
+                                console.log(json)
                                 if (!json.uid) {
                                     let params = {
                                         openid: json.open_id,
@@ -43,7 +43,7 @@ App({
      * 获取个人信息
      * @returns {Promise}
      */
-    getUserInfo: function () {
+    getUserInfo () {
         var self = this
         return new Promise((resolve, reject) => {
             if (self.globalData.userInfo) {
@@ -94,6 +94,13 @@ App({
         if (JSON.stringify(params) !== JSON.stringify(page.options)) return false
         return true
     },
+    /**
+     * 表单校验
+     * @param rules
+     * @param messages
+     * @constructor
+     */
+    WxValidate: (rules, messages) => new WxValidate(rules, messages),
     globalData: {
         userInfo: null,
         wxData: null

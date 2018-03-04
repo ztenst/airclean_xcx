@@ -1,5 +1,32 @@
 @charset "UTF-8";
 @import "./common";
+.btn-block {
+  left: 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  border: none;
+  pointer-events: auto;
+  width: 100%;
+  display: block;
+  font-size: 34rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 0;
+  color: #fff;
+  &.btn-submit {
+    background-color: $color_primary;
+    image {
+      width: 32rpx;
+      height: 34rpx;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10rpx;
+    }
+  }
+}
+
 
 //index
 .index {
@@ -353,6 +380,7 @@
   }
   .img-box {
     padding: 30rpx 24rpx;
+
     .item {
       position: relative;
       width: 160rpx;
@@ -378,6 +406,15 @@
         color: #ff6565;
         font-size: 35rpx;
         padding: 20rpx;
+      }
+      .fm{
+        position: absolute;
+        left:0;top:0;
+        background-color: #FD7406;
+        color:#fff;
+        display: block;
+        font-size:28rpx;
+        padding:4rpx 10rpx;
       }
     }
   }
@@ -518,32 +555,6 @@
   padding-bottom: 130rpx;
   .img-box {
     border-bottom: 1rpx solid $borderColorE6;
-  }
-  .btn-block {
-    left: 0;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    text-align: center;
-    border: none;
-    pointer-events: auto;
-    width: 100%;
-    display: block;
-    font-size: 34rpx;
-    height: 88rpx;
-    line-height: 88rpx;
-    border-radius: 0;
-    color: #fff;
-    &.btn-submit {
-      background-color: $color_primary;
-      image {
-        width: 32rpx;
-        height: 34rpx;
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 10rpx;
-      }
-    }
   }
 }
 

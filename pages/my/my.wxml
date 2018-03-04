@@ -1,6 +1,6 @@
 <import src="../../components/tab_bar/tab_bar.wxml"/>
 
-<view class="my">
+<view class="my page">
     <view class="user-box">
         <view class="bg">
             <image src="../../images/bj.png"/>

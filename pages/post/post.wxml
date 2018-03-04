@@ -1,44 +1,33 @@
-<view class="post pub-product">
-    <view class="textarea-box">
-        <textarea class="text-content" placeholder="写点什么吧~" name="" id="" cols="30" rows="10"></textarea>
-        <view class="counter">至少输入10个字</view>
-    </view>
-    <view class="blank20"></view>
-    <view class="img-box">
-        <view class="item">
-            <image src="../../images/160x160.png"></image>
-            <view class="iconfont icon-delete"></view>
+<form action="" bindsubmit="submitForm">
+
+    <view class="post ">
+        <view class="textarea-box bg-fff">
+            <textarea class="text-content" placeholder="写点什么吧~" name="content" id="" cols="30" rows="10"></textarea>
+            <view class="counter">至少输入10个字</view>
         </view>
-        <view class="item">
-            <image src="../../images/160x160.png"></image>
-            <view class="iconfont icon-delete"></view>
-        </view>
-        <view class="item">
-            <image src="../../images/160x160.png"></image>
-            <view class="iconfont icon-delete"></view>
-        </view>
-        <view class="item">
-            <image src="../../images/160x160.png"></image>
-            <view class="iconfont icon-delete"></view>
-        </view>
-        <view class="item">
-            <image src="../../images/160x160.png"></image>
-            <view class="iconfont icon-delete"></view>
-        </view>
-        <view class="item">
-            <image src="../../images/160x160.png"></image>
-            <view class="iconfont icon-delete"></view>
-        </view>
-        <view class="item">
-            <image src="../../images/160x160.png"></image>
-            <view class="iconfont icon-delete"></view>
+        <view class="blank20"></view>
+        <view class="img-box clearfix bg-fff">
+            <block wx:for="{{ uploadImgs }}" wx:key="index" wx:if="{{uploadImgs.length>0}}">
+                <view class="item"  bindtap="changeFm" data-url="{{ item }}">
+                    <image src="{{ item }}"></image>
+                    <view class="iconfont icon-delete" data-url="{{ item }}" bindtap="deleteUploadImg"></view>
+                    <text class="fm" wx:if="{{currentFm==item}}">封面</text>
+                </view>
+            </block>
+            <view class="item" bindtap="didPressChooesImage">
+                <image src="../../images/camera.png"></image>
+            </view>
         </view>
 
-        <view class="item">
-            <image src="../../images/160x160.png"></image>
-            <view class="iconfont icon-delete"></view>
-        </view>
+        <checkbox-group value="{{uploadImgs}}" name="image" hidden></checkbox-group>
+        <input type="text" name="fm" value="{{currentFm}}" hidden/>
+
+        <button class="btn-block btn-submit">
+            <view class="iconfont">
+                <image src="../../images/icon-tijiao.png"></image>
+            </view>
+            提交
+        </button>
     </view>
-    <button class="btn-block btn-submit">
-        <view class="iconfont"><image src="../../images/icon-tijiao.png"></image></view>提交</button>
-</view>
+
+</form>

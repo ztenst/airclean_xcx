@@ -33,6 +33,7 @@ page {
   box-sizing: border-box;
   height: 100%;
   //overflow-x: hidden;
+  background-color: $color_cool;
   font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
 }
 
@@ -50,6 +51,8 @@ page {
   width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
+  height:100%;
+  background-color: #fff;
 }
 
 a {
@@ -67,7 +70,9 @@ a {
 .bg-color {
   background-color: $color_cool;
 }
-
+.bg-fff{
+  background-color: #fff;
+}
 .c-fff {
   color: #fff;
 }

@@ -1,5 +1,5 @@
 <import src="../../components/tab_bar/tab_bar.wxml"/>
-<view class="app bbs bg-color ">
+<view class=" bbs page ">
     <!--列表-->
 
     <view class="ui-search-bar ">

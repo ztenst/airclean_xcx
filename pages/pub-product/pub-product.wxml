@@ -5,7 +5,7 @@
         <template is="searchFilter" data="{{...$searchFilter }}"></template>
     </view>
     <view class="blank20"></view>
-    <view class="img-box clearfix">
+    <view class="img-box clearfix bg-fff">
         <view class="item">
             <image src="../../images/160x160.png"></image>
             <view class="iconfont icon-delete"></view>

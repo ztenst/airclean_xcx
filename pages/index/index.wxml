@@ -3,7 +3,7 @@
 
 <template is="toast" data="{{ ...$toast }}"/>
 
-<view class="index">
+<view class="index page" >
     <scroll-view class="overflow-scroll" scroll-y="true" scroll-with-animation="true">
         <!--search-->
         <view class="index_search_bar">
@@ -24,7 +24,7 @@
         </view>
 
         <!--banner-->
-        <view class="index-banner">
+        <view class="index-banner ">
             <swiper class="swiper" indicator-dots="true" autoplay="true">
                 <swiper-item wx:for="{{index.imgs}}" wx:key="x" wx:for-item="x">
                     <image src="{{x}}" data-src="{{x}}" bindtap="onImageTap" mode="widthFix"></image>

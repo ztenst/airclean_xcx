@@ -124,4 +124,9 @@ export default {
     addSave(params) {
         return getRequest(`${HOST}/api/product/addSave?`, params)
     },
+    /*新增文章*/
+    addNews(params) {
+        let url = `${config.host}/api/cus/addNews`
+        return postRequest(url, params)
+    },
 }

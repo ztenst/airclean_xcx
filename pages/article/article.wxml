@@ -1,6 +1,6 @@
 <import src="../../components/detail_content/detail_content.wxml"/>
 
-<view class="app article">
+<view class=" article page">
 
         <view class="articleIndex-header">
             <view class="title">{{articleInfo.title}}</view>

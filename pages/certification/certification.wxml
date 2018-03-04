@@ -1,5 +1,5 @@
 <import src="../../components/tab_bar/tab_bar.wxml"/>
-<view class="certification">
+<view class="certification page">
    <view class="blank20"></view>
     <view class="text_box">
         <view class="Title">资质认证资质认证资质认证资质认证资质认证资质认证资质认证资质认证</view>
