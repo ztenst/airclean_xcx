@@ -23,119 +23,54 @@
     <view wx:if="{{listType=='bbs'}}">
         <view class="blank20"></view>
         <view class="bbs_list">
-            <view class="item">
-                <view class="pic">
-                    <image src="http://oofuaem2b.bkt.clouddn.com/2018/0119/15163419242936587847.png?imageView2/1/w/700/h/360/interlace/1/q/100" mode="scaleToFill"></image>
+            <view class="item" wx:for="{{listData}}" wx:key="id">
+                <view class="pic" wx:if="{{item.image}}">
+                    <image src="{{item.image}}" mode="scaleToFill"></image>
                 </view>
                 <view class="info">
-                    <view class="title">
-                        上海设计周date论坛 来自云SPAC
-                        E商业空间中的策展思维上海设计周date论坛 来自云SPAC
-                        E商业空间中的策展思维上海设计周date论坛 来自云SPAC
-                        E商业空间中的策展思维
-                    </view>
+                    <view class="title">{{item.name}}</view>
                     <view class="data-box">
-                        <view class="time-box">2017-10-16
+                        <view class="time-box">{{item.date}}
                             <text class="dot">·</text>
-                            用户001发表
+                            用户{{item.author}}发表
                         </view>
                         <view class="icon-box">
-                            <text class="iconfont icon-zan"></text>
-                            <text class="iconfont icon-shoucang"></text>
+                            <text class="iconfont icon-dianzan2  {{item.praise_num==1?'':''}}"></text>
+                            <text class="iconfont icon-shoucang1 {{item.save_num==1?'on':''}}"></text>
                         </view>
                     </view>
                 </view>
             </view>
-            <view class="item ">
-                <view class="pic">
-                    <image src="http://oofuaem2b.bkt.clouddn.com/2018/0119/15163419242936587847.png?imageView2/1/w/700/h/360/interlace/1/q/100" mode="scaleToFill"></image>
-                </view>
-                <view class="info">
-                    <view class="title">
-                        上海设计周date论坛 来自云SPAC
-                        E商业空间中的策展思维上海设计周date论坛 来自云SPAC
-                        E商业空间中的策展思维上海设计周date论坛 来自云SPAC
-                        E商业空间中的策展思维
-                    </view>
-                    <view class="data-box">
-                        <view class="time-box">2017-10-16
-                            <text class="dot">·</text>
-                            用户001发表
-                        </view>
-                        <view class="icon-box">
-                            <text class="iconfont icon-zan"></text>
-                            <text class="iconfont icon-shoucang"></text>
-                        </view>
-                    </view>
-                </view>
-            </view>
-            <view class="item pictype">
-                <view class="title-box">魔都醉美金秋，你缺的是一场慵懒下午茶，这篇优惠 集锦为你奉上！魔都醉美金秋，你缺的是一场慵懒下午茶，这篇优惠 集锦为你奉上！魔都醉美金秋，你缺的是一场慵懒下午茶，这篇优惠 集锦为你奉上！</view>
-                <view class="pic-box clearfix">
-                    <view class="img">
-                        <image src="http://oofuaem2b.bkt.clouddn.com/2018/0119/15163419242936587847.png?imageView2/1/w/700/h/360/interlace/1/q/100"></image>
-                    </view>
-                    <view class="img">
-                        <image src="http://oofuaem2b.bkt.clouddn.com/2018/0119/15163419242936587847.png?imageView2/1/w/700/h/360/interlace/1/q/100"></image>
-                    </view>
-                    <view class="img">
-                        <image src="http://oofuaem2b.bkt.clouddn.com/2018/0119/15163419242936587847.png?imageView2/1/w/700/h/360/interlace/1/q/100"></image>
-                    </view>
-                    <view class="img">
-                        <image src="http://oofuaem2b.bkt.clouddn.com/2018/0119/15163419242936587847.png?imageView2/1/w/700/h/360/interlace/1/q/100"></image>
-                    </view>
-                </view>
-                <view class="info">
-                    <view class="data-box">
-                        <view class="time-box">2017-10-16
-                            <text class="dot">·</text>
-                            用户001发表
-                        </view>
-                        <view class="icon-box">
-                            <text class="iconfont icon-zan"></text>
-                            <text class="iconfont icon-shoucang"></text>
-                        </view>
-                    </view>
-                </view>
-            </view>
-            <view class="item">
-                <view class="info">
-                    <view class="title">
-                        上海设计周date论坛 来自云SPAC
-                        E商业空间中的策展思维上海设计周date论坛
-                    </view>
-                    <view class="data-box">
-                        <view class="time-box">2017-10-16
-                            <text class="dot">·</text>
-                            用户001发表
-                        </view>
-                        <view class="icon-box">
-                            <text class="iconfont icon-zan"></text>
-                            <text class="iconfont icon-shoucang"></text>
-                        </view>
-                    </view>
-                </view>
-            </view>
-            <view class="item ">
-                <view class="info">
-                    <view class="title">
-                        上海设计周date论坛 来自云SPAC
-                        E商业空间中的策展思维上海设计周date论坛 来自云SPAC
-                        E商业空间中的策展思维上海设计周date论坛 来自云SPAC
-                        E商业空间中的策展思维
-                    </view>
-                    <view class="data-box">
-                        <view class="time-box">2017-10-16
-                            <text class="dot">·</text>
-                            用户001发表
-                        </view>
-                        <view class="icon-box">
-                            <text class="iconfont icon-zan"></text>
-                            <text class="iconfont icon-shoucang"></text>
-                        </view>
-                    </view>
-                </view>
-            </view>
+
+            <!--<view class="item pictype">-->
+            <!--<view class="title-box">魔都醉美金秋，你缺的是一场慵懒下午茶，这篇优惠 集锦为你奉上！魔都醉美金秋，你缺的是一场慵懒下午茶，这篇优惠 集锦为你奉上！魔都醉美金秋，你缺的是一场慵懒下午茶，这篇优惠 集锦为你奉上！</view>-->
+            <!--<view class="pic-box clearfix">-->
+            <!--<view class="img">-->
+            <!--<image src="http://oofuaem2b.bkt.clouddn.com/2018/0119/15163419242936587847.png?imageView2/1/w/700/h/360/interlace/1/q/100"></image>-->
+            <!--</view>-->
+            <!--<view class="img">-->
+            <!--<image src="http://oofuaem2b.bkt.clouddn.com/2018/0119/15163419242936587847.png?imageView2/1/w/700/h/360/interlace/1/q/100"></image>-->
+            <!--</view>-->
+            <!--<view class="img">-->
+            <!--<image src="http://oofuaem2b.bkt.clouddn.com/2018/0119/15163419242936587847.png?imageView2/1/w/700/h/360/interlace/1/q/100"></image>-->
+            <!--</view>-->
+            <!--<view class="img">-->
+            <!--<image src="http://oofuaem2b.bkt.clouddn.com/2018/0119/15163419242936587847.png?imageView2/1/w/700/h/360/interlace/1/q/100"></image>-->
+            <!--</view>-->
+            <!--</view>-->
+            <!--<view class="info">-->
+            <!--<view class="data-box">-->
+            <!--<view class="time-box">2017-10-16-->
+            <!--<text class="dot">·</text>-->
+            <!--用户001发表-->
+            <!--</view>-->
+            <!--<view class="icon-box">-->
+            <!--<text class="iconfont icon-zan"></text>-->
+            <!--<text class="iconfont icon-shoucang"></text>-->
+            <!--</view>-->
+            <!--</view>-->
+            <!--</view>-->
+            <!--</view>-->
         </view>
     </view>
 </block>

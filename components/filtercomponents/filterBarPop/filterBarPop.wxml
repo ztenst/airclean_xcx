@@ -1,6 +1,6 @@
 <view class="filter " wx:if="{{showFilterBarPop}}">
     <view class="filter-bg"></view>
-    <view class="filter-extend {{showFilterBarPop?'show':'hide'}}">
+    <view class="filter-extend {{showFilterBarPop?'show':'hide'}}"  style="top:90rpx;">
         <!--两栏-->
         <view class="filter-scroller two-column" wx:if="{{barMenu.filed=='area'&&barMenu.type!='more'}}">
             <scroll-view class="col-l" scroll-y="{{true}}" scroll-x="{{false}}">

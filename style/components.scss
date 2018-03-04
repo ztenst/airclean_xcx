@@ -1,16 +1,8 @@
 @charset "UTF-8";
 @import "./args";
 
-$color_scheme: #d61939;
-$lightMainColor: #ff706a;
-$color_primary: '';
 
-$colorE6: #e6e6e6;
-$colorBD: #bdbdbd;
-$colorE0: #e0e0e0;
-$colorDF: #dfdfdf;
 
-$colorF5: #f5f5f5;
 
 
 
@@ -126,6 +118,7 @@ $colorF5: #f5f5f5;
     width: 100%;
     transform-origin: 50% 0%;
     transform: scaleY(0);
+
     animation: showAnimationUp 0.2s ease-in-out;
     &.show{
       transform: scaleY(1);
@@ -463,9 +456,11 @@ $colorF5: #f5f5f5;
           .iconfont {
             color: $color_primary;
             font-size: 30rpx;
-            &.icon-zan {
+            &.icon-dianzan2 {
               margin-right: 20rpx;
-
+            }
+            &.on{
+              color: $color_primary;
             }
           }
         }
