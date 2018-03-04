@@ -19,8 +19,9 @@ App({
                             let userInfo = RES.userInfo;
                             self.globalData.userInfo = userInfo;
                             api.getOpenId({code: loginres.code}).then(res => {
-                                let json = res.data;
+                                let json = res;
                                 self.globalData.wxData = json;
+                                // console.log(json)
                                 if (!json.uid) {
                                     let params = {
                                         openid: json.open_id,

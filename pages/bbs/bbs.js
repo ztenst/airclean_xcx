@@ -22,7 +22,7 @@ Page({
                 listType: 'bbs',
                 ToTop: 90
             },
-        })
+        });
     },
 
 

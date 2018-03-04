@@ -93,6 +93,16 @@ function postRequest(url, data = {}) {
 }
 
 export default {
+    /*获取openid*/
+    getOpenId(params) {
+        let url = `${config.host}/api/index/getOpenId`
+        return getRequest(url, params, {cache: true})
+    },
+    /*存用户信息*/
+    indexSub(params) {
+        let url = `${config.host}/api/index/setUser`
+        return postRequest(url, params)
+    },
     getIndex() {
         return getRequest(`${HOST}/api/index/index`)
     },
@@ -110,5 +120,8 @@ export default {
     },
     getCusInfo(params) {
         return getRequest(`${HOST}/api/cus/info`, params)
+    },
+    addSave(params) {
+        return getRequest(`${HOST}/api/product/addSave?`, params)
     },
 }

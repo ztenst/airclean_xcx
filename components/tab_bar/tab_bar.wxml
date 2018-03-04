@@ -14,7 +14,7 @@
         <view class="item" bindtap="{{go_tab}}" data-index="2">
             <view class="cont">
                 <view class="pic">
-                    <image src="{{tabIndex==2?'../../images/hov-fenlei.png':' ../../images/icon-fenlei.png'}}"></image>
+                    <image src="{{tabIndex==2?'../../images/hov-fenlei.png':'../../images/icon-fenlei.png'}}"></image>
                 </view>
                 <view class="text {{tabIndex==2?'on':''}}">分类
 

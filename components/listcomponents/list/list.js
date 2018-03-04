@@ -31,6 +31,22 @@ Component({
                 params = {id: dataset.id}
             }
             app.goPage(url, params);
+        },
+        handleDianZan(e){
+            let self = this;
+            let params = {
+                pid: e.currentTarget.dataset.id,
+                openid: app.globalData.wxData.open_id
+            }
+
+            api.addSave(params).then(res => {
+                let json = res.data;
+                $toast.show({
+                    timer: 2e3,
+                    text: json.msg
+                });
+                self.restartSearch();
+            })
         }
     },
 

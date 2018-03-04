@@ -35,8 +35,8 @@
                             用户{{item.author}}发表
                         </view>
                         <view class="icon-box">
-                            <text class="iconfont icon-dianzan2  {{item.praise_num==1?'':''}}"></text>
-                            <text class="iconfont icon-shoucang1 {{item.save_num==1?'on':''}}"></text>
+                            <text class="iconfont icon-dianzan2  {{item.praise_num==1?'':''}}" catchtap="handleDianZan" ></text>
+                            <text class="iconfont icon-shoucang1 {{item.save_num==1?'on':''}}" catchtap="handleCollect"></text>
                         </view>
                     </view>
                 </view>

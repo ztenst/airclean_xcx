@@ -9,15 +9,21 @@ import api from '../../common/api'
 
 //获取应用实例
 const app = getApp();
-
+app.getUserOpenId().then(res => {
+    let json = res;
+    console.log(json)
+    if (json.status == 'success') {
+        app.globalData.wxData.uid = json;
+    }
+});
 Page({
     data: {
         kw: '',
         focused: false,
         isFinished: false,//轮播图是否加载完毕
-        list:[]
+        list: []
     },
-    onLoad () {
+    onLoad() {
         /**
          * 初始化tabBar组件
          */
@@ -28,10 +34,10 @@ Page({
         /**
          * 首页数据渲染
          */
-        api.getIndex().then(res=>{
+        api.getIndex().then(res => {
             let json = res.data;
             this.setData({
-                index:json
+                index: json
             })
         });
         /**
@@ -43,7 +49,7 @@ Page({
 
     requestList() {
 
-        api.getProductList({'limit': 6,page:1}).then(resp => {
+        api.getProductList({'limit': 6, page: 1}).then(resp => {
             let json = resp.data;
             if (json.list.length > 0) {
                 this.setData({
