@@ -1,21 +1,13 @@
 //index.js
 import {
-    $tabBar,
-    $toast
+    $tabBar
 } from '../../components/wxcomponents'
-
 import api from '../../common/api'
 
 
 //获取应用实例
 const app = getApp();
-app.getUserOpenId().then(res => {
-    let json = res;
-    console.log(json)
-    if (json.status == 'success') {
-        app.globalData.wxData.uid = json;
-    }
-});
+
 Page({
     data: {
         kw: '',

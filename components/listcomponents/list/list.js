@@ -18,7 +18,11 @@ Component({
         }
     },
     data: {
-        config: config
+        config: config,
+        toast: null
+    },
+    ready() {
+        this.data.toast = this.selectComponent('#toast');
     },
     methods: {
         goDetail(e) {
@@ -26,28 +30,32 @@ Component({
             if (listType == 'product') {
                 url = "/pages/detail/detail";
                 params = {id: dataset.id}
-            }else if (listType == 'bbs') {
+            } else if (listType == 'bbs') {
                 url = "/pages/article/article";
                 params = {id: dataset.id}
             }
             app.goPage(url, params);
         },
-        handleDianZan(e){
-            let self = this;
+        handleDianZan(e) {
             let params = {
-                pid: e.currentTarget.dataset.id,
-                openid: app.globalData.wxData.open_id
-            }
-
-            api.addSave(params).then(res => {
-                let json = res.data;
-                $toast.show({
-                    timer: 2e3,
-                    text: json.msg
-                });
-                self.restartSearch();
+                cid: e.currentTarget.dataset.cid,
+                uid: app.globalData.wxData.uid,
+            };
+            api.addPraise(params).then(res => {
+                let json = res;
+                this.data.toast.show(json.msg)
             })
-        }
+        },
+        handleCollect(e) {
+            let params = {
+                pid: e.currentTarget.dataset.pid,
+                uid: app.globalData.wxData.uid
+            };
+            api.addSave(params).then(res => {
+                let json = res;
+                this.data.toast.show(json.msg);
+            })
+        },
     },
 
 })

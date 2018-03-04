@@ -1,5 +1,16 @@
-<form action="" bindsubmit="submitForm">
-    <view class="post ">
+<view class="post ">
+    <form action="" bindsubmit="submitForm">
+        <view class="m-cell">
+            <view class="cell-item">
+                <view class="cell-left">
+                    添加标题
+                </view>
+                <view class="cell-right ">
+                    <input type="number" pattern="[0-9]*" class="cell-input " placeholder-class="c-ccc" name="title"
+                           placeholder="请输入标题" autocomplete="off"/>
+                </view>
+            </view>
+        </view>
         <view class="textarea-box bg-fff">
             <textarea class="text-content" placeholder="写点什么吧~" name="content" id="" cols="30" rows="10"></textarea>
             <view class="counter">至少输入10个字</view>
@@ -17,8 +28,7 @@
                 <image src="../../images/camera.png"></image>
             </view>
         </view>
-
-        <checkbox-group value="{{uploadImgs}}" name="image" hidden></checkbox-group>
+        <checkbox-group value="{{uploadImgs}}" name="imgs" hidden></checkbox-group>
         <input type="text" name="fm" value="{{currentFm}}" hidden/>
 
         <button class="btn-block btn-submit" form-type="submit">
@@ -27,7 +37,8 @@
             </view>
             提交
         </button>
-    </view>
-</form>
+    </form>
+</view>
+
 <toast id="toast"></toast>
 

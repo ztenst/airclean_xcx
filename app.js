@@ -1,49 +1,38 @@
 import api from './common/api'
 import util from './common/util'
 import WxValidate from './libs/wx-validate/WxValidate'
+import regeneratorRuntime from './libs/regenerator-runtime/runtime';
 
 App({
-    onLaunch () {
+    async onLaunch() {
+        await this.getUserOpenId();
     },
     /**
      * 获取openid 
      * @returns {Promise}
      */
-    getUserOpenId () {
+    getUserOpenId() {
         var self = this;
         return new Promise((resolve, reject) => {
-            wx.login({
-                success: function (loginres) {
-                    wx.getUserInfo({
-                        success: function (RES) {
-                            let userInfo = RES.userInfo;
-                            self.globalData.userInfo = userInfo;
-                            api.getOpenId({code: loginres.code}).then(res => {
-                                let json = res;
-                                self.globalData.wxData = json;
-                                console.log(json)
-                                if (!json.uid) {
-                                    let params = {
-                                        openid: json.open_id,
-                                        name: userInfo.nickName,
-                                        sex: userInfo.gender,
-                                        pro: userInfo.province,
-                                        city: userInfo.city
-                                    };
-                                    resolve(api.indexSub(params))
-                                }
-                            })
-                        }
-                    });
-                }
-            })
+            if (self.globalData.wxData) {
+                resolve(self.globalData.wxData)
+            } else {
+                wx.login({
+                    success(loginres) {
+                        api.getOpenId({code: loginres.code}).then(res => {
+                            self.globalData.wxData = res;
+                            resolve(res)
+                        });
+                    }
+                })
+            }
         });
     },
     /**
      * 获取个人信息
      * @returns {Promise}
      */
-    getUserInfo () {
+    getUserInfo() {
         var self = this
         return new Promise((resolve, reject) => {
             if (self.globalData.userInfo) {
@@ -71,7 +60,6 @@ App({
      * options: {type: 'navigate' | 'redirect', force: false} //type 跳转方式, force: url一致时是否强制跳转
      */
     goPage(url, params = {}, options = {type: 'navigate'}) {
-        console.log(url)
         if (!options.force && this.isCurrentPage()) return;
         //如果传了params 就做参数的拼接
         let query = util.params2Query(params)

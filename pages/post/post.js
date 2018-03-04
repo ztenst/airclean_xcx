@@ -1,5 +1,6 @@
 import api from '../../common/api'
 import Util from '../../common/util'
+import regeneratorRuntime from '../../libs/regenerator-runtime/runtime';
 
 const qiniuUploader = require("../../common/qiniuUploader");
 
@@ -14,6 +15,7 @@ function getKey() {
     var num = 100000 + Math.round(Rand * Range);
     return key + myDate.getFullYear() + '/' + (month < 10 ? "0" + month : month) + (day < 10 ? "0" + day : day) + '/' + new Date().getTime() + num + '.jpg';
 }
+
 function didPressChooesImage(that) {
     // initQiniu();
     // 微信 API 选文件
@@ -47,28 +49,27 @@ let app = getApp();
 
 Page({
     data: {
-        tags: {},
         uploadImgs: [],
         currentFm: 0,
-        toast:null
+        toast: null,
     },
-    onLoad() {
+    async onLoad() {
+
+        await app.getUserOpenId();
+
         this.setData({
-            toast:this.selectComponent('#toast')
+            toast: this.selectComponent('#toast')
         });
-        this.setData({
-            customInfo: app.globalData.customInfo,
-            userInfo: app.globalData.userInfo,
-        });
+
         //初始化表单校验组件
         this.WxValidate = app.WxValidate({
+            'title': {required: true}, // 标题
             'content': {required: true, minlength: 10,}, //内容
             'fm': {required: true}, // 封面
-            'image': {required: true}, // 图片 字符串数组
         }, {
+            'title': {required: '请输入标题'}, // 标题
             'content': {required: '请输入内容'}, //内容
             'fm': {required: '请输入封面'}, // 封面
-            'image': {required: '请上传图片'}, // 图片 字符串数组
         });
     },
 
@@ -106,20 +107,16 @@ Page({
             this.data.toast.show(error.msg)
             return false
         }
-        // let params = Object.assign({}, formParms, {uid: app.globalData.customInfo.id});
+        if (this.data.uploadImgs.length == 0) {
+            this.data.toast.show('请上传图片')
+            return false
+        }
+        let params = Object.assign({}, formParms, {imgs: this.data.uploadImgs}, {uid: app.globalData.wxData.uid});
 
-        // api.addNews(params).then(res => {
-        //     let data = res.data;
-        //     if (data.status == 'success') {
-        //         let url = '/pages/myhouse_list/myhouse_list';
-        //         app.goPage(url, {}, false);
-        //     } else {
-        //         $toast.show({
-        //             timer: 2e3,
-        //             text: data.msg,
-        //         });
-        //     }
-        // });
+        api.addNews(params).then(res => {
+            let data = res;
+            this.data.toast.show(data.msg)
+        });
     },
 });
 

@@ -122,7 +122,10 @@ export default {
         return getRequest(`${HOST}/api/cus/info`, params)
     },
     addSave(params) {
-        return getRequest(`${HOST}/api/product/addSave?`, params)
+        return getRequest(`${HOST}/api/cus/addSave`, params)
+    },
+    addPraise(params) {
+        return getRequest(`${HOST}/api/cus/addPraise`, params)
     },
     /*新增文章*/
     addNews(params) {

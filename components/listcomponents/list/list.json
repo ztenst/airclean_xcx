@@ -1,6 +1,6 @@
 {
   "component": true,
-  "usingComponets": {
-    "go-to": "../../common/go-to/go-to"
+  "usingComponents": {
+    "toast": "../../toast/toast"
   }
 }
