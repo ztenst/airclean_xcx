@@ -37,23 +37,32 @@ Component({
             app.goPage(url, params);
         },
         handleDianZan(e) {
+            let dataset = e.currentTarget.dataset;
             let params = {
-                cid: e.currentTarget.dataset.cid,
+                cid: dataset.cid,
                 uid: app.globalData.customInfo.id,
             };
             api.addPraise(params).then(res => {
                 let json = res;
-                this.data.toast.show(json.msg)
+                this.data.toast.show(json.msg);
+                this.setData({
+                    [`listData[${dataset.index}].praise_num`]: json.data
+                })
             })
         },
         handleCollect(e) {
+            let dataset = e.currentTarget.dataset;
             let params = {
-                pid: e.currentTarget.dataset.pid,
+                pid: dataset.pid,
                 uid: app.globalData.customInfo.id,
             };
             api.addSave(params).then(res => {
                 let json = res;
                 this.data.toast.show(json.msg);
+                this.setData({
+                    [`listData[${dataset.index}].save_num`]: json.data
+                });
+                console.log(this.data.listData)
             })
         },
     },

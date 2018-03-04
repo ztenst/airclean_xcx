@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0543050e-9aec-4f42-8e4f-1244950030a2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/dialog/dialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/dialog/dialog.wxml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app.wxss.map" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.wxss" afterPath="$PROJECT_DIR$/app.wxss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/api.js" afterPath="$PROJECT_DIR$/common/api.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/listcomponents/list/list.js" afterPath="$PROJECT_DIR$/components/listcomponents/list/list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/wxcomponents.js" afterPath="$PROJECT_DIR$/components/wxcomponents.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/wxs/filter.wxs" afterPath="$PROJECT_DIR$/components/wxs/filter.wxs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/index/index.js" afterPath="$PROJECT_DIR$/pages/index/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/index/index.wxml" afterPath="$PROJECT_DIR$/pages/index/index.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/components.scss" afterPath="$PROJECT_DIR$/style/components.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/listcomponents/list/list.wxml" afterPath="$PROJECT_DIR$/components/listcomponents/list/list.wxml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,97 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="list.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/listcomponents/list/list.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-81">
-              <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="20" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="filter.wxs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/components/wxs/filter.wxs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="565">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="api.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/api.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="105" column="4" lean-forward="false" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/index/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="37" column="18" lean-forward="true" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-              <folding>
-                <element signature="e#11#78#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dialog.wxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/dialog/dialog.wxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="60" lean-forward="true" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="components.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/style/components.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="403" column="20" lean-forward="true" selection-start-line="403" selection-start-column="20" selection-end-line="403" selection-end-column="20" />
-              <folding>
-                <element signature="e#264#6054#0" expanded="false" />
-                <element signature="e#838#2088#0" expanded="false" />
-                <element signature="e#874#908#0" expanded="false" />
-                <element signature="e#6064#7716#0" expanded="false" />
-                <element signature="e#11269#11430#0" expanded="false" />
-                <element signature="e#11662#13922#0" expanded="false" />
-                <element signature="e#13965#14747#0" expanded="false" />
-                <element signature="e#14770#17387#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="109" column="69" lean-forward="true" selection-start-line="109" selection-start-column="69" selection-end-line="109" selection-end-column="69" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-                <element signature="e#642#1732#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="bbs.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/bbs/bbs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+            <state relative-caret-position="459">
+              <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
               <folding>
                 <element signature="e#10#69#0" expanded="true" />
               </folding>
@@ -126,14 +29,54 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dialog.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/dialog/dialog.js">
+      <file leaf-file-name="list.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/listcomponents/list/list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="103" column="33" lean-forward="false" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="33" />
+            <state relative-caret-position="568">
+              <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
               <folding>
-                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.wxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/listcomponents/list/list.wxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="41" column="23" lean-forward="true" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
+              <folding>
+                <element signature="n#view#0;n#block#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="components.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/style/components.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="456" column="21" lean-forward="true" selection-start-line="456" selection-start-column="21" selection-end-line="456" selection-end-column="21" />
+              <folding>
+                <element signature="e#264#6054#0" expanded="false" />
+                <element signature="e#838#2088#0" expanded="false" />
+                <element signature="e#874#908#0" expanded="false" />
+                <element signature="e#6064#7716#0" expanded="false" />
+                <element signature="e#11269#11430#0" expanded="false" />
+                <element signature="e#13965#14747#0" expanded="false" />
+                <element signature="e#14770#17387#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="demo_fontclass.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/download/font_511601_r5fmr0i0xjrftj4i/demo_fontclass.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -236,7 +179,6 @@
         <option value="$PROJECT_DIR$/pages/post/post.wxml" />
         <option value="$PROJECT_DIR$/pages/post/post.js" />
         <option value="$PROJECT_DIR$/components/listcomponents/list/list.json" />
-        <option value="$PROJECT_DIR$/components/listcomponents/list/list.wxml" />
         <option value="$PROJECT_DIR$/components/wxcomponents.js" />
         <option value="$PROJECT_DIR$/common/api.js" />
         <option value="$PROJECT_DIR$/pages/index/index.js" />
@@ -244,8 +186,9 @@
         <option value="$PROJECT_DIR$/style/components.scss" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/components/dialog/dialog.js" />
-        <option value="$PROJECT_DIR$/components/listcomponents/list/list.js" />
         <option value="$PROJECT_DIR$/components/wxs/filter.wxs" />
+        <option value="$PROJECT_DIR$/components/listcomponents/list/list.js" />
+        <option value="$PROJECT_DIR$/components/listcomponents/list/list.wxml" />
       </list>
     </option>
   </component>
@@ -312,6 +255,24 @@
             <path>
               <item name="airclean_xcx_new" type="b2602c69:ProjectViewProjectNode" />
               <item name="airclean_xcx_new" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="airclean_xcx_new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="airclean_xcx_new" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="download" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="airclean_xcx_new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="airclean_xcx_new" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="download" type="462c0819:PsiDirectoryNode" />
+              <item name="font_511601_r5fmr0i0xjrftj4i" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="airclean_xcx_new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="airclean_xcx_new" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -365,20 +326,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.demo_fontclass.html (2)">
+  <component name="RunManager" selected="JavaScript Debug.demo_fontclass.html (3)">
     <configuration name="demo_fontclass.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/airclean_xcx_new/libs/font_511601_gf5aytz29p3f2yb9/demo_fontclass.html" />
     <configuration name="demo_fontclass.html (2)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/airclean_xcx_new/libs/font_511601_pjws44dz041xxbt9/demo_fontclass.html" />
+    <configuration name="demo_fontclass.html (3)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/airclean_xcx_new/libs/download/font_511601_r5fmr0i0xjrftj4i/demo_fontclass.html" />
     <configuration name="demo_fontclass.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/airclean_xcx_new/libs/font_511601_6hx4xcei5v9dlsor/demo_fontclass.html" />
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.demo_fontclass.html" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.demo_fontclass.html (1)" />
       <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.demo_fontclass.html (2)" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.demo_fontclass.html (3)" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.demo_fontclass.html (2)" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.demo_fontclass.html (1)" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.demo_fontclass.html" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.demo_fontclass.html (3)" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.demo_fontclass.html (2)" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.demo_fontclass.html (1)" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.demo_fontclass.html" />
       </list>
     </recent_temporary>
   </component>
@@ -408,12 +372,12 @@
       <workItem from="1520002056977" duration="774000" />
       <workItem from="1520039702221" duration="35059000" />
       <workItem from="1520125911332" duration="20497000" />
-      <workItem from="1520168870981" duration="8162000" />
+      <workItem from="1520168870981" duration="8758000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83369000" />
+    <option name="totallyTimeSpent" value="83965000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -450,14 +414,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/common/qiniuUploader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/wxParse/wxParse.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -767,16 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/listcomponents/list/list.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="37" column="183" lean-forward="false" selection-start-line="37" selection-start-column="170" selection-end-line="37" selection-end-column="183" />
-          <folding>
-            <element signature="n#view#0;n#block#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/index/index.wxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -795,28 +741,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/dialog/dialog.wxml">
+    <entry file="file://$PROJECT_DIR$/style/common.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="60" lean-forward="true" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+        <state relative-caret-position="615">
+          <caret line="133" column="18" lean-forward="true" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style/components.scss">
+    <entry file="file://$PROJECT_DIR$/components/wxs/filter.wxs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="403" column="20" lean-forward="true" selection-start-line="403" selection-start-column="20" selection-end-line="403" selection-end-column="20" />
-          <folding>
-            <element signature="e#264#6054#0" expanded="false" />
-            <element signature="e#838#2088#0" expanded="false" />
-            <element signature="e#874#908#0" expanded="false" />
-            <element signature="e#6064#7716#0" expanded="false" />
-            <element signature="e#11269#11430#0" expanded="false" />
-            <element signature="e#11662#13922#0" expanded="false" />
-            <element signature="e#13965#14747#0" expanded="false" />
-            <element signature="e#14770#17387#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="403">
+          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -838,13 +775,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/dialog/dialog.js">
+    <entry file="file://$PROJECT_DIR$/components/dialog/dialog.wxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="103" column="33" lean-forward="false" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="216">
+          <caret line="8" column="60" lean-forward="true" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -859,10 +794,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/components/dialog/dialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="103" column="33" lean-forward="false" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/bbs/bbs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        <state relative-caret-position="459">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
           <folding>
             <element signature="e#10#69#0" expanded="true" />
           </folding>
@@ -871,27 +816,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/listcomponents/list/list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
-          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="20" selection-end-column="23" />
+        <state relative-caret-position="568">
+          <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style/common.scss">
+    <entry file="file://$PROJECT_DIR$/style/components.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="133" column="18" lean-forward="true" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
+        <state relative-caret-position="413">
+          <caret line="456" column="21" lean-forward="true" selection-start-line="456" selection-start-column="21" selection-end-line="456" selection-end-column="21" />
+          <folding>
+            <element signature="e#264#6054#0" expanded="false" />
+            <element signature="e#838#2088#0" expanded="false" />
+            <element signature="e#874#908#0" expanded="false" />
+            <element signature="e#6064#7716#0" expanded="false" />
+            <element signature="e#11269#11430#0" expanded="false" />
+            <element signature="e#13965#14747#0" expanded="false" />
+            <element signature="e#14770#17387#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/download/font_511601_r5fmr0i0xjrftj4i/demo_fontclass.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/wxs/filter.wxs">
+    <entry file="file://$PROJECT_DIR$/components/listcomponents/list/list.wxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="594">
+          <caret line="41" column="23" lean-forward="true" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
+          <folding>
+            <element signature="n#view#0;n#block#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
