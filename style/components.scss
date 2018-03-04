@@ -417,6 +417,9 @@
     position: relative;
     border-top: 1rpx solid $borderColorE6;
     display: flex;
+    &:first-child{
+      border-top: 0;
+    }
     .pic {
       width: 220rpx;
       height: 150rpx;
@@ -452,9 +455,9 @@
             padding: 0 6rpx;
           }
           .iconfont {
-            color: $color_primary;
+            color: #999;
             font-size: 30rpx;
-            &.icon-dianzan2 {
+            &:first-child {
               margin-right: 20rpx;
             }
             &.on{
