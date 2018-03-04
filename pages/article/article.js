@@ -29,48 +29,32 @@ Page({
 
     onLoad(options) {
         this.setData({
-            product_id: options.id,
+            cus_id: options.id,
         });
     },
-    onShow () {
-        let product_id = this.data.product_id;
-        this.getProductDetail(product_id);
+    onShow() {
+        let cus_id = this.data.cus_id;
+        this.getCusDetail(cus_id);
     },
     /**
      * 产品详细页数据渲染
      * @param product_id
      */
-    getProductDetail(product_id) {
-        api.getProductInfo({id: product_id}).then(res => {
+    getCusDetail(product_id) {
+        api.getCusInfo({id: product_id}).then(res => {
             let json = res;
             if (json.status == 'success') {
                 //设置导航条标题
                 wx.setNavigationBarTitle({title: json.data.name});
-
                 this.setData({
-                    productInfo: json.data,
+                    articleInfo: json.data,
                     imgUrls: json.data.images,
                 });
 
-                /**
-                 * 初始化轮播图组件
-                 */
-                $bannerSwiper.init({
-                    imgUrls: json.data.images,
-                    onFinishLoad() {
-                        //隐藏加载logo
-                        this.setData({
-                            isFinished: true
-                        })
-                    }
-                });
-
-                /**
-                 *初始化图文详情组件
-                 */
                 $detailContent.init('news', {
-                    content: json.data.content.trim()
+                    content: this.data.articleInfo.content.trim()
                 });
+
 
             } else {
                 wx.showToast({
@@ -86,7 +70,6 @@ Page({
             }
         });
     },
-
 
 
 });

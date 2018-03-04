@@ -107,5 +107,8 @@ export default {
     },
     getCusList(params) {
         return getRequest(`${HOST}/api/cus/list`, params)
-    }
+    },
+    getCusInfo(params) {
+        return getRequest(`${HOST}/api/cus/info`, params)
+    },
 }

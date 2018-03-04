@@ -26,7 +26,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
@@ -83,10 +83,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 9,
 					"name": "article",
 					"pathName": "pages/article/article",
-					"query": ""
+					"query": "id=37"
 				},
 				{
 					"id": -1,

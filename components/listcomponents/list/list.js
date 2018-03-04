@@ -26,6 +26,9 @@ Component({
             if (listType == 'product') {
                 url = "/pages/detail/detail";
                 params = {id: dataset.id}
+            }else if (listType == 'bbs') {
+                url = "/pages/article/article";
+                params = {id: dataset.id}
             }
             app.goPage(url, params);
         }

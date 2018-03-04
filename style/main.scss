@@ -242,6 +242,7 @@
     box-sizing: border-box;
     background-color: #fff;
     display: flex;
+    align-items: center;
     .ui-search-bar__form {
       position: relative;
       flex: 1;
@@ -832,6 +833,7 @@
       }
     }
   }
+
 }
 
 //order
