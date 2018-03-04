@@ -1,4 +1,4 @@
-@import "../filterBar/filterBar.wxss";
+@import "../../../app.wxss";
 
 
 

@@ -65,6 +65,12 @@ Page({
         this.setData({
             focused: !this.data.focused
         });
+        if(this.data.condition.kw){
+            this.setData({
+                condition: Object.assign({},this.data.condition,{kw:''}),
+                [`listOpts.condition`]: Object.assign({},this.data.condition,{kw:''}),
+            });
+        }
     },
     onSearchInput(e){
         this.setData({
