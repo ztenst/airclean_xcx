@@ -1,5 +1,5 @@
 import Component from '../component'
-import Util from '../../utils/util'
+import Util from '../../common/util'
 
 var WxParse = require('../../libs/wxParse/wxParse.js');
 

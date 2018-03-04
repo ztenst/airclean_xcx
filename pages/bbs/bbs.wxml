@@ -1,23 +1,19 @@
 <import src="../../components/tab_bar/tab_bar.wxml"/>
-<import src="../../components/bbs_list/bbs_list.wxml"/>
 <view class="app bbs bg-color ">
     <!--列表-->
-    <scroll-view class="overflow-scroll" scroll-y="true" lower-threshold="100" bindscrolltolower="requestList"
-                 scroll-with-animation="true">
-        <view class="ui-search-bar ">
-            <form class="ui-search-bar__form">
-                <view class="ui-search-bar__box">
-                    <text  class="ui-icon-search iconfont icon-search"></text>
-                    <input type="search" class="ui-search-bar__input" placeholder-class="search_input_placeholder_c"  placeholder="搜索内容" required="" />
-                    <text  class="ui-icon-clear iconfont icon-close"></text>
-                </view>
-            </form>
-            <view  class="ui-search-bar__cancel-btn box box-align-center iconfont icon-write"></view>
-        </view>
-        <view class="blank20"></view>
-        <template is="bbsList" data="{{list, ...$bbsList }}"></template>
-    </scroll-view>
 
+    <view class="ui-search-bar ">
+        <form class="ui-search-bar__form">
+            <view class="ui-search-bar__box">
+                <text class="ui-icon-search iconfont icon-search"></text>
+                <input type="search" class="ui-search-bar__input" placeholder-class="search_input_placeholder_c" placeholder="搜索内容" required=""/>
+                <text class="ui-icon-clear iconfont icon-close"></text>
+            </view>
+        </form>
+        <view class="ui-search-bar__cancel-btn box box-align-center iconfont icon-write"></view>
+    </view>
+    <!--列表组件-->
+    <list-bar list-opts="{{listOpts}}"></list-bar>
 
 </view>
 <template is="tabBar" data="{{...$tabBar }}"></template>

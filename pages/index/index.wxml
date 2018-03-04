@@ -1,12 +1,10 @@
-<import src="../../components/product_list/product_list.wxml"/>
 <import src="../../components/tab_bar/tab_bar.wxml"/>
 <import src="../../components/toast/toast.wxml"/>
 
 <template is="toast" data="{{ ...$toast }}"/>
 
 <view class="index">
-    <scroll-view class="overflow-scroll" scroll-y="true" lower-threshold="100" bindscrolltolower="requestList"
-                 scroll-with-animation="true">
+    <scroll-view class="overflow-scroll" scroll-y="true" scroll-with-animation="true">
         <!--search-->
         <view class="index_search_bar bg-mianColor">
             <view class="search-box">
@@ -27,7 +25,7 @@
 
         <!--banner-->
         <view class="index-banner">
-            <swiper class="swiper" indicator-dots="true" autoplay="true" >
+            <swiper class="swiper" indicator-dots="true" autoplay="true">
                 <swiper-item wx:for="{{index.imgs}}" wx:key="x" wx:for-item="x">
                     <image src="{{x}}" data-src="{{x}}" bindtap="onImageTap" mode="widthFix"></image>
                 </swiper-item>
@@ -48,20 +46,20 @@
         <!--推荐位-->
         <block class="ele-container">
             <view class="cells_auto_fill box ">
-                <view class="item" wx:for="{{short_recoms}}" bindtap="go_detail" data-id="{{item.pid}}">
+                <view class="item" wx:for="{{index.short_recoms}}" bindtap="go_detail" data-id="{{item.pid}}">
                     <image src="{{item.img}}" mode="scaleToFill"></image>
                 </view>
             </view>
             <view class="cells_auto_fill">
                 <view class="body">
-                    <image src="{{long_recoms[0].img}}" mode="scaleToFill" bindtap="go_detail"
+                    <image src="{{index.long_recoms[0].img}}" mode="scaleToFill" bindtap="go_detail"
                            data-id="{{index.long_recoms[0].pid}}"></image>
                 </view>
             </view>
             <view class="blank20"></view>
         </block>
         <!--列表-->
-        <template is="productList" data="{{list, ...$productList }}"></template>
+        <list list-data="{{list}}" list-type="product"></list>
 
     </scroll-view>
 

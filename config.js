@@ -12,7 +12,7 @@ var version = '1.0.1';
 // development and production host
 var hosts = {
     development: 'http://mall.madridwine.cn',
-    production: 'https://airclean.madridwine.cn/'
+    production: 'https://airclean.madridwine.cn'
 };
 
 // static path

@@ -5,7 +5,7 @@ import {
 } from '../../components/wxcomponents'
 import config from '../../config'
 import api from '../../common/api'
-import Util from '../../utils/util'
+import Util from '../../common/util'
 
 //获取应用实例
 const app = getApp();

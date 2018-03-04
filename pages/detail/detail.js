@@ -5,7 +5,7 @@ import {
 
 //获取应用实例
 import api from '../../common/api'
-import Util from '../../utils/util'
+import Util from '../../common/util'
 
 const app = getApp();
 
@@ -30,7 +30,7 @@ Page({
     getProductDetail(product_id) {
         
         api.getProductInfo({id: product_id}).then(res => {
-            let json = res.data;
+            let json = res;
             if (json.status == 'success') {
                 //设置导航条标题
                 wx.setNavigationBarTitle({title: json.data.name});

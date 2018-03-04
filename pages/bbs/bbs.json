@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "贝莱橱柜"
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "list-bar": "../../components/listcomponents/listBar/listBar"
+  }
 }

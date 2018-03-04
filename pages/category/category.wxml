@@ -1,17 +1,25 @@
-<import src="../../components/search_filter/search_filter.wxml"/>
-<import src="../../components/product_list_single/product_list_single.wxml"/>
-
 <import src="../../components/tab_bar/tab_bar.wxml"/>
-<view class="page index">
-    <scroll-view class="overflow-scroll" scroll-y="true" lower-threshold="100" bindscrolltolower="requestList" scroll-with-animation="true">
-        <!--搜索筛选-->
-        <view class="search-top">
-            <template is="searchFilter" data="{{...$searchFilter }}"></template>
-        </view>
-        <!--列表-->
-        <template is="productListSingle" data="{{list,...$productListSingle}}"></template>
 
-    </scroll-view>
+<view class="page category">
+
+    <view class="slide-nav">
+        <scroll-view scroll-x class="slide">
+            <view wx:for="{{tags}}" wx:key="id" class="item {{py==item.py?'on':''}}" bindtap="setFilterOpt" data-py="{{item.py}}">
+                <view class="text">{{item.name}}</view>
+            </view>
+        </scroll-view>
+        <view class="search-btn">
+            <text class="iconfont icon-search"></text>
+        </view>
+
+    </view>
+
+    <filter-bar filters="{{filters}}" filter-condition="{{condition}}" bind:changeSelect="changeData"
+                bind:closeFilterBar="handleCloseFilterBar"></filter-bar>
+
+    <!--列表组件-->
+    <list-bar list-opts="{{listOpts}}"></list-bar>
+
 </view>
 
 <template is="tabBar" data="{{...$tabBar }}"></template>

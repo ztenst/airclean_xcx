@@ -1,3 +1,7 @@
 {
-  "navigationBarTitleText": "贝莱橱柜"
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "filter-bar": "../../components/filtercomponents/filterBar/filterBar",
+    "list-bar": "../../components/listcomponents/listBar/listBar"
+  }
 }

@@ -1,37 +1,63 @@
-/* eslint-disable camelcase,spaced-comment,no-undef,comma-spacing */
 import config from '../config'
-import Util from '../utils/util'
+import util from './util'
+import _ from '../libs/lodash/we-lodash'
+import CacheFactory from '../libs/cacheFactory'
 
-//无论promise对象最后状态如何都会执行
-Promise.prototype.finally = function (callback) {
-    let P = this.constructor;
-    return this.then(
-        value => P.resolve(callback()).then(() => value),
-        reason => P.resolve(callback()).then(() => {
-            throw reason
-        })
-    );
-};
+const cache = new CacheFactory('api', {capacity: 100})
+const HOST = config.host
+
+if (!Promise.prototype.finally) {
+    //无论promise对象最后状态如何都会执行
+    Promise.prototype.finally = function (callback) {
+        let P = this.constructor;
+        return this.then(
+            value => P.resolve(callback()).then(() => value),
+            reason => P.resolve(callback()).then(() => {
+                throw reason
+            })
+        );
+    };
+}
 
 /**
  * 微信请求promise化
  * @param  {Function} fn [description]
  * @return {[type]}      [description]
  */
-function wxPromisify(fn) {
+function ajaxPromisify(fn) {
     return function (obj = {}) {
         return new Promise((resolve, reject) => {
             obj.success = function (res) {
                 //成功
-                resolve(res)
+                resolve(res.data)
             }
             obj.fail = function (res) {
                 //失败
-                reject(res)
+                reject(res.statusCode)
             }
             fn(obj)
         })
     }
+}
+
+//可以差缓存的promise
+const requestCachePromise = function (obj, opts = {cache: false}) {
+    let requestPromise = ajaxPromisify(wx.request)
+    if (opts.cache) {
+        let u = obj.url + JSON.stringify(obj.data)
+        let c = cache.get(u)
+        if (c) {
+            return new Promise(resolve => {
+                resolve(_.cloneDeep(c))
+            })
+        } else {
+            return requestPromise(obj).then(json => {
+                cache.put(u, _.cloneDeep(json)) //储存拷贝, 使用原值
+                return json
+            })
+        }
+    }
+    return requestPromise(obj)
 }
 
 /**
@@ -39,17 +65,15 @@ function wxPromisify(fn) {
  * url
  * data 以对象的格式传入
  */
-function getRequest(url, data = {}) {
-    var getRequest = wxPromisify(wx.request)
-    return getRequest({
+function getRequest(url, data = {}, opts) {
+    return requestCachePromise({
         url: url,
         method: 'GET',
-        // data: Util.filterEmpty(data),
-        data: data,
+        data: util.filterEmpty(data),
         header: {
-            'Content-Type': 'application/json'
+            'content-Type': 'application/json'
         }
-    })
+    }, opts)
 }
 
 /**
@@ -58,88 +82,30 @@ function getRequest(url, data = {}) {
  * data 以对象的格式传入
  */
 function postRequest(url, data = {}) {
-    var postRequest = wxPromisify(wx.request)
-    return postRequest({
+    return requestCachePromise({
         url: url,
         method: 'POST',
-        data: Util.filterEmpty(data),
+        data: util.filterEmpty(data),
         header: {
-            "content-type": "application/x-www-form-urlencoded"
+            'content-type': 'application/x-www-form-urlencoded'
         },
     })
 }
 
-const api = {
-    /*首页*/
+export default {
     getIndex() {
-        let url = `${config.host}/api/index/index`;
-        return getRequest(url)
+        return getRequest(`${HOST}/api/index/index`)
     },
-    /*产品列表*/
+    getActiveTags() {
+        return getRequest(`${HOST}/api/tag/activeTags`, {}, {cache: true})
+    },
     getProductList(params) {
-        let url = `${config.host}/api/product/list`;
-        return getRequest(url, params)
+        return getRequest(`${HOST}/api/product/list`, params)
     },
-    /*产品详细页*/
     getProductInfo(params) {
-        let url = `${config.host}/api/product/info`;
-        return getRequest(url, params)
+        return getRequest(`${HOST}/api/product/info`, params)
     },
-    /*产品类别*/
-    getCates(params) {
-        let url = `${config.host}/api/product/getCates`;
-        return getRequest(url, params)
-    },
-    /*发现列表*/
-    getFindList(params) {
-        let url = `${config.host}/api/find/list`;
-        return getRequest(url, params)
-    },
-    /*案例列表*/
-    getCusist(params) {
-        let url = `${config.host}/api/cus/list`;
-        return getRequest(url, params)
-    },
-    /*发现详细页*/
-    getFindInfo(params) {
-        let url = `${config.host}/api/find/info`;
-        return getRequest(url, params)
-    },
-    /*案例详细页*/
-    getCaseInfo(params) {
-        let url = `${config.host}/api/cus/info`;
-        return getRequest(url, params)
-    },
-    /*获取openid*/
-    getOpenId(params) {
-        let url = `${config.host}/api/index/getOpenId`
-        return getRequest(url, params)
-    },
-    /*存用户信息*/
-    indexSub(params) {
-        let url = `${config.host}/api/index/setUser`
-        return postRequest(url, params)
-    },
-    /*提交订单*/
-    addOrder(params) {
-        let url = `${config.host}/api/product/addOrder`
-        return postRequest(url, params)
-    },
-    /*添加或取消收藏*/
-    addSave(params) {
-        let url = `${config.host}/api/product/addSave`
-        return getRequest(url, params)
-    },
-    /*获取商家简介信息*/
-    getIntro(params) {
-        let url = `${config.host}/api/index/getIntro`
-        return getRequest(url, params)
-    },
-     /*获取商家联系电话*/
-    getIndexConfig(params) {
-        let url = `${config.host}/api/index/config`
-        return getRequest(url, params)
-    },
-};
-
-module.exports = api
+    getCusList(params) {
+        return getRequest(`${HOST}/api/cus/list`, params)
+    }
+}

@@ -1,6 +1,6 @@
 import { $toast,    $searchFilter} from '../../components/wxcomponents'
 import api from '../../common/api'
-import Util from '../../utils/util'
+import Util from '../../common/util'
 
 let app = getApp();
 
