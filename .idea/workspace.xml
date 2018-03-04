@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0543050e-9aec-4f42-8e4f-1244950030a2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/listcomponents/list/list.js" afterPath="$PROJECT_DIR$/components/listcomponents/list/list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/listcomponents/list/list.wxml" afterPath="$PROJECT_DIR$/components/listcomponents/list/list.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/tab_bar/tab_bar.js" afterPath="$PROJECT_DIR$/components/tab_bar/tab_bar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/tab_bar/tab_bar.wxml" afterPath="$PROJECT_DIR$/components/tab_bar/tab_bar.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/post/post.json" afterPath="$PROJECT_DIR$/pages/post/post.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,14 +42,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.wxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="list.wxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/listcomponents/list/list.wxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="41" column="23" lean-forward="true" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
+            <state relative-caret-position="405">
+              <caret line="34" column="47" lean-forward="true" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
               <folding>
                 <element signature="n#view#0;n#block#0;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tab_bar.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/tab_bar/tab_bar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="622">
+              <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/post/post.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="28">
+              <caret line="63" column="19" lean-forward="true" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+                <element signature="n#!!block;n#getKey#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/post/post.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tab_bar.wxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/tab_bar/tab_bar.wxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="59" column="88" lean-forward="false" selection-start-line="59" selection-start-column="88" selection-end-line="59" selection-end-column="88" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -138,7 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/components/filtercomponents/filterBar/filterBar.scss" />
         <option value="$PROJECT_DIR$/components/filtercomponents/filterBar/filterBar.wxss" />
         <option value="$PROJECT_DIR$/components/filtercomponents/filterBar/filterBar.json" />
         <option value="$PROJECT_DIR$/components/filtercomponents/filterBarPop/filterBarPop.json" />
@@ -153,7 +196,6 @@
         <option value="$PROJECT_DIR$/app.scss" />
         <option value="$PROJECT_DIR$/pages/article/article.json" />
         <option value="$PROJECT_DIR$/pages/article/article.js" />
-        <option value="$PROJECT_DIR$/components/tab_bar/tab_bar.wxml" />
         <option value="$PROJECT_DIR$/components/filtercomponents/filterBarPop/filterBarPop.wxss" />
         <option value="$PROJECT_DIR$/style/args.scss" />
         <option value="$PROJECT_DIR$/pages/bbs/bbs.js" />
@@ -167,7 +209,6 @@
         <option value="$PROJECT_DIR$/components/filtercomponents/filterBar/filterBar.js" />
         <option value="$PROJECT_DIR$/components/filtercomponents/filterBarPop/filterBarPop.js" />
         <option value="$PROJECT_DIR$/pages/category/category.wxml" />
-        <option value="$PROJECT_DIR$/pages/post/post.json" />
         <option value="$PROJECT_DIR$/components/toast/toast.wxss" />
         <option value="$PROJECT_DIR$/style/main.scss" />
         <option value="$PROJECT_DIR$/style/iconfont.scss" />
@@ -189,6 +230,9 @@
         <option value="$PROJECT_DIR$/components/wxs/filter.wxs" />
         <option value="$PROJECT_DIR$/components/listcomponents/list/list.js" />
         <option value="$PROJECT_DIR$/components/listcomponents/list/list.wxml" />
+        <option value="$PROJECT_DIR$/components/tab_bar/tab_bar.wxml" />
+        <option value="$PROJECT_DIR$/components/tab_bar/tab_bar.js" />
+        <option value="$PROJECT_DIR$/pages/post/post.json" />
       </list>
     </option>
   </component>
@@ -237,19 +281,6 @@
               <item name="airclean_xcx_new" type="b2602c69:ProjectViewProjectNode" />
               <item name="airclean_xcx_new" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="listcomponents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="airclean_xcx_new" type="b2602c69:ProjectViewProjectNode" />
-              <item name="airclean_xcx_new" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="listcomponents" type="462c0819:PsiDirectoryNode" />
-              <item name="list" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="airclean_xcx_new" type="b2602c69:ProjectViewProjectNode" />
-              <item name="airclean_xcx_new" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="wxs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -260,26 +291,13 @@
             <path>
               <item name="airclean_xcx_new" type="b2602c69:ProjectViewProjectNode" />
               <item name="airclean_xcx_new" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="download" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="airclean_xcx_new" type="b2602c69:ProjectViewProjectNode" />
-              <item name="airclean_xcx_new" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="download" type="462c0819:PsiDirectoryNode" />
-              <item name="font_511601_r5fmr0i0xjrftj4i" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="airclean_xcx_new" type="b2602c69:ProjectViewProjectNode" />
-              <item name="airclean_xcx_new" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="airclean_xcx_new" type="b2602c69:ProjectViewProjectNode" />
               <item name="airclean_xcx_new" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="post" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="airclean_xcx_new" type="b2602c69:ProjectViewProjectNode" />
@@ -372,12 +390,12 @@
       <workItem from="1520002056977" duration="774000" />
       <workItem from="1520039702221" duration="35059000" />
       <workItem from="1520125911332" duration="20497000" />
-      <workItem from="1520168870981" duration="8758000" />
+      <workItem from="1520168870981" duration="8964000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83965000" />
+    <option name="totallyTimeSpent" value="84171000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -414,13 +432,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libs/wxParse/wxParse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/detail_content/detail_content.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -676,37 +687,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/post/post.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="63" column="19" lean-forward="true" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <element signature="n#!!block;n#getKey#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/listcomponents/list/list.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/tab_bar/tab_bar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="6" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="15" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/post/post.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -850,11 +834,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/listcomponents/list/list.wxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="41" column="23" lean-forward="true" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
+        <state relative-caret-position="405">
+          <caret line="34" column="47" lean-forward="true" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
           <folding>
             <element signature="n#view#0;n#block#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/tab_bar/tab_bar.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="59" column="88" lean-forward="false" selection-start-line="59" selection-start-column="88" selection-end-line="59" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/tab_bar/tab_bar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/post/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="63" column="19" lean-forward="true" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="n#!!block;n#getKey#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/post/post.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>

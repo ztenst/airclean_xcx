@@ -39,6 +39,9 @@ export default {
                     self.setData({
                         [`${SCOPE}.showMenuLi`]: !self.getComponentData().showMenuLi
                     });
+                },
+                goPostCus(){
+                    app.goPage('/pages/post/post', null, true)
                 }
             }
 

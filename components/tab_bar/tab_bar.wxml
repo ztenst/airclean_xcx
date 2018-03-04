@@ -57,7 +57,7 @@
                     <image mode="scaleToFill" src="../../images/icon-demo.png"></image>
                     <text>发布商品</text>
                 </view>
-                <view class="item box-pack-center box-align-center">
+                <view class="item box-pack-center box-align-center" bindtap="{{goPostCus}}">
                     <image mode="scaleToFill" src="../../images/icon-tiezi.png"></image>
                     <text>发布帖子</text>
                 </view>
