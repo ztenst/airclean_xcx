@@ -1,17 +1,34 @@
 <import src="../../components/tab_bar/tab_bar.wxml"/>
 
 <view class="page category">
-
-    <view class="slide-nav">
-        <scroll-view scroll-x class="slide">
-            <view wx:for="{{tags}}" wx:key="id" class="item {{py==item.py?'on':''}}" bindtap="setFilterOpt" data-py="{{item.py}}">
-                <view class="text">{{item.name}}</view>
+    <block wx:if="{{!focused}}">
+        <view class="slide-nav">
+            <scroll-view scroll-x class="slide">
+                <view wx:for="{{tags}}" wx:key="id" class="item {{py==item.py?'on':''}}" bindtap="setFilterOpt" data-py="{{item.py}}">
+                    <view class="text">{{item.name}}</view>
+                </view>
+            </scroll-view>
+            <view class="search-btn" bindtap="handleSearchBox">
+                <text class="iconfont icon-search"></text>
             </view>
-        </scroll-view>
-        <view class="search-btn" bindtap="showSearchInput">
-            <text class="iconfont icon-search"></text>
         </view>
-    </view>
+    </block>
+     <block wx:else>
+         <view class="search-box">
+             <view class="input-container container">
+                 <view>
+                     <text class="iconfont icon-search"></text>
+                     <input type="text" confirm-type="search" focus="{{focused}}" value="{{kw_input}}"
+                            bindinput="onSearchInput" bindconfirm="confimSearch" placeholder-class="c-999"
+                            placeholder="请输入关键字"/>
+                     <view class="search-cancel c-999" bindtap="handleSearchBox">
+                         <text>取消</text>
+                     </view>
+                 </view>
+             </view>
+         </view>
+     </block>
+
 
     <filter-bar filters="{{filters}}" filter-condition="{{condition}}" bind:changeSelect="changeData"
                 bind:closeFilterBar="handleCloseFilterBar"></filter-bar>

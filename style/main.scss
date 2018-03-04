@@ -222,6 +222,53 @@
       }
     }
   }
+  .search-box {
+    .input-container {
+      background: #fff;
+      border-bottom: 1px solid #e1e1e1;
+      font-size: 28rpx;
+      line-height: 60rpx;
+      padding-top: 15rpx;
+      padding-bottom: 15rpx;
+      >view {
+        position: relative;
+        padding-left: 70rpx;
+        padding-right: 160rpx;
+      }
+      input {
+        display: block;
+        height: 60rpx;
+      }
+      .icon-search {
+        position: absolute;
+        color: #ccc;
+        left: 24rpx;
+        top: 0;
+      }
+      .icon-close {
+        position: absolute;
+        color: #bfbfbf;
+        padding: 10rpx;
+        right: 118rpx - 10rpx;
+        top: 0 - 10rpx;
+      }
+      .search-cancel {
+        height: 60rpx;
+        position: absolute;
+        right: 0rpx;
+        top: 0rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text {
+          border-left: 1px solid #dfdfdf;
+          height: 60rpx;
+          padding-left: 33rpx;
+          padding-right: 34rpx;
+        }
+      }
+    }
+  }
 }
 
 //bbs

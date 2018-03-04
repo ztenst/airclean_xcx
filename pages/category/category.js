@@ -16,7 +16,8 @@ Page({
         condition: {},
         showSearchPanel: false,
         cidIndex: 0,
-        menus: []
+        menus: [],
+        focused: false,
     },
     async onLoad(options) {
         /**
@@ -59,9 +60,17 @@ Page({
             menus: e.detail.barMenus || []
         });
     },
-
-    showSearchInput(){
-
+    //搜索得到焦点
+    handleSearchBox() {
+        this.setData({
+            focused: !this.data.focused
+        });
+    },
+    onSearchInput(e){
+        this.setData({
+            condition: Object.assign({},this.data.condition,{kw:e.detail.value}),
+            [`listOpts.condition`]: Object.assign({},this.data.condition,{kw:e.detail.value}),
+        });
     }
 });
 

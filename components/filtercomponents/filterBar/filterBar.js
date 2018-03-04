@@ -99,9 +99,9 @@ Component({
             _.chain(this.data.barMenus)
                 .forEach((barMenu, menuIndex) => {
                     if (barMenu.type !== 'more') {
-                        if (filterConditionkeys.indexOf(barMenu.tag) !== -1) {
+                        if (filterConditionkeys.indexOf(barMenu.filed) !== -1) {
                             barMenu.list[0].detailList.find((items, index) => {
-                                if (filterCondition[barMenu.tag] == items.id) {
+                                if (filterCondition[barMenu.filed] == items.id) {
                                     let childList = items.childAreas;
                                     if (childList) {
                                         childList.find((v, i) => {
@@ -131,16 +131,16 @@ Component({
                         let res = filterConditionkeys.filter((n) => {
                             return _.chain(barMenu.list)
                                 .map((item) => {
-                                    return item.tag;
+                                    return item.filed;
                                 })
                                 .value()
                                 .indexOf(n) !== -1;
                         });
                         barMenu.name = res.length > 0 ? `筛选(${res.length})` : `筛选`;
                         barMenu.list.find((tabitem, tabindex) => {
-                            if (res.indexOf(tabitem.tag) !== -1) {
+                            if (res.indexOf(tabitem.filed) !== -1) {
                                 tabitem.detailList.find((items, index) => {
-                                    if (filterCondition[tabitem.tag] == items.id) {
+                                    if (filterCondition[tabitem.filed] == items.id) {
                                         barMenu.list[tabindex].selectIndex = index;
                                     }
                                 })
