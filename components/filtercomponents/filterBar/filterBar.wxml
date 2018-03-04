@@ -7,7 +7,6 @@
             </view>
         </view>
     </view>
-
     <filter-bar-pop show-filter-bar-pop="{{showFilterBarPop}}" menu="{{selectedMenu}}" selected-indexMenu="{{selectedIndexMenu}}"
                     bind:changeSelect="changeSelect" bind:closeDialog="handleCloseDialog"
                     bind:changeMainItem="handleChangeMainItem"></filter-bar-pop>
