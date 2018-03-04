@@ -208,27 +208,17 @@
       top: 0;
       right: 0;
       width: 90rpx;
-      height: 90rpx;
-      //line-height: 90rpx;
+      height: 94rpx;
       -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, .2);
       box-shadow: 0 0 40px rgba(0, 0, 0, .2);
-      //z-index-old: 2;
       font-size: 44rpx;
       background: #fff;
       color: $c-666;
-      text {
-        vertical-align: middle;
-        float: right;
-        display: block;
-        color: $c-666;
-        padding-right: 15rpx;
-        padding-top: 15rpx;
-      }
-      .icon-sousuo {
-
-        line-height: 60rpx;
-        color: #ccc;
-        margin: 0 12rpx 0 20rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .iconfont {
+        font-size:40rpx;
       }
     }
   }

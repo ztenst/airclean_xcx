@@ -88,8 +88,8 @@
         .txt {
           display: inline-block;
           color: #666;
-          font-size: 32rpx;
-          max-width: 70%;
+          font-size: 30rpx;
+          max-width: 79%;
           text-align: center;
           vertical-align: middle;
           text-overflow: ellipsis;
@@ -104,7 +104,7 @@
           color: #b8b8b8;
 
           transform-origin:center center;
-          transform:rotate(-180deg);
+          transform:rotate(0deg);
           transition: transform 0.1s ease-out;
         }
       }

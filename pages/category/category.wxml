@@ -8,10 +8,9 @@
                 <view class="text">{{item.name}}</view>
             </view>
         </scroll-view>
-        <view class="search-btn">
+        <view class="search-btn" bindtap="showSearchInput">
             <text class="iconfont icon-search"></text>
         </view>
-
     </view>
 
     <filter-bar filters="{{filters}}" filter-condition="{{condition}}" bind:changeSelect="changeData"
