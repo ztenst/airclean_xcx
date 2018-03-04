@@ -27,13 +27,6 @@
                           class="option {{items.selectIndex == index?'on':''}}">{{item.name}}
                     </view>
                 </scroll-view>
-                <view class="price-filter-btn" wx:if="{{barMenu.showButton}}">
-                    <input type="number" placeholder="最小" bindinput="inputMinprice"/>
-                    <text>至</text>
-                    <input type="number" placeholder="最大" bindinput="inputMaxprice"/>
-                    <text>万</text>
-                    <button class="btn-main button" bindtap="handleEnsurePrice">确定</button>
-                </view>
             </view>
         </view>
         <!--筛选-->

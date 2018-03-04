@@ -31,7 +31,8 @@ Page({
             filters: this.getFilters(res.data.tags, options.py || res.data.tags[0].py),
             listOpts: {
                 listType: 'product',
-                ToTop: 185
+                ToTop: 185,
+                bottom:98
             },
         });
     },

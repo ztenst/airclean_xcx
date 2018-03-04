@@ -1,5 +1,5 @@
 <scroll-view class="overflow-scroll" scroll-y="true"
-             style="top:{{listOpts.ToTop}}rpx;bottom:{{listOpts.ToBottom||0}}rpx;left:{{listOpts.ToLeft||0}}rpx;"
+             style="top:{{listOpts.ToTop}}rpx;bottom:{{listOpts.ToBottom||0}}rpx;"
              scroll-top="0"
              lower-threshold="200"
              bindscrolltolower="loadMore"
@@ -9,12 +9,12 @@
 
 
     <view class="loadmore">
-        <view class="nodata" wx:if="{{listScroll.nodata}}">
-            <view class="loadmore__tips">{{listScroll.nodata_str || '暂无数据'}}</view>
-        </view>
-        <view class="loading" wx:if="{{listScroll.loading}}">
+        <view class="loading" wx:if="{{listScroll.hasMore}}">
             <view class="icon-loading"></view>
             <view class="loadmore__tips">加载中...</view>
+        </view>
+        <view class="nodata" wx:else>
+            <view class="loadmore__tips"></view>
         </view>
     </view>
 
