@@ -48,7 +48,7 @@
                                   bindtap="clickFilterbar"
                                   data-tabindex="{{_index}}"
                                   data-index="{{index}}"
-                                  data-tag="{{sm.tag}}"
+                                  data-tag="{{sm.filed}}"
                                   data-id="{{sidemenu.id}}">{{sidemenu.name}}
                             </view>
                         </view>

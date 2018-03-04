@@ -7,8 +7,8 @@
         </view>
         <view class="blank20"></view>
         <view class="img-box clearfix bg-fff">
-            <block wx:for="{{ uploadImgs }}" wx:key="index" wx:if="{{uploadImgs.length>0}}">
-                <view class="item"  bindtap="changeFm" data-url="{{ item }}">
+            <block wx:if="{{uploadImgs.length>0}}">
+                <view class="item" wx:for="{{ uploadImgs }}" wx:key="index" bindtap="changeFm" data-url="{{ item }}">
                     <image src="{{ item }}"></image>
                     <view class="iconfont icon-delete" data-url="{{ item }}" bindtap="deleteUploadImg"></view>
                     <text class="fm" wx:if="{{currentFm==item}}">封面</text>

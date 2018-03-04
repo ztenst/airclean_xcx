@@ -172,7 +172,7 @@ Component({
             let o3 = _.chain(barMenu.list)
                 .map((item) => {
                     item.selectIndex = 0;
-                    return item.tag;
+                    return item.filed;
                 })
                 .value();
             this.data.range = _.fromPairs(o3.map((v) => {

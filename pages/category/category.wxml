@@ -1,6 +1,7 @@
 <import src="../../components/tab_bar/tab_bar.wxml"/>
 
 <view class="page category">
+
     <block wx:if="{{!focused}}">
         <view class="slide-nav">
             <scroll-view scroll-x class="slide">
