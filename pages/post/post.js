@@ -1,4 +1,3 @@
-import {$toast} from '../../components/wxcomponents'
 import api from '../../common/api'
 import Util from '../../common/util'
 
@@ -15,7 +14,6 @@ function getKey() {
     var num = 100000 + Math.round(Rand * Range);
     return key + myDate.getFullYear() + '/' + (month < 10 ? "0" + month : month) + (day < 10 ? "0" + day : day) + '/' + new Date().getTime() + num + '.jpg';
 }
-
 function didPressChooesImage(that) {
     // initQiniu();
     // 微信 API 选文件
@@ -50,32 +48,25 @@ let app = getApp();
 Page({
     data: {
         tags: {},
-        areaList: [],
-        streetList: [],
-        unitList: [{id: 1, name: '元/m2'}, {id: 2, name: '万元/套'}],
-        areaIndex: 0,
-        streetIndex: 0,
-        sfpriceIndex: 0,
-        unitIndex: 0,
-
         uploadImgs: [],
         currentFm: 0,
+        toast:null
     },
     onLoad() {
-        let tags = {};
+        this.setData({
+            toast:this.selectComponent('#toast')
+        });
         this.setData({
             customInfo: app.globalData.customInfo,
             userInfo: app.globalData.userInfo,
         });
-
-
         //初始化表单校验组件
         this.WxValidate = app.WxValidate({
-            'content': {required: true}, //姓名
+            'content': {required: true, minlength: 10,}, //内容
             'fm': {required: true}, // 封面
             'image': {required: true}, // 图片 字符串数组
         }, {
-            'content': {required: '请输入'}, //姓名
+            'content': {required: '请输入内容'}, //内容
             'fm': {required: '请输入封面'}, // 封面
             'image': {required: '请上传图片'}, // 图片 字符串数组
         });
@@ -112,26 +103,23 @@ Page({
         const formParms = e.detail.value;
         if (!this.WxValidate.checkForm(e)) {
             const error = this.WxValidate.errorList[0];
-            $toast.show({
-                timer: 2e3,
-                text: `${error.msg}`,
-            });
+            this.data.toast.show(error.msg)
             return false
         }
-        let params = Object.assign({}, formParms, {uid: app.globalData.customInfo.id});
+        // let params = Object.assign({}, formParms, {uid: app.globalData.customInfo.id});
 
-        api.addNews(params).then(res => {
-            let data = res.data;
-            if (data.status == 'success') {
-                let url = '/pages/myhouse_list/myhouse_list';
-                app.goPage(url, {}, false);
-            } else {
-                $toast.show({
-                    timer: 2e3,
-                    text: data.msg,
-                });
-            }
-        });
+        // api.addNews(params).then(res => {
+        //     let data = res.data;
+        //     if (data.status == 'success') {
+        //         let url = '/pages/myhouse_list/myhouse_list';
+        //         app.goPage(url, {}, false);
+        //     } else {
+        //         $toast.show({
+        //             timer: 2e3,
+        //             text: data.msg,
+        //         });
+        //     }
+        // });
     },
 });
 

@@ -1,5 +1,3 @@
-<template name="toast">
-    <view class="weui-toast" hidden="{{ !visible }}">
-        <view class="weui-toast__content">{{ text }}</view>
-    </view>
-</template>
+<view class="popup-wrapper" hidden="{{!text.length}}" bindtap="hide">
+  <view class="popup">{{text}}</view>
+</view>

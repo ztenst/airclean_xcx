@@ -1,5 +1,4 @@
 <form action="" bindsubmit="submitForm">
-
     <view class="post ">
         <view class="textarea-box bg-fff">
             <textarea class="text-content" placeholder="写点什么吧~" name="content" id="" cols="30" rows="10"></textarea>
@@ -22,12 +21,13 @@
         <checkbox-group value="{{uploadImgs}}" name="image" hidden></checkbox-group>
         <input type="text" name="fm" value="{{currentFm}}" hidden/>
 
-        <button class="btn-block btn-submit">
+        <button class="btn-block btn-submit" form-type="submit">
             <view class="iconfont">
                 <image src="../../images/icon-tijiao.png"></image>
             </view>
             提交
         </button>
     </view>
-
 </form>
+<toast id="toast"></toast>
+

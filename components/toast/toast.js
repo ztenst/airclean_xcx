@@ -1,53 +1,34 @@
-import Component from '../component'
+let t;
 
-export default {
-    /**
-     * 默认参数
-     */
-    setDefaults() {
-        return {
-            timer: 1500,
-            text: ``,
-            success() {},
-        }
+Component({
+  properties: {
+    // text: {
+    //   type: String,
+    //   value: '',
+    //   observer(newValue, oldValue) {
+    //     if (t) clearTimeout(t)
+    //     if (!newValue) return;
+    //     t = setTimeout(() => {
+    //       this.hide();
+    //     }, 300000)
+    //   }
+    // }
+  },
+  data: {
+    text: ''
+  },
+  methods: {
+    show(text){
+      this.setData({text: text});
+      if (t) clearTimeout(t)
+      t = setTimeout(() => {
+        this.hide();
+      }, 3000)
     },
-    /**
-     * 显示toast组件
-     * @param {Object} opts 配置项
-     * @param {String} opts.type 提示类型
-     * @param {Number} opts.timer 提示延迟时间
-     * @param {String} opts.color 图标颜色
-     * @param {String} opts.text 提示文本
-     * @param {Function} opts.success 关闭后的回调函数
-     */
-    show(opts = {}) {
-        const options = Object.assign({}, this.setDefaults(), opts)
-
-
-        // 实例化组件
-        const component = new Component({
-            scope: `$toast`,
-            data: options,
-            methods: {
-                /**
-                 * 隐藏
-                 */
-                hide(cb) {
-                    setTimeout(() => {
-                        this.setHidden()
-                        typeof cb === `function` && cb()
-                    }, options.timer)
-                },
-                /**
-                 * 显示
-                 */
-                show() {
-                    this.setVisible()
-                },
-            },
-        })
-
-        component.show()
-        component.hide(opts.success)
-    },
-}
+    hide() {
+      this.setData({ text: '' })
+      //触发一个hide事件
+      this.triggerEvent('hide', {}, { bubbles: true, composed: true })
+    }
+  }
+})

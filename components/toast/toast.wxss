@@ -16,7 +16,7 @@
   padding: 20rpx 40rpx;
   font-size: 30rpx;
   line-height: 1.5;
-  top: 40%;
+  top: 80%;
   left: 50%;
   background: rgba(40, 40, 40, 0.75);
   text-align: center;

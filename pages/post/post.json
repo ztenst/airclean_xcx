@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "快速报备"
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "toast": "../../components/toast/toast"
+  }
 }

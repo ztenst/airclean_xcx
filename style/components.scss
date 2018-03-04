@@ -27,12 +27,11 @@
 
 
 .filter {
-  position: fixed;
+  position: absolute;
   width: 100%;
   box-sizing: border-box;
   height: 9rpx;
   line-height: 86rpx;
-  //border-top: 1rpx solid $colorE0;
   z-index: 10;
   top:95rpx;
   &.filter-fixed {
