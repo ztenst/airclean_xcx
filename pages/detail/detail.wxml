@@ -33,8 +33,8 @@
             </view>
             <view class="tabs-views">
 
-                <view class="views"  wx:if="{{tabIndex==1}}">
-                    <view class="table">
+                <view class="views" wx:if="{{tabIndex==1}}">
+                    <view class="table" wx:if="{{productInfo.params.length>0}}">
                         <view class="tbody">
                             <view class="tr box box-pack-center box-align-center" wx:for="{{productInfo.params}}">
                                 <view class="th">
@@ -43,7 +43,6 @@
                                 </view>
                                 <view class="td">
                                     <text>{{item.value}}</text>
-
                                 </view>
                             </view>
                         </view>
@@ -61,18 +60,17 @@
     </view>
 
     <view class="product-footer">
-        <view class="a" bindtap="addCollect" >
-            <view class="iconfont box box-align-center box-pack-center"  >
-                <image src="../../images/coll.png " wx:if="{{productInfo.is_save==0}}"></image>
-                <image src="../../images/hov-coll.png " wx:if="{{productInfo.is_save==1}}"></image>
-            </view>
+        <view class="a" bindtap="addCollect" data-pid="{{productInfo.id}}">
+            <view class="iconfont  {{productInfo.is_save==1?'icon-shoucang-shi on':'icon-shoucang-kong'}}"></view>
         </view>
-        <view class="btn contactShop"   bindtap="contactShop">
-            <view class="p">联系商家</view>
+        <view class="btn contactShop">
+            <button class="p" open-type="share">一键分享</button>
         </view>
-        <view class="btn buyNow"  bindtap="addOrder"  data-id="{{productInfo.id}}">
-            <view class="p">提交订单</view>
+        <view class="btn buyNow">
+            <view class="p">立即购买</view>
         </view>
     </view>
 
 </view>
+
+<toast id="toast"></toast>

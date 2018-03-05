@@ -64,7 +64,7 @@ Component({
             this.setData({
                 page: nextPage,
                 [`listScroll.hasMore`]: (nextPage == 0 ? false : true),
-                listData: this.data.listData.concat(json.list)
+                listData: this.data.listData.concat(json.list||[])
             });
         },
 

@@ -6,7 +6,7 @@
         <form class="ui-search-bar__form">
             <view class="ui-search-bar__box">
                 <text class="ui-icon-search iconfont icon-search"></text>
-                <input type="search" class="ui-search-bar__input" placeholder-class="search_input_placeholder_c" placeholder="搜索内容" required=""/>
+                <input type="search" class="ui-search-bar__input" bindinput="onSearchInput" placeholder-class="search_input_placeholder_c" placeholder="搜索内容" />
                 <text class="ui-icon-clear iconfont icon-close"></text>
             </view>
         </form>

@@ -1,9 +1,6 @@
-//detail.js
 import {
-    $bannerSwiper, $detailContent, $toast
+    $bannerSwiper, $detailContent
 } from '../../components/wxcomponents'
-
-//获取应用实例
 import api from '../../common/api'
 import Util from '../../common/util'
 
@@ -12,11 +9,15 @@ const app = getApp();
 Page({
     data: {
         tabIndex: 1,
-        productInfo: {}
+        productInfo: {},
+        toast:null
     },
     onLoad(options) {
         this.setData({
             product_id: options.id,
+        });
+        this.setData({
+            toast: this.selectComponent('#toast')
         });
     },
     onShow () {
@@ -88,30 +89,19 @@ Page({
     /**
      * 添加收藏
      */
-    addCollect() {
-
+    addCollect(e) {
+        let dataset = e.currentTarget.dataset;
         let params = {
-            pid: this.data.product_id,
-            openid: app.globalData.wxData.open_id
-        }
+            pid: dataset.pid,
+            uid: app.globalData.customInfo.id,
+        };
         api.addSave(params).then(res => {
-            let json = res.data;
-            $toast.show({
-                timer: 2e3,
-                text: json.msg
+            let json = res;
+            this.data.toast.show(json.msg);
+            this.setData({
+                [`productInfo.is_save`]: json.data
             });
-            if (json.status == 'success') {
-                if (this.data.productInfo.is_save == 0) {
-                    this.setData({
-                        [`productInfo.is_save`]: 1
-                    });
-                } else if (this.data.productInfo.is_save == 1) {
-                    this.setData({
-                        [`productInfo.is_save`]: 0
-                    })
-                }
-            }
-        })
+        });
     },
     /**
      * 提交订单
@@ -123,29 +113,11 @@ Page({
 
     },
     /**
-     * 联系商家
-     */
-    contactShop() {
-        api.getIndexConfig().then(res => {
-            let json = res.data;
-            console.log(json);
-            if (json.status == 'success') {
-                if (json.data.phone) {
-                    wx.makePhoneCall({
-                        phoneNumber: json.data.phone
-                    });
-                }
-            }
-        })
-    },
-
-    /**
      * 产品详细页转发分享
      * @param res
      * @returns {{title: string, path: string}}
      */
     onShareAppMessage(res) {
-        
         return {
             title:this.data.productInfo.name,
             path: 'pages/detail/detail?id='+this.data.productInfo.id

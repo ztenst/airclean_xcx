@@ -10,12 +10,12 @@ const app = getApp();
 
 Page({
     data: {
-        listOpts:{},
+        listOpts: {},
         list: [],
     },
-    onLoad () {
+    onLoad() {
         $tabBar.init({
-            tabIndex:3
+            tabIndex: 3
         });
         this.setData({
             listOpts: {
@@ -25,6 +25,13 @@ Page({
         });
     },
 
+    //键盘输入时
+    onSearchInput(e) {
+        var text = e.detail.value;
+        this.setData({
+            [`listOpts.condition.kw`]: text
+        });
+    },
 
 })
 ;

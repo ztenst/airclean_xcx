@@ -832,12 +832,16 @@
       line-height: 90rpx;
       text-align: center;
       .iconfont {
-        padding-top: 16rpx;
+        padding-top: 1rpx;
+        color:#999;
         image {
           width: 47rpx;
           height: 45rpx;
           display: block;
           margin: 0 auto;
+        }
+        &.on{
+          color: $color_primary_red;
         }
       }
     }
@@ -849,6 +853,22 @@
       color: #fff;
       &.contactShop {
         background-color: $color_primary;
+        button{
+          color:#fff;
+          height:100%;
+          display: initial;
+          background-color: $color_primary;
+          border: none;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          line-height: 1 !important;
+          border-radius: 0 !important;;
+          &::after {
+            display: none
+          }
+        }
       }
       &.buyNow {
         background-color: #27b8b8;
