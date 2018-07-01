@@ -3,8 +3,11 @@
 <import src="../../components/toast/toast.wxml"/>
 <template is="toast" data="{{ ...$toast }}"/>
 
-<import src="../../components/dialog/dialog.wxml"/>
-<template is="dialog" data="{{ ...$dialog }}"/>
+<dialog id='dialog'
+        title='登录提示'
+        content='小程序需要您的授权才能提供更好的服务哦'
+        confirmText='知道了'>
+</dialog>
 
 <view class="index page" >
     <scroll-view class="overflow-scroll" scroll-y="true" scroll-with-animation="true">

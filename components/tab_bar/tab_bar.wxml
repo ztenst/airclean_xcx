@@ -53,29 +53,13 @@
     <view class="menuLi {{!showMenuLi?'':'show'}}" bindtap="{{isShowMenuLi}}">
         <view class="inner">
             <view class="list">
-                <view class="item box-pack-center box-align-center">
-                    <image mode="scaleToFill" src="../../images/icon-demo.png"></image>
-                    <text>发布商品</text>
-                </view>
                 <view class="item box-pack-center box-align-center" bindtap="{{goPostCus}}">
                     <image mode="scaleToFill" src="../../images/icon-tiezi.png"></image>
                     <text>发布帖子</text>
                 </view>
                 <view class="item box-pack-center box-align-center">
-                    <image mode="scaleToFill" src="../../images/icon-demo.png"></image>
-                    <text>发布商品</text>
-                </view>
-                <view class="item box-pack-center box-align-center">
-                    <image mode="scaleToFill" src="../../images/icon-demo.png"></image>
-                    <text>发布商品</text>
-                </view>
-                <view class="item box-pack-center box-align-center">
-                    <image mode="scaleToFill" src="../../images/icon-demo.png"></image>
-                    <text>发布商品</text>
-                </view>
-                <view class="item box-pack-center box-align-center">
-                    <image mode="scaleToFill" src="../../images/icon-demo.png"></image>
-                    <text>发布商品</text>
+                    <image mode="scaleToFill" src=""></image>
+                    <text></text>
                 </view>
             </view>
             <view class="close-box" catchtap="{{isShowMenuLi}}">

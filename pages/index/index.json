@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "空气净化专家",
   "usingComponents": {
-    "list": "/components/listcomponents/list/list"
+    "list": "/components/listcomponents/list/list",
+    "dialog": "/components/dialog/dialog"
   }
 }

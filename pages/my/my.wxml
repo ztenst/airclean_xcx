@@ -24,7 +24,7 @@
                     <view class="cell-icon w60">
                         <image src="../../images/kehu.png"></image>
                     </view>
-                    客户管理
+                    我的帖子
                 </view>
                 <view class="cell-right"></view>
             </view>
@@ -40,50 +40,68 @@
             <view class="cell-item">
                 <view class="cell-left ">
                     <view class="cell-icon w60">
-                        <image src="../../images/function.png"></image>
+                        <image src="../../images/order.png"></image>
                     </view>
-                    更多功能
+                    我的订单
                 </view>
-                <view class="cell-right iconfont icon-sjt"></view>
+                <view class="cell-right "></view>
             </view>
+            <view class="cell-item">
+                <view class="cell-left ">
+                    <view class="cell-icon w60">
+                        <image src="../../images/service.png"></image>
+                    </view>
+                    联系客服
+                </view>
+                <view class="cell-right "></view>
+            </view>
+            <!--<view class="cell-item">-->
+                <!--<view class="cell-left ">-->
+                    <!--<view class="cell-icon w60">-->
+                        <!--<image src="../../images/function.png"></image>-->
+                    <!--</view>-->
+                    <!--更多功能-->
+                <!--</view>-->
+                <!--<view class="cell-right iconfont icon-sjt"></view>-->
+            <!--</view>-->
         </view>
-        <view class="extend-box">
-            <view class="nav">
-                <view class="item">
-                    <image src="../../images/house.png"></image>
-                    <text>我的订阅</text>
-                </view>
-                <view class="item">
-                    <image src="../../images/mony.png"></image>
-                    <text>发布房源</text>
-                </view>
-                <view class="item">
-                    <image src="../../images/yanfang.png"></image>
-                    <text>特惠验房</text>
-                </view>
-                <view class="item">
-                    <image src="../../images/zhuanti.png"></image>
-                    <text>精彩专题</text>
-                </view>
-                <view class="item">
-                    <image src="../../images/diary.png"></image>
-                    <text>装修日记</text>
-                </view>
-                <view class="item">
-                    <image src="../../images/gonglue.png"></image>
-                    <text>装修攻略</text>
-                </view>
-                <view class="item">
-                    <image src="../../images/zx.png"></image>
-                    <text>装修公司</text>
-                </view>
-                <view class="item">
-                    <image src="../../images/jiancai.png"></image>
-                    <text>建材公司</text>
-                </view>
+        <!--<view class="extend-box">-->
+            <!--<view class="nav">-->
+                <!--<view class="item">-->
+                    <!--<image src="../../images/house.png"></image>-->
+                    <!--<text>我的订阅</text>-->
+                <!--</view>-->
+                <!--<view class="item">-->
+                    <!--<image src="../../images/mony.png"></image>-->
+                    <!--<text>发布房源</text>-->
+                <!--</view>-->
+                <!--<view class="item">-->
+                    <!--<image src="../../images/yanfang.png"></image>-->
+                    <!--<text>特惠验房</text>-->
+                <!--</view>-->
+                <!--<view class="item">-->
+                    <!--<image src="../../images/zhuanti.png"></image>-->
+                    <!--<text>精彩专题</text>-->
+                <!--</view>-->
+                <!--<view class="item">-->
+                    <!--<image src="../../images/diary.png"></image>-->
+                    <!--<text>装修日记</text>-->
+                <!--</view>-->
+                <!--<view class="item">-->
+                    <!--<image src="../../images/gonglue.png"></image>-->
+                    <!--<text>装修攻略</text>-->
+                <!--</view>-->
+                <!--<view class="item">-->
+                    <!--<image src="../../images/zx.png"></image>-->
+                    <!--<text>装修公司</text>-->
+                <!--</view>-->
+                <!--<view class="item">-->
+                    <!--<image src="../../images/jiancai.png"></image>-->
+                    <!--<text>建材公司</text>-->
+                <!--</view>-->
 
-            </view>
-        </view>
+            <!--</view>-->
+        <!--</view>-->
 
     </view>
 </view>
