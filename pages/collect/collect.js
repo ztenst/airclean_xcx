@@ -12,8 +12,7 @@ Page({
         requested: false, // 判断是否请求过数据, 每次重新搜索会重置
         loading: false,
         filters: {},//筛选字段
-
-
+      
         list: [
             {
                 id: "19",
@@ -159,7 +158,6 @@ Page({
          * 初始化产品列表组件
          */
         $productList.init();
-
     },
 
 

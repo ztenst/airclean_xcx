@@ -14,29 +14,37 @@ Page({
   data: {},
   
   onLoad: function () {
-    let self = this;
     
     /**
      * 初始化tabBar组件
      */
-    
     $tabBar.init({
       tabIndex: 4
     });
-    console.log( app.globalData.userInfo)
-    self.setData({
-      userInfo: app.globalData.userInfo
-    })
-    //
-    // app.getUserInfo().then(res => {
-    //     self.setData({
-    //         userInfo:res
-    //     })
-    // });
+    if (!app.globalData.userInfo) {
+      app.getUserInfo().then(res => {
+        this.setData({
+          userInfo: res
+        })
+      });
+    } else {
+      this.setData({
+        userInfo: app.globalData.userInfo
+      })
+    }
+  },
+  toList(e) {
+    let type = e.currentTarget.dataset.type, url = "";
+    if (type == "mypost") {
+      url = "/pages/customer_manage/customer_manage";
+    } else if (type == "mycollect") {
+      url = "/pages/collect/collect";
+    } else if (type === 'myorder') {
     
+    }
+    if (url) app.goPage(url, null, false);
     
   },
-  
   go_List(e) {
     let type = e.currentTarget.dataset.type, url = "";
     if (type == "customer") {

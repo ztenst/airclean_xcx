@@ -42,7 +42,8 @@ Page({
     this.setData({
       py: py,
       filters: this.getFilters(this.data.tags, py),
-      [`listOpts.condition`]: Object.assign({}, this.data.condition, {kw: e.detail.value}),
+      condition: Object.assign({}, this.data.condition, {py: py}),
+      [`listOpts.condition`]: Object.assign({}, this.data.condition, {py: py}),
     });
   },
   
