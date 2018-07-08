@@ -27,7 +27,7 @@ Component({
     methods: {
         goDetail(e) {
             let dataset = e.currentTarget.dataset, url = '', params = {}, listType = this.data.listType;
-            if (listType == 'product') {
+            if (listType == 'product'||listType == 'order') {
                 url = "/pages/detail/detail";
                 params = {id: dataset.id}
             } else if (listType == 'bbs') {

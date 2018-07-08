@@ -21,29 +21,29 @@ Page({
     $tabBar.init({
       tabIndex: 4
     });
-    if (!app.globalData.userInfo) {
+    if(!app.globalData.userInfo){
       app.getUserInfo().then(res => {
         this.setData({
-          userInfo: res
+          userInfo:res
         })
       });
-    } else {
+    }else{
       this.setData({
         userInfo: app.globalData.userInfo
       })
     }
   },
-  toList(e) {
+  toList(e){
     let type = e.currentTarget.dataset.type, url = "";
     if (type == "mypost") {
       url = "/pages/customer_manage/customer_manage";
     } else if (type == "mycollect") {
       url = "/pages/collect/collect";
-    } else if (type === 'myorder') {
-    
+    }else if(type==='myorder'){
+      url = "/pages/order/order";
     }
-    if (url) app.goPage(url, null, false);
-    
+    if(url)  app.goPage(url, null, false);
+   
   },
   go_List(e) {
     let type = e.currentTarget.dataset.type, url = "";

@@ -6,8 +6,7 @@ import regeneratorRuntime from './libs/regenerator-runtime/runtime';
 App({
   
   async onLaunch() {
-    await this.getUserOpenId();
-    
+  
   },
   /**
    * 获取openid 

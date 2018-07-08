@@ -1,6 +1,6 @@
 <wxs src="../../wxs/filter.wxs" module="filter"></wxs>
 <block class="ele-container" wx:if="{{listData.length>0}}">
-    <view class="f-list box" wx:if="{{listType=='product'}}">
+    <view class="f-list box" wx:if="{{listType=='product'||listType=='order'}}">
         <block wx:for="{{listData}}" wx:key="id">
             <view class="item" bindtap="goDetail" data-id="{{item.id}}">
                 <view class="pic">
@@ -34,10 +34,10 @@
                             <text class="dot">·</text>
                             用户{{item.author}}发表
                         </view>
-                        <view class="icon-box">
-                            <text class="iconfont {{item.praise_num==1?'icon-dianzan-shi on':'icon-dianzan-kong'}}" data-index="{{index}}" data-cid="{{item.id}}" catchtap="handleDianZan"></text>
-                            <text class="iconfont {{item.save_num==1?'icon-shoucang-shi on':'icon-shoucang-kong'}}" data-index="{{index}}" data-pid="{{item.id}}" catchtap="handleCollect"></text>
-                        </view>
+                        <!--<view class="icon-box">-->
+                            <!--<text class="iconfont {{item.praise_num==1?'icon-dianzan-shi on':'icon-dianzan-kong'}}" data-index="{{index}}" data-cid="{{item.id}}" catchtap="handleDianZan"></text>-->
+                            <!--<text class="iconfont {{item.save_num==1?'icon-shoucang-shi on':'icon-shoucang-kong'}}" data-index="{{index}}" data-pid="{{item.id}}" catchtap="handleCollect"></text>-->
+                        <!--</view>-->
                     </view>
                 </view>
             </view>
