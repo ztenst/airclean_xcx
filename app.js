@@ -6,10 +6,9 @@ import regeneratorRuntime from './libs/regenerator-runtime/runtime';
 App({
   
   async onLaunch() {
-    // await this.getUserOpenId();
-
+    await this.getUserOpenId();
+    
   },
-
   /**
    * 获取openid 
    * @returns {Promise}
@@ -116,5 +115,6 @@ App({
     isUser: false,
     wxData: null,
     phone: '',
+    hasAuthUserInfo: false
   }
 })

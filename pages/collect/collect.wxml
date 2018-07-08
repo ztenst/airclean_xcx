@@ -2,6 +2,11 @@
 <import src="../../components/product_list_single/product_list_single.wxml"/>
 
 <import src="../../components/tab_bar/tab_bar.wxml"/>
+<dialog id='dialog'
+        title='登录提示'
+        content='小程序需要您的授权才能提供更好的服务哦'
+        confirmText='知道了'>
+</dialog>
 <view class="page index collect ">
     <view class="header_box bg-fff">
         <view class="shopnavli">

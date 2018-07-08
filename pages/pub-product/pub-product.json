@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "快速报备"
+  "navigationBarTitleText": "快速报备",
+  "usingComponents": {
+    "dialog": "/components/dialog/dialog"
+  }
 }

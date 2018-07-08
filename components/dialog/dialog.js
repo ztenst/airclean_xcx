@@ -34,7 +34,9 @@ Component({
     // 弹窗显示控制
     isShow: false
   },
-  
+  ready() {
+    this.showDialog();
+  },
   /**
    * 组件的公有方法列表
    */
@@ -49,15 +51,18 @@ Component({
     //展示弹框
     showDialog() {
       let _this = this;
-      wx.getSetting({
-        success(res) {
-          if (!res.authSetting['scope.userInfo']) {
-            _this.setData({
-              isShow: true
-            });
+      if (!app.globalData.hasAuthUserInfo) {
+        wx.getSetting({
+          success(res) {
+            if (!res.authSetting['scope.userInfo']) {
+              _this.setData({isShow: true});
+            } else {
+              app.globalData.hasAuthUserInfo = true;
+              app.getUserOpenId();
+            }
           }
-        }
-      })
+        })
+      }
     },
     /**
      * triggerEvent 组件之间通信
@@ -67,24 +72,8 @@ Component({
       if (e.detail.userInfo) {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         app.globalData.userInfo = e.detail.userInfo;
-        that.setData({isShow: false
-        });
-        wx.login({
-          success: res => {
-            api.getOpenId({code: res.code}).then(res => {
-              let data = res;
-              app.globalData.customInfo = data;
-              // console.log(data)
-              //如果没有open_id说明是新用户
-              if (!data.open_id) {
-                app.globalData.customInfo = data;
-                app.globalData.isUser = true;
-              } else {
-                app.globalData.wxData = data;
-              }
-            })
-          }
-        })
+        that.setData({isShow: false});
+        app.getUserOpenId();
       } else {
         console.log(333, '执行到这里，说明拒绝了授权')
         wx.showToast({

@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "详细页",
   "usingComponents": {
-    "toast": "../../components/toast/toast"
+    "toast": "../../components/toast/toast",
+    "dialog": "/components/dialog/dialog"
   }
 }

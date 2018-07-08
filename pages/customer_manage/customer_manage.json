@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "贝莱橱柜"
+  "navigationBarTitleText": "贝莱橱柜",
+  "usingComponents": {
+    "dialog": "/components/dialog/dialog"
+  }
 }

@@ -14,22 +14,6 @@ Page({
     list: []
   },
   onReady () {
-    //获得dialog组件
-    this.dialog = this.selectComponent("#dialog");
-    this.showDialog()
-  },
-  
-  showDialog () {
-    this.dialog.showDialog();
-  },
-  
-  confirmEvent () {
-    this.dialog.hideDialog();
-  },
-  
-  bindGetUserInfo () {
-    // 用户点击授权后，这里可以做一些登陆操作
-    this.login();
   },
   onLoad() {
     /**

@@ -1,0 +1,16 @@
+1. 进小程序先getUserInfo，现在好像没有获取微信用户数据
+2. 列表页点击顶部tab没有调用接口传值
+3. 底部tab中间那个加号点击了之后只需要弹出发布帖子这个按钮 其他暂时去掉
+4. 个人中心显示 我的帖子(icon不变) 我的收藏(icon不变) 我的订单(icon/order.png) 联系客服(icon/servive.png)
+
+我的帖子 显示和帖子列表一样 点击跳转对应详情页
+/api/cus/list?uid=x
+
+我的收藏 顶部有个tab，分收藏商品和收藏帖子
+收藏商品列表 显示和商品列表一样 点击跳转对应详情页
+/api/product/list?uid=x&save=1&savetype=1
+收藏帖子列表 显示和帖子列表一样 点击跳转对应详情页
+/api/cus/list?uid=x&save=1&savetype=2
+
+订单列表 显示和商品列表一样 点击跳转对应详情页
+/api/order/list?uid=x
