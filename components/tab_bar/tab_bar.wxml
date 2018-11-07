@@ -1,24 +1,21 @@
 <template name="tabBar">
 
+  <view class="tabBar-placeholder">
     <view class="tabBar box box-pack-center box-pack-between">
         <view class="item" bindtap="{{go_tab}}" data-index="1">
             <view class="cont">
-                <view class="pic">
-                    <image src="{{tabIndex==1?'../../images/hov-home.png':'../../images/icon-home.png'}}"></image>
+                <view class="pic i1 {{tabIndex == 1 ? 'ison' : ''}}">
+                    <!--image src="{{tabIndex==1?'../../images/hover-home.png':'../../images/icon-home.png'}}"></image-->
                 </view>
-                <view class="text {{tabIndex==1?'on':''}}">
-                    首页
-                </view>
+                <view class="text {{tabIndex==1?'on':''}}">首页</view>
             </view>
         </view>
         <view class="item" bindtap="{{go_tab}}" data-index="2">
             <view class="cont">
-                <view class="pic">
-                    <image src="{{tabIndex==2?'../../images/hov-fenlei.png':'../../images/icon-fenlei.png'}}"></image>
+              <view class="pic i2 {{tabIndex == 2 ? 'ison' : ''}}">
+                    <!--image src="{{tabIndex==2?'../../images/hover-fenlei.png':'../../images/icon-fenlei.png'}}"></image-->
                 </view>
-                <view class="text {{tabIndex==2?'on':''}}">分类
-
-                </view>
+                <view class="text {{tabIndex==2?'on':''}}">分类</view>
             </view>
         </view>
         <view class="item more" bindtap="{{isShowMenuLi}}">
@@ -30,42 +27,23 @@
         </view>
         <view class="item" bindtap="{{go_tab}}" data-index="3">
             <view class="cont">
-                <view class="pic">
-                    <image src="{{tabIndex==3?'../../images/hov-luntan.png':'../../images/icon-luntan.png'}}"></image>
+                <view class="pic i3 {{tabIndex == 3 ? 'ison' : ''}}">
+                    <!--image src="{{tabIndex==3?'../../images/hover-luntan.png':'../../images/icon-luntan.png'}}"></image-->
                 </view>
-                <view class="text {{tabIndex==3?'on':''}}">
-                    论坛
-                </view>
+                <view class="text {{tabIndex==3?'on':''}}">论坛</view>
             </view>
         </view>
         <view class="item" bindtap="{{go_tab}}" data-index="4">
             <view class="cont">
-                <view class="pic">
-                    <image src="{{tabIndex==4?'../../images/hov-user.png':'../../images/icon-user.png'}}"></image>
+                <view class="pic i4 {{tabIndex == 4 ? 'ison' : ''}}">
+                    <!--image src="{{tabIndex==4?'../../images/hover-user.png':'../../images/icon-user.png'}}"></image-->
                 </view>
-                <view class="text {{tabIndex==4?'on':''}}">
-                    我的
-                </view>
+                <view class="text {{tabIndex==4?'on':''}}">我的</view>
             </view>
         </view>
     </view>
+  </view>
 
-    <view class="menuLi {{!showMenuLi?'':'show'}}" bindtap="{{isShowMenuLi}}">
-        <view class="inner">
-            <view class="list">
-                <view class="item box-pack-center box-align-center" bindtap="{{goPostCus}}">
-                    <image mode="scaleToFill" src="../../images/icon-tiezi.png"></image>
-                    <text>发布帖子</text>
-                </view>
-                <view class="item box-pack-center box-align-center">
-                    <image mode="scaleToFill" src=""></image>
-                    <text></text>
-                </view>
-            </view>
-            <view class="close-box" catchtap="{{isShowMenuLi}}">
-                <image class="close" src="../../images/X.png"></image>
-            </view>
-        </view>
-    </view>
+  <fabu-dialog id="j-fabu-dialog" show="{{showMenuLi}}"></fabu-dialog>
 
 </template>

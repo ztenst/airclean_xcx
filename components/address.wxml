@@ -1,0 +1,8 @@
+  <view class="formElem">
+    <view class="formElem-title">地址</view>
+    <view class="formElem-option">
+      <picker class="formElem-picker" mode="multiSelector" range="{{multiArray}}" range-key="name" bindcolumnchange="columnChange" value="{{value}}" bindchange="onChange">
+        <input type="text" placeholder="选择城市" name="" class="formElem-input" disabled="true" value="{{select.text}}"/>
+      </picker>
+    </view>
+  </view>

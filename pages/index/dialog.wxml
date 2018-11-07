@@ -1,0 +1,7 @@
+<view class="dialog">
+  <view class="dialog-content flex flex-main-justify">
+    <view class="dialog-item i1">发商品</view>
+    <view class="dialog-item i2">发帖子</view>
+  </view>
+  <view class="dialog-close"></view>
+</view>

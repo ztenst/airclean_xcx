@@ -1,0 +1,15 @@
+  <view class="formElem">
+    <view class="formElem-title">{{title}}<text class="formElem-subtitle" wx:if="{{subtitle}}">（{{subtitle}}）</text></view>
+    <view class="formElem-option notop">
+      <view class="uploadImg-wrap">
+        <view class="uploadImg" wx:for="{{images}}" wx:key="index" bindtap="setCover" data-index="{{index}}">
+          <image src="{{item.imageURL}}?imageView2/1/w/200/h/200/interlace/1" class="blockImg"></image>
+          <view class="uploadImg-del iconfont icon-delete" catchtap="del" data-index="{{index}}"></view>
+          <view class="uploadImg-cover" wx:if="{{cover == index && openCover}}">封面</view>
+        </view>
+        <view class="uploadImg" wx:if="{{images.length < limit}}">
+          <view class="uploadImg-btn" bindtap="choose"></view>
+        </view>
+      </view>
+    </view>
+  </view>

@@ -1,0 +1,32 @@
+@import '../app.wxss';
+.notop{
+  margin-top:0;
+}
+.uploadImg-wrap{
+  height:auto;
+  overflow:hidden;
+  padding-top:20rpx;
+  margin-top:-20rpx;
+}
+.uploadImg{
+  position:relative;
+  margin-bottom:20prx;
+  margin-top:20rpx;
+}
+
+.uploadImg .iconfont{
+  color: #ff6565;
+  font-size: 35rpx;
+  background:transparent;
+  right:-10rpx;
+  line-height:20rpx;
+}
+.uploadImg-cover{
+  position:absolute;
+  font-size:24rpx;
+  padding:2rpx;
+  position: absolute;
+  left:0;top:0;
+  background-color: #FD7406;
+  color:#fff;
+}

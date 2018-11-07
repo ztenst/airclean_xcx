@@ -9,15 +9,25 @@
     "pages/certification/certification",
     "pages/customer_manage/customer_manage",
     "pages/article/article",
-
     "pages/detail/detail",
     "pages/collect/collect",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/product/select",
+    "pages/my/auth",
+    "pages/my/pubproduct",
+    "pages/my/fav",
+    "pages/my/statement",
+    "pages/my/productmanage",
+    "pages/my/bbsmanage",
+    "pages/product/detail",
+    "pages/bbs/detail",
+    "pages/index/dialog",
+    "pages/test/demo"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#181c1f",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "空气净化专家",
-    "navigationBarTextStyle":"#fff"
+    "navigationBarTextStyle":"black"
   }
 }

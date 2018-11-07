@@ -9,67 +9,204 @@
         confirmText='知道了'>
 </dialog>
 
-<view class="index page" >
-    <scroll-view class="overflow-scroll" scroll-y="true" scroll-with-animation="true">
-        <!--search-->
-        <view class="index_search_bar">
-            <view class="search-box">
-                <view bindtap="focus" wx:if="{{!focused}}" class="text-box">
-                    <text class="iconfont icon-search"></text>
-                    搜索商品
-                </view>
-
-                <view class="input-container container" hidden="{{!focused}}">
-                    <view>
-                        <text class="iconfont icon-sousuo"></text>
-                        <input type="text" confirm-type="search" focus="{{focused}}" placeholder-class="c-fff"
-                               bindconfirm="confirm" placeholder="请输入关键字"/>
-                    </view>
-                </view>
-            </view>
-        </view>
-
+<view class="index page" wx:if="{{isLoad}}" >
         <!--banner-->
         <view class="index-banner ">
             <swiper class="swiper" indicator-dots="true" autoplay="true">
                 <swiper-item wx:for="{{index.imgs}}" wx:key="x" wx:for-item="x">
-                    <image src="{{x}}" data-src="{{x}}" bindtap="onImageTap" mode="widthFix"></image>
+                    <image src="{{x}}" data-src="{{x}}" bindtap="onImageTap" class="blockImg"></image>
                 </swiper-item>
             </swiper>
         </view>
 
         <!--cate-->
         <block class="ele-container">
-            <view class="index-nav ">
-                <view class="item" wx:for="{{index.cates}}" wx:key="id" bindtap="go_category" data-id="{{item.id}}">
+            <view class="index-nav" wx:if="{{index.cates.length <= 8}}">
+              <view class="item" wx:for="{{index.cates}}" wx:key="id" bindtap="go_category" data-id="{{item.id}}" data-py="{{item.py}}">
                     <image mode="scaleToFill" src="{{item.img}}"></image>
                     <text>{{item.name}}</text>
                 </view>
             </view>
-            <view class="blank20"></view>
-        </block>
-
-        <!--推荐位-->
-        <block class="ele-container">
-            <view class="cells_auto_fill box ">
-                <view class="item" wx:for="{{index.short_recoms}}" bindtap="go_detail" data-id="{{item.pid}}">
-                    <image src="{{item.img}}" mode="scaleToFill"></image>
-                </view>
+            <view wx:if="{{index.cates.length > 8}}">
+              <swiper indicator-dots="true" autoplay="true" class="indexNavSwiper">
+                <swiper-item>
+                  <view class="index-nav">
+                    <view class="item" wx:for="{{index.cate1}}" wx:key="id" bindtap="go_category" data-id="{{item.id}}" data-py="{{item.py}}">
+                          <image mode="scaleToFill" src="{{item.img}}"></image>
+                          <text>{{item.name}}</text>
+                      </view>
+                  </view>
+                </swiper-item>
+                <swiper-item>
+                  <view class="index-nav">
+                    <view class="item" wx:for="{{index.cate2}}" wx:key="id" bindtap="go_category" data-id="{{item.id}}" data-py="{{item.py}}">
+                          <image mode="scaleToFill" src="{{item.img}}"></image>
+                          <text>{{item.name}}</text>
+                      </view>
+                  </view>
+                </swiper-item>
+              </swiper>
             </view>
-            <view class="cells_auto_fill">
-                <view class="body">
-                    <image src="{{index.long_recoms[0].img}}" mode="scaleToFill" bindtap="go_detail"
-                           data-id="{{index.long_recoms[0].pid}}"></image>
-                </view>
-            </view>
-            <view class="blank20"></view>
+            <view class="blank10 f7"></view>
         </block>
-        <!--列表-->
-        <list list-data="{{list}}" list-type="product"></list>
-
-    </scroll-view>
-
+        <view class="recommandProduct">
+          <view class="recommandProduct-title"><view class="gtitle">推荐商品</view></view>
+          <view class="recommandProduct-block">
+            <view class="recommandProduct-t1" wx:for="{{index.long_recoms}}" bindtap="goDetail" data-id="{{item.pid}}">
+              <image src="{{item.img}}" class="blockImg"/>
+            </view>
+            <view class="recommandProduct-t2 flex flex-main-justify">
+              <view class="recommandProduct-t2Img" wx:for="{{index.short_recoms}}" bindtap="goDetail" data-id="{{item.pid}}">
+                <image src="{{item.img}}" class="blockImg"/>
+              </view>
+            </view>
+          </view>
+          <view class="blank10 f7"></view>
+        </view>
+        <view class="jpProduct">
+          <view class="jpProduct-title">
+            <view class="gtitle">精选商品</view>
+          </view>
+          <view class="jpProduct-block">
+            <scroll-view scroll-x="true">
+              <view class="jpProduct-item jpProductItem" wx:for="{{index.products}}" bindtap="goDetail" data-id="{{item.pid}}">
+                <view class="jpProductItem-tag" wx:if="{{item.rzwords}}"></view>
+                <view class="jpProductItem-pic">
+                  <image src="{{item.img}}" class="blockImg"/>
+                </view>
+                <view class="jpProductItem-info">
+                  <view class="jpProductItem-title">{{item.name}}</view>
+                  <view class="jpProductItem-price flex">
+                    <view class="jpProductItem-label">售价：</view>
+                    <view class="jpProductItem-numBlock"><text class="jpProductItem-num">{{item.price}}</text><text class="jpProductItem-unit">元</text></view>
+                  </view>
+                  <view class="jpProductItem-shop">商家：{{item.company}}</view>
+                </view>
+              </view>
+              <!--view class="jpProduct-item jpProductItem">
+                <view class="jpProductItem-tag"></view>
+                <view class="jpProductItem-pic">
+                  <image src="../../images/demo.png" class="blockImg"/>
+                </view>
+                <view class="jpProductItem-info">
+                  <view class="jpProductItem-title">药剂测试</view>
+                  <view class="jpProductItem-price flex">
+                    <view class="jpProductItem-label">售价：</view>
+                    <view class="jpProductItem-numBlock"><text class="jpProductItem-num">1829.00</text><text class="jpProductItem-unit">元</text></view>
+                  </view>
+                  <view class="jpProductItem-shop">商家：富土康</view>
+                </view>
+              </view>
+              <view class="jpProduct-item jpProductItem">
+                <view class="jpProductItem-pic">
+                  <image src="../../images/demo.png" class="blockImg"/>
+                </view>
+                <view class="jpProductItem-info">
+                  <view class="jpProductItem-title">药剂测试</view>
+                  <view class="jpProductItem-price flex">
+                    <view class="jpProductItem-label">售价：</view>
+                    <view class="jpProductItem-numBlock"><text class="jpProductItem-num">1829.00</text><text class="jpProductItem-unit">元</text></view>
+                  </view>
+                  <view class="jpProductItem-shop">商家：富土康</view>
+                </view>
+              </view>
+              <view class="jpProduct-item jpProductItem">
+                <view class="jpProductItem-pic">
+                  <image src="../../images/demo.png" class="blockImg"/>
+                </view>
+                <view class="jpProductItem-info">
+                  <view class="jpProductItem-title">药剂测试</view>
+                  <view class="jpProductItem-price flex">
+                    <view class="jpProductItem-label">售价：</view>
+                    <view class="jpProductItem-numBlock"><text class="jpProductItem-num">1829.00</text><text class="jpProductItem-unit">元</text></view>
+                  </view>
+                  <view class="jpProductItem-shop">商家：富土康</view>
+                </view>
+              </view>
+              <view class="jpProduct-item jpProductItem">
+                <view class="jpProductItem-pic">
+                  <image src="../../images/demo.png" class="blockImg"/>
+                </view>
+                <view class="jpProductItem-info">
+                  <view class="jpProductItem-title">药剂测试</view>
+                  <view class="jpProductItem-price flex">
+                    <view class="jpProductItem-label">售价：</view>
+                    <view class="jpProductItem-numBlock"><text class="jpProductItem-num">1829.00</text><text class="jpProductItem-unit">元</text></view>
+                  </view>
+                  <view class="jpProductItem-shop">商家：富土康</view>
+                </view>
+              </view-->
+            </scroll-view>
+          </view>
+        </view>
+        <view class="blank10 f7"></view>
+        <view class="hyNews">
+          <view class="hyNews-title">
+            <view class="gtitle">行业新闻</view>
+          </view>
+          <view class="hyNews-list">
+            <view class="hyNewsItem flex hyNews-item" wx:for="{{index.news}}" bindtap="goNewsDetail" data-id="{{item.id}}">
+              <view class="hyNewsItem-pic flex-box0">
+                <image src="{{item.img}}"  class="blockImg"/>
+              </view>
+              <view class="hyNewsItem-info flex flex-dir-top flex-main-justify">
+                <view class="hyNewsItem-title">{{item.title}}</view>
+                <view class="hyNewsItem-subinfo">
+                  <view class="hyNewsItem-view">{{item.hits}}</view>
+                  <view class="hyNewsItem-author">作者：{{item.author}}</view>
+                </view>
+              </view>
+            </view>
+            <!--view class="hyNewsItem flex hyNews-item">
+              <view class="hyNewsItem-pic flex-box0">
+                <image src="../../images/demo.png"  class="blockImg"/>
+              </view>
+              <view class="hyNewsItem-info flex flex-dir-top flex-main-justify">
+                <view class="hyNewsItem-title">中国历代政治得失</view>
+                <view class="hyNewsItem-subinfo">
+                  <view class="hyNewsItem-view">241</view>
+                  <view class="hyNewsItem-author">作者：Tivio</view>
+                </view>
+              </view>
+            </view>
+            <view class="hyNewsItem flex hyNews-item">
+              <view class="hyNewsItem-pic flex-box0">
+                <image src="../../images/demo.png"  class="blockImg"/>
+              </view>
+              <view class="hyNewsItem-info flex flex-dir-top flex-main-justify">
+                <view class="hyNewsItem-title">中国历代政治得失</view>
+                <view class="hyNewsItem-subinfo">
+                  <view class="hyNewsItem-view">241</view>
+                  <view class="hyNewsItem-author">作者：Tivio</view>
+                </view>
+              </view>
+            </view>
+            <view class="hyNewsItem flex hyNews-item">
+              <view class="hyNewsItem-pic flex-box0">
+                <image src="../../images/demo.png"  class="blockImg"/>
+              </view>
+              <view class="hyNewsItem-info flex flex-dir-top flex-main-justify">
+                <view class="hyNewsItem-title">中国历代政治得失</view>
+                <view class="hyNewsItem-subinfo">
+                  <view class="hyNewsItem-view">241</view>
+                  <view class="hyNewsItem-author">作者：Tivio</view>
+                </view>
+              </view>
+            </view>
+            <view class="hyNewsItem flex hyNews-item">
+              <view class="hyNewsItem-pic flex-box0">
+                <image src="../../images/demo.png"  class="blockImg"/>
+              </view>
+              <view class="hyNewsItem-info flex flex-dir-top flex-main-justify">
+                <view class="hyNewsItem-title">中国历代政治得失</view>
+                <view class="hyNewsItem-subinfo">
+                  <view class="hyNewsItem-view">241</view>
+                  <view class="hyNewsItem-author">作者：Tivio</view>
+                </view>
+              </view>
+            </view-->
+          </view>
+        </view>
 </view>
 
 <template is="tabBar" data="{{...$tabBar }}"></template>
-

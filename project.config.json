@@ -8,7 +8,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.91",
+	"libVersion": "2.3.0",
 	"appid": "wx0d383ab85333cb04",
 	"projectname": "airclean_xcx_offical",
 	"isGameTourist": false,
@@ -21,28 +21,32 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 19,
 			"list": [
 				{
-					"id": -1,
-					"name": "category",
+					"id": 0,
+					"name": "分类",
 					"pathName": "pages/category/category",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "bbs",
+					"id": 1,
+					"name": "论坛",
 					"pathName": "pages/bbs/bbs",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "my",
+					"id": 2,
+					"name": "我的",
 					"pathName": "pages/my/my",
 					"query": ""
 				},
@@ -53,10 +57,10 @@
 					"query": "id=24"
 				},
 				{
-					"id": -1,
-					"name": "post",
+					"id": 4,
+					"name": "发布帖子",
 					"pathName": "pages/post/post",
-					"query": ""
+					"query": "id=51"
 				},
 				{
 					"id": -1,
@@ -89,15 +93,75 @@
 					"query": "id=37"
 				},
 				{
-					"id": -1,
-					"name": "index",
+					"id": 10,
+					"name": "首页",
 					"pathName": "pages/index/index",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "index",
-					"pathName": "pages/index/index",
+					"name": "商品选择",
+					"pathName": "pages/product/select",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我要认证",
+					"pathName": "pages/my/auth",
+					"query": ""
+				},
+				{
+					"id": 13,
+					"name": "发布商品",
+					"pathName": "pages/my/pubproduct",
+					"query": "id=31"
+				},
+				{
+					"id": 14,
+					"name": "我的收藏",
+					"pathName": "pages/my/fav",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "数据中心",
+					"pathName": "pages/my/statement",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品管理",
+					"pathName": "pages/my/productmanage",
+					"query": ""
+				},
+				{
+					"id": 17,
+					"name": "帖子管理",
+					"pathName": "pages/my/bbsmanage",
+					"query": "id=51"
+				},
+				{
+					"id": 18,
+					"name": "商品详情",
+					"pathName": "pages/product/detail",
+					"query": "id=26"
+				},
+				{
+					"id": 19,
+					"name": "帖子详情",
+					"pathName": "pages/bbs/detail",
+					"query": "id=50"
+				},
+				{
+					"id": -1,
+					"name": "弹框",
+					"pathName": "pages/index/dialog",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "测试",
+					"pathName": "pages/test/demo",
 					"query": ""
 				}
 			]

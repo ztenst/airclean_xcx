@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "发布帖子",
+  "navigationBarTitleText": "",
   "usingComponents": {
     "toast": "../../components/toast/toast",
     "dialog": "/components/dialog/dialog"

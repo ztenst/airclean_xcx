@@ -1,24 +1,37 @@
 <wxs src="../../wxs/filter.wxs" module="filter"></wxs>
 <block class="ele-container" wx:if="{{listData.length>0}}">
-    <view class="f-list box" wx:if="{{listType=='product'||listType=='order'}}">
-        <block wx:for="{{listData}}" wx:key="id">
-            <view class="item" bindtap="goDetail" data-id="{{item.id}}">
-                <view class="pic">
-                    <image src="{{item.image}}" mode="scaleToFill"></image>
-                    <view class="tag" wx:if="{{item.old_price-item.price>0}}">
-                        <text>立减{{item.old_price-item.price}}元</text>
-                    </view>
-                </view>
-                <view class="info">
-                    <view class="name ft-nowap">{{item.name}}</view>
-                    <view class="brief ft-nowap">{{item.ts}}</view>
-                    <view class="price">
-                        {{item.price}}元
-                        <text class="old">{{item.old_price}}元</text>
-                    </view>
+    <view class="product-list notop" wx:if="{{listType=='product'||listType=='order'}}">
+        <view class="product-item productItem flex" wx:for="{{listData}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
+          <view class="productItem-pic flex-box0">
+            <view class="productItem-tag" wx:if="{{item.rzwords}}">{{item.rzwords}}</view>
+            <image src="{{item.image}}" class="blockImg"/>
+          </view>
+          <view class="productItem-info">
+            <view class="productItem-title productItem-l1">{{item.name}}</view>
+            <view class="productItem-l2 flex">
+              <view class="productItem-price">{{item.price}}<text class="productItem-unit">元</text></view>
+              <view class="productItem-view">{{item.hits}}</view>
+            </view>
+            <view class="productItem-l3">{{item.ts}}</view>
+            <view class="productItem-l4" wx:if="{{item.company}}">商家：{{item.company}}</view>
+          </view>
+        </view>
+        <!--view class="item" bindtap="goDetail" data-id="{{item.id}}">
+            <view class="pic">
+                <image src="{{item.image}}" mode="scaleToFill"></image>
+                <view class="tag" wx:if="{{item.old_price-item.price>0}}">
+                    <text>立减{{item.old_price-item.price}}元</text>
                 </view>
             </view>
-        </block>
+            <view class="info">
+                <view class="name ft-nowap">{{item.name}}</view>
+                <view class="brief ft-nowap">{{item.ts}}</view>
+                <view class="price">
+                    {{item.price}}元
+                    <text class="old">{{item.old_price}}元</text>
+                </view>
+            </view>
+        </view-->
     </view>
     <view wx:if="{{listType=='bbs'}}">
         <view class="blank20"></view>

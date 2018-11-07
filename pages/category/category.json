@@ -3,6 +3,7 @@
   "usingComponents": {
     "filter-bar": "../../components/filtercomponents/filterBar/filterBar",
     "list-bar": "../../components/listcomponents/listBar/listBar",
-    "dialog": "/components/dialog/dialog"
+    "dialog": "/components/dialog/dialog",
+    "fabu-dialog" : "../../components/fabu-dialog"
   }
 }

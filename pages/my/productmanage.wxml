@@ -1,0 +1,57 @@
+<view class="productmanage">
+  <view class="favNav">
+    <view class="favNav-item {{item.value === status ? 'ison' : ''}}" wx:for="{{category}}" bindtap="changeStatus" data-value="{{item.value}}">{{item.name}}</view>
+  </view>
+  <view class="productmanage-list">
+    <view class="pmItem" wx:for="{{list}}" wx:key="id">
+      <view class="product-item productItem flex">
+        <view class="productItem-pic flex-box0">
+          <view class="productItem-tag"></view>
+          <image src="../../images/demo.png" class="blockImg"/>
+        </view>
+        <view class="productItem-info flex flex-dir-top flex-main-justify">
+          <view class="productItem-title productItem-l1">{{item.name}}</view>
+          <view>
+            <view class="productItem-l2 flex">
+              <view class="productItem-price">{{item.price}}<text class="productItem-unit">元</text></view>
+              <view class="productItem-view">{{item.hits}}</view>
+            </view>
+            <view class="productItem-l3">{{item.ts}}</view>
+            <view class="productItem-l4">商家：{{item.company}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="pmItem-option flex flex-main-right">
+        <view class="pmItem-btn" bindtap="onEdit" data-id="{{item.id}}">编辑</view>
+        <view class="pmItem-btn t2" wx:if="{{item.status == 0}}">{{item.status_word}}</view>
+        <view class="pmItem-btn t2" wx:if="{{item.status == 1}}" bindtap="onDown" data-id="{{item.id}}">下架</view>
+        <view class="pmItem-btn t2" wx:if="{{item.status == 2}}" bindtap="onUp" data-id="{{item.id}}">上架</view>
+      </view>
+    </view>
+    <!--view class="pmItem">
+      <view class="product-item productItem flex">
+        <view class="productItem-pic flex-box0">
+          <view class="productItem-tag"></view>
+          <image src="../../images/demo.png" class="blockImg"/>
+        </view>
+        <view class="productItem-info flex flex-dir-top flex-main-justify">
+          <view class="productItem-title productItem-l1">药剂测试</view>
+          <view>
+            <view class="productItem-l2 flex">
+              <view class="productItem-price">1829.00<text class="productItem-unit">元</text></view>
+              <view class="productItem-view">241</view>
+            </view>
+            <view class="productItem-l3">微悦科技信息技术有限公司</view>
+            <view class="productItem-l4">商家：富土康</view>
+          </view>
+        </view>
+      </view>
+      <view class="pmItem-option flex flex-main-right">
+        <view class="pmItem-btn">认证</view>
+        <view class="pmItem-btn">编辑</view>
+        <view class="pmItem-btn t2">上架</view>
+      </view>
+    </view-->
+  </view>
+  <load-more type="{{isNeedLoadMore}}"></load-more>
+</view>

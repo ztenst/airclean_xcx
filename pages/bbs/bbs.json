@@ -2,6 +2,8 @@
   "navigationBarTitleText": "",
   "usingComponents": {
     "list-bar": "../../components/listcomponents/listBar/listBar",
-    "dialog": "/components/dialog/dialog"
+    "dialog": "/components/dialog/dialog",
+    "load-more" : "../../components/load-more",
+    "fabu-dialog" : "../../components/fabu-dialog"
   }
 }

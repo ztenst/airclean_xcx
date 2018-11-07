@@ -25,15 +25,8 @@
 .flex{-moz-flex-grow:1;-webkit-flex-grow:1;flex-grow:1}
 
 page {
-
   font-size: 30rpx;
   color: $c-333;
-  //font-size: 32.8125rpx;
-  //width: 100%;
-  box-sizing: border-box;
-  height: 100%;
-  //overflow-x: hidden;
-  background-color: $color_cool;
   font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
 }
 
@@ -45,14 +38,6 @@ page {
 
 .pdbm100 {
   padding-bottom: 100rpx;
-}
-
-.page {
-  width: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  height:100%;
-  background-color: #fff;
 }
 
 a {

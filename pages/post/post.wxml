@@ -5,22 +5,12 @@
 </dialog>
 <view class="post ">
     <form action="" bindsubmit="submitForm">
-        <view class="m-cell">
-            <view class="cell-item">
-                <view class="cell-left">
-                    添加标题
-                </view>
-                <view class="cell-right ">
-                    <input type="number" pattern="[0-9]*" class="cell-input " placeholder-class="c-ccc" name="title"
-                           placeholder="请输入标题" autocomplete="off"/>
-                </view>
-            </view>
+        <view class="post-title">
+          <input type="number" pattern="[0-9]*"  class="post-titleInput" name="title" placeholder="标题" autocomplete="off" value="{{title}}"/>
         </view>
         <view class="textarea-box bg-fff">
-            <textarea class="text-content" placeholder="写点什么吧~" name="content" id="" cols="30" rows="10"></textarea>
-            <view class="counter">至少输入10个字</view>
+          <textarea class="text-content" placeholder="输入内容" name="content" id="" cols="30" rows="10" value="{{content}}"></textarea>
         </view>
-        <view class="blank20"></view>
         <view class="img-box clearfix bg-fff">
             <block wx:if="{{uploadImgs.length>0}}">
                 <view class="item" wx:for="{{ uploadImgs }}" wx:key="index" bindtap="changeFm" data-url="{{ item }}">

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "测试",
+  "usingComponents": {
+    "upload" : "../../components/upload",
+    "singSelect" : "../../components/singSelect",
+    "tag" : "../../components/tag",
+    "address" : "../../components/address",
+    "load-more" : "../../components/load-more"
+  }
+}

@@ -55,7 +55,7 @@ function removeDOCTYPE(html) {
 
 function trimHtml(html) {
   return html
-        .replace(/\n+/g, '')
+        .replace(/\r?\n+/g, '')
         .replace(/<!--.*?-->/ig, '')
         .replace(/\/\*.*?\*\//ig, '')
         .replace(/[ ]+</ig, '<')
@@ -109,12 +109,14 @@ function html2json(html, bindName) {
                     var name = attr.name;
                     var value = attr.value;
                     if (name == 'class') {
+                        //console.dir(value);
                         //  value = value.join("")
                         node.classStr = value;
                     }
                     // has multi attibutes
                     // make it array of attribute
                     if (name == 'style') {
+                        //console.dir(value);
                         //  value = value.join("")
                         node.styleStr = value;
                     }
@@ -182,7 +184,7 @@ function html2json(html, bindName) {
             }
             
             if (unary) {
-                // if this tag dosen't have end tag
+                // if this tag doesn't have end tag
                 // like <img src="hoge.png"/>
                 // add to parents
                 var parent = bufArray[0] || results;
@@ -203,7 +205,7 @@ function html2json(html, bindName) {
             //当有缓存source资源时于于video补上src资源
             if(node.tag === 'video' && results.source){
                 node.attr.src = results.source;
-                delete result.source;
+                delete results.source;
             }
             
             if (bufArray.length === 0) {
@@ -225,6 +227,8 @@ function html2json(html, bindName) {
             };
             
             if (bufArray.length === 0) {
+                node.index = index.toString()
+                index += 1
                 results.nodes.push(node);
             } else {
                 var parent = bufArray[0];

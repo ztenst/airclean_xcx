@@ -1,0 +1,36 @@
+<form bindsubmit="onSubmit">
+  <view class="myAuth">
+    <view class="myAuth-title">我要认证</view>
+    <view class="formElem">
+      <view class="formElem-title">姓名</view>
+      <view class="formElem-option">
+        <input class="formElem-input" type="text" placeholder="输入我的真实姓名" name="UserExt[name]"/>
+      </view>
+    </view>
+    <view class="formElem">
+      <view class="formElem-title">手机号</view>
+      <view class="formElem-option">
+        <input class="formElem-input" type="number" maxlength="11" placeholder="输入我的手机号码" name="UserExt[phone]"/>
+      </view>
+    </view>
+    <view class="formElem">
+      <view class="formElem-title">公司名称</view>
+      <view class="formElem-option">
+        <input class="formElem-input" type="text" placeholder="输入我需要认证的公司名称" name="UserExt[company]" value="{{company}}" disabled="{{company ? true : false}}"/>
+      </view>
+    </view>
+    <upload title="身份证" subtitle="法人身份证正面" name="UserExt[id_pic]" limit="1" openCover="{{false}}"></upload>
+    <upload title="身份证" subtitle="法人身份证反面" name="UserExt[id_pic_2]" limit="1" openCover="{{false}}"></upload>
+    <upload title="营业执照" name="UserExt[licence]" limit="1" openCover="{{false}}"></upload>
+    <view class="formElem">
+      <view class="formElem-title">备注</view>
+      <view class="formElem-option">
+        <input class="formElem-input" type="text" placeholder="输入我还想说的" name="UserExt[note]"/>
+      </view>
+    </view>
+    <view class="myAuth-check">
+        <label bindtap="onChange"><checkbox checked="{{checked}}"></checkbox>已阅读并同意<span class="myAuth-link">《申明》</span></label>
+    </view>
+    <button class="myAuth-btn {{checked ? '' : 'disabled'}}" form-type="submit">提交</button>
+  </view>
+</form>

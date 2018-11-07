@@ -27,5 +27,6 @@ module.exports = {
     host: hosts[env],
     version: version,
     static_path: static_path,
-    color_scheme:color_scheme
+    color_scheme:color_scheme,
+    qiniu : 'http://oofuaem2b.bkt.clouddn.com/'
 };

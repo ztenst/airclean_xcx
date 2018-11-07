@@ -1,0 +1,10 @@
+  <view class="formElem">
+    <view class="formElem-title">{{data.name}}</view>
+    <view class="formElem-option">
+      <view class="formElem-checkbox">
+        <radio-group bindchange="onChange">
+          <label class="formElem-checkboxItem flex flex-cross-center flex-main-center {{value == item.id? 'ison' : ''}}" wx:for="{{data.list}}"><radio value="{{item.id}}"></radio>{{item.name}}</label>
+        </radio-group>
+      </view>
+    </view>
+  </view>

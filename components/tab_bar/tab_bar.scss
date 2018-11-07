@@ -8,8 +8,11 @@
   bottom: 0;
   padding: 0 24rpx;
   height: 98rpx;
-  border-top: 1rpx solid $borderColorE6;
   background-color: #fff;
+  box-shadow:0px 0px 4rpx 0px rgba(0,0,0,0.1);
+  &-placeholder{
+    height:98rpx;
+  }
   .item {
     padding-top: 10rpx;
     width: 140rpx;
@@ -18,11 +21,36 @@
     .cont {
       display: table-cell;
       vertical-align: middle;
+      text-align:center;
       .pic {
         width: 49rpx;
         height: 45rpx;
-
-        display: inline-block;
+        margin: 0 auto;
+        margin-bottom:5rpx;
+        &.i1{
+          background:url(#{$domain}icon-home.png) top center/40rpx 40rpx no-repeat;
+          &.ison{
+            background-image:url(#{$domain}hover-home.png);
+          }
+        }
+        &.i2{
+          background:url(#{$domain}icon-fenlei.png) top center/40rpx 40rpx no-repeat;
+          &.ison{
+            background-image:url(#{$domain}hover-fenlei.png);
+          }
+        }
+        &.i3{
+          background:url(#{$domain}icon-luntan.png?t=1) top center/40rpx 40rpx no-repeat;
+          &.ison{
+            background-image:url(#{$domain}hover-luntan.png);
+          }
+        }
+        &.i4{
+          background:url(#{$domain}icon-user.png) top center/40rpx 40rpx no-repeat;
+          &.ison{
+            background-image:url(#{$domain}hover-user.png);
+          }
+        }
         image {
           width: 100%;
           height: 100%;

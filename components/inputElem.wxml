@@ -1,0 +1,6 @@
+  <view class="formElem">
+    <view class="formElem-title">{{title}}</view>
+    <view class="formElem-option">
+      <input class="formElem-input" name="{{name}}" value="{{value}}" type="text" placeholder="{{placeholder}}"/>
+    </view>
+  </view>

@@ -1,0 +1,44 @@
+<import src="../../libs/wxParse/wxParse.wxml"/>
+<view class="pDetail" wx:if="{{isLoad}}">
+  <view class="pDetail-pic">
+    <swiper autoplay="true" >
+      <swiper-item wx:for="{{detail.images}}">
+        <image src="{{item}}" class="blockImg"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="pDetail-price">
+    <view class="pDetail-np">{{detail.price}}<span class="pDetail-unit">元</span></view>
+    <view class="pDetail-op">{{detail.old_price}}元</view>
+  </view>
+  <view class="pDetail-wrapper">
+    <view class="pDetail-title">{{detail.name}}</view>
+    <view class="pDetail-desc">{{detail.shortdes}}</view>
+  </view>
+  <view class="blank10 f7"></view>
+  <view class="pDetail-info">
+    <view class="pDetail-infoNav flex flex-box-mean">
+      <view class="pDetail-nav {{tab == 0 ? 'ison' : ''}} flex-item" bindtap="onChangeTab" data-tab="0">产品参数</view>
+      <view class="pDetail-nav {{tab == 1 ? 'ison' : ''}} flex-item" bindtap="onChangeTab" data-tab="1">图文详情</view>
+    </view>
+    <view class="pDetail-content c1">
+      <view class="pDetail-params" wx:if="{{tab == 0}}">
+        <view class="pDetail-param flex flex-main-justify {{index % 2 == 1 ? 'even' : ''}}" wx:for="{{detail.tags}}">
+          <view class="pDetail-label">{{item.name}}</view>
+          <view class="pDetail-text">{{item.value}}</view>
+        </view>
+      </view>
+      <view class="pDetail-contentDetail" wx:if="{{tab == 1}}">
+        <view class="pDetail-contentDetailTitle">商品详情</view>
+        <view class="pDetail-contentDetailContent"><template is="wxParse" data="{{wxParseData:_content.nodes}}"/></view>
+      </view>
+    </view>
+  </view>
+  <view class="pDetail-bar flex">
+    <view class="pDetail-option flex-box0 flex">
+      <view class="pDetail-o isfav {{is_save == 1 ? 'ison' : ''}}" bindtap="fav">收藏</view>
+      <view class="pDetail-o istel" bindtap="onCall" data-phone="{{detail.phone}}">电话</view>
+    </view>
+    <view class="pDetail-btn flex-box1" bindtap="onCall" data-phone="{{detail.phone}}">立即购买</view>
+  </view>
+</view>

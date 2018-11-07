@@ -10,7 +10,10 @@ export default {
     setDefaults() {
         return {}
     },
-
+    goDetail : function(e) {
+      var id = e.currentTarget.dataset.id;
+      console.log(id);
+    },
     init(opts = {}) {
         const options = Object.assign({}, this.setDefaults(), opts);
 

@@ -1,0 +1,8 @@
+  <view class="formElem">
+    <view class="formElem-title">标签选择</view>
+    <view class="formElem-option" bindtap="onTap">
+      <input type="text" placeholder="请选择" value="{{select.title}}" name="" class="formElem-input" disabled="true"/>
+    </view>
+  </view>
+  <singSelect wx:for="{{select.tags}}" data="{{item}}" class="singSelect" value="{{item.value}}"></singSelect>
+

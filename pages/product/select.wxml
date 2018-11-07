@@ -1,0 +1,45 @@
+<view class="productSelect">
+  <view class="productSelect-title">商品选择</view>
+  <view class="productSelect-list">
+    <view class="productSelect-item" bindtap="onSelect" data-py="yj" data-name="药剂">
+      <view class="productSelect-text">药剂</view>
+      <view class="productSelect-icon i1"></view>
+    </view>
+    <view class="productSelect-item" bindtap="onSelect" data-py="pq" data-name="喷枪">
+      <view class="productSelect-text">喷枪</view>
+      <view class="productSelect-icon i2"></view>
+    </view>
+    <view class="productSelect-item" bindtap="onSelect" data-py="hxt" data-name="活性炭">
+      <view class="productSelect-text">活性炭</view>
+      <view class="productSelect-icon i3"></view>
+    </view>
+    <view class="productSelect-item" bindtap="onSelect" data-py="jhq" data-name="净化器">
+      <view class="productSelect-text">净化器</view>
+      <view class="productSelect-icon i4"></view>
+    </view>
+    <view class="productSelect-item" bindtap="onSelect" data-py="jsq" data-name="净水器">
+      <view class="productSelect-text">净水器</view>
+      <view class="productSelect-icon i5"></view>
+    </view>
+    <view class="productSelect-item" bindtap="onSelect" data-py="jcsb" data-name="检测设备">
+      <view class="productSelect-text">检测设备</view>
+      <view class="productSelect-icon i6"></view>
+    </view>
+    <view class="productSelect-item" bindtap="onSelect" data-py="hc" data-name="耗材">
+      <view class="productSelect-text">耗材</view>
+      <view class="productSelect-icon i7"></view>
+    </view>
+    <view class="productSelect-item" bindtap="onSelect" data-name="CMA合作" data-py="cma">
+      <view class="productSelect-text">CMA合作</view>
+      <view class="productSelect-icon i8"></view>
+    </view>
+    <view class="productSelect-item" bindtap="onSelect" data-name="软件服务" data-py="soft">
+      <view class="productSelect-text">软件服务</view>
+      <view class="productSelect-icon i9"></view>
+    </view>
+    <view class="productSelect-item">
+      <view class="productSelect-text" bindtap="onSelect" data-name="加盟合作" data-py="jm">加盟合作</view>
+      <view class="productSelect-icon i10"></view>
+    </view>
+  </view>
+</view>

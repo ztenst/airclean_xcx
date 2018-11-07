@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "帖子管理",
+  "usingComponents": {
+    "load-more" : "../../components/load-more"
+  }
+}

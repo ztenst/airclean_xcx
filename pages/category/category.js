@@ -34,6 +34,7 @@ Page({
         ToTop: 185,
         bottom: 98
       },
+      isLoad : true
     });
   },
   

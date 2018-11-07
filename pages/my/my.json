@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "个人中心",
   "usingComponents": {
-    "dialog": "/components/dialog/dialog"
+    "dialog": "/components/dialog/dialog",
+    "fabu-dialog" : "../../components/fabu-dialog"
   }
 }

@@ -1,0 +1,38 @@
+<view class="bbsmanage">
+  <view class="favNav">
+    <view class="favNav-item {{item.value === status ? 'ison' : ''}}" wx:for="{{category}}" bindtap="changeStatus" data-value="{{item.value}}">{{item.name}}</view>
+  </view>
+  <view class="bbsmanage-list">
+    <view class="pmItem" wx:for="{{list}}">
+      <view class="bsItem">
+        <view class="bsItem-title">{{item.name}}</view>
+        <view class="bsItem-desc">{{item.desc}}</view>
+        <view class="bsItem-aside flex flex-main-justify">
+          <view class="bbsItem-view">{{item.hits}}</view>
+          <view class="bbsItem-time">{{item.date}}</view>
+        </view>
+      </view>
+      <view class="pmItem-option flex flex-main-right">
+        <view class="pmItem-btn" bindtap="onEdit" data-id="{{item.id}}">编辑</view>
+        <view class="pmItem-btn t2" wx:if="{{item.status == 0}}">{{item.status_word}}</view>
+        <view class="pmItem-btn t2" wx:if="{{item.status == 1}}" bindtap="onDown" data-id="{{item.id}}">下架</view>
+        <view class="pmItem-btn t2" wx:if="{{item.status == 2}}" bindtap="onUp" data-id="{{item.id}}">上架</view>
+      </view>
+    </view>
+    <!--view class="pmItem">
+      <view class="bsItem">
+        <view class="bsItem-title">65岁老人高速上遇见两车追尾 下车示意被撞身亡</view>
+        <view class="bsItem-desc">今天是2017年10月31日，宋仲基宋慧乔大婚，十月的最后一天秋意很浓，爱也很浓...</view>
+        <view class="bsItem-aside flex flex-main-justify">
+          <view class="bbsItem-view">241</view>
+          <view class="bbsItem-time">2018-09-12 18</view>
+        </view>
+      </view>
+      <view class="pmItem-option flex flex-main-right">
+        <view class="pmItem-btn">编辑</view>
+        <view class="pmItem-btn t2">审核</view>
+      </view>
+    </view-->
+  </view>
+  <load-more type="{{isNeedLoadMore}}"></load-more>
+</view>

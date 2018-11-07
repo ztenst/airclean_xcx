@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "tag" : "../../components/tag",
+    "upload" : "../../components/upload",
+    "singSelect" : "../../components/singSelect",
+    "address" : "../../components/address"
+  }
+}

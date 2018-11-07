@@ -5,8 +5,7 @@
         confirmText='知道了'>
 </dialog>
 
-<view class="page category">
-
+<view class="page category" wx:if="{{isLoad}}">
     <block wx:if="{{!focused}}">
         <view class="slide-nav">
             <scroll-view scroll-x class="slide">
@@ -39,9 +38,71 @@
     <filter-bar filters="{{filters}}" filter-condition="{{condition}}" bind:changeSelect="changeData"
                 bind:closeFilterBar="handleCloseFilterBar"></filter-bar>
 
-    <!--列表组件-->
+
     <list-bar list-opts="{{listOpts}}"></list-bar>
-
+    <!--列表组件-->
+    <!--view class="product-list">
+      <view class="product-item productItem flex">
+        <view class="productItem-pic flex-box0">
+          <view class="productItem-tag"></view>
+          <image src="../../images/demo.png" class="blockImg"/>
+        </view>
+        <view class="productItem-info">
+          <view class="productItem-title productItem-l1">药剂测试</view>
+          <view class="productItem-l2 flex">
+            <view class="productItem-price">1829.00<text class="productItem-unit">元</text></view>
+            <view class="productItem-view">241</view>
+          </view>
+          <view class="productItem-l3">微悦科技信息技术有限公司</view>
+          <view class="productItem-l4">商家：富土康</view>
+        </view>
+      </view>
+      <view class="product-item productItem flex">
+        <view class="productItem-pic flex-box0">
+          <view class="productItem-tag"></view>
+          <image src="../../images/demo.png" class="blockImg"/>
+        </view>
+        <view class="productItem-info">
+          <view class="productItem-title productItem-l1">药剂测试</view>
+          <view class="productItem-l2 flex">
+            <view class="productItem-price">1829.00<text class="productItem-unit">元</text></view>
+            <view class="productItem-view">241</view>
+          </view>
+          <view class="productItem-l3">微悦科技信息技术有限公司</view>
+          <view class="productItem-l4">商家：富土康</view>
+        </view>
+      </view>
+      <view class="product-item productItem flex">
+        <view class="productItem-pic flex-box0">
+          <view class="productItem-tag"></view>
+          <image src="../../images/demo.png" class="blockImg"/>
+        </view>
+        <view class="productItem-info">
+          <view class="productItem-title productItem-l1">药剂测试</view>
+          <view class="productItem-l2 flex">
+            <view class="productItem-price">1829.00<text class="productItem-unit">元</text></view>
+            <view class="productItem-view">241</view>
+          </view>
+          <view class="productItem-l3">微悦科技信息技术有限公司</view>
+          <view class="productItem-l4">商家：富土康</view>
+        </view>
+      </view>
+      <view class="product-item productItem flex">
+        <view class="productItem-pic flex-box0">
+          <view class="productItem-tag"></view>
+          <image src="../../images/demo.png" class="blockImg"/>
+        </view>
+        <view class="productItem-info">
+          <view class="productItem-title productItem-l1">药剂测试</view>
+          <view class="productItem-l2 flex">
+            <view class="productItem-price">1829.00<text class="productItem-unit">元</text></view>
+            <view class="productItem-view">241</view>
+          </view>
+          <view class="productItem-l3">微悦科技信息技术有限公司</view>
+          <view class="productItem-l4">商家：富土康</view>
+        </view>
+      </view>
+    </view-->
 </view>
-
 <template is="tabBar" data="{{...$tabBar }}"></template>
+

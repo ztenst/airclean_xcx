@@ -2,11 +2,66 @@ import api from './common/api'
 import util from './common/util'
 import WxValidate from './libs/wx-validate/WxValidate'
 import regeneratorRuntime from './libs/regenerator-runtime/runtime';
+import Global from './utils/global'
 
 App({
-  
-  async onLaunch() {
-  
+  onLaunch() {
+    this.Global = new Global;
+    this.Api = this.Global.Api;
+    this.initUser();
+
+    //获取配置
+    this.Api.config().then(obj=>{
+      this.globalData.config = obj;
+      this.Global._.each(this.configCallback,v=>{
+        v(obj);
+      });
+    })
+  },
+  //初始化用户信息，这里以后可能做授权弹框，现在先openid用着，只会执行一次
+  initUser(){
+    wx.login({
+      success: (loginres) => {
+        api.getOpenId({code: loginres.code}).then(res => {
+          this.globalData.wxUser = res;
+          this.Global.checkSetting('scope.userInfo').then(obj=>{
+            wx.getUserInfo({
+              success: res => {
+                var userInfo = res.userInfo;
+                //如果不存在id
+                if(!this.globalData.wxUser.id){
+                  //首先更新用户信息
+                  this.Api.setUser({
+                    openid : this.globalData.wxUser.open_id,
+                    name : userInfo.nickName,
+                    pro : userInfo.province,
+                    city : userInfo.city,
+                    sex : userInfo.gender
+                  }).then(obj=>{
+                    var id = obj.data;
+                    userInfo.id = id;
+                    this.globalData.userInfo = userInfo;
+                    this.Global._.each(this.userInfoCallback,(v)=>{
+                      v(userInfo);
+                    })
+                  })
+                }else{
+                  userInfo.id = this.globalData.wxUser.id;
+                  this.globalData.userInfo = userInfo;
+                  this.Global._.each(this.userInfoCallback,(v)=>{
+                    v(userInfo);
+                  })
+                }
+              }
+            });
+          },obj=>{
+
+          });
+        })
+      }
+    })
+      //获取用户信息
+
   },
   /**
    * 获取openid 
@@ -20,25 +75,20 @@ App({
       if (!self.globalData.isUser || status == 'fresh') {
         wx.login({
           success: function (loginres) {
-            wx.getUserInfo({
-              success: function (resuserinfo) {
-                self.globalData.userInfo = resuserinfo.userInfo;
-                api.getOpenId({code: loginres.code}).then(res => {
-                  let data = res;
-                  self.globalData.customInfo = data;
-                  // console.log(data)
-                  //如果没有open_id说明是新用户
-                  if (!data.open_id) {
-                    self.globalData.customInfo = data;
-                    self.globalData.isUser = true;
-                    
-                  } else {
-                    self.globalData.wxData = data;
-                  }
-                  resolve(data);
-                })
+            api.getOpenId({code: loginres.code}).then(res => {
+              let data = res;
+              self.globalData.customInfo = data;
+              // console.log(data)
+              //如果没有open_id说明是新用户
+              if (!data.open_id) {
+                self.globalData.customInfo = data;
+                self.globalData.isUser = true;
+                
+              } else {
+                self.globalData.wxData = data;
               }
-            });
+              resolve(data);
+            })
           }
         })
       } else {
@@ -108,8 +158,9 @@ App({
    * @constructor
    */
   WxValidate: (rules, messages) => new WxValidate(rules, messages),
+  configCallback : [],
+  userInfoCallback : [],
   globalData: {
-    userInfo: {},
     customInfo: {},
     isUser: false,
     wxData: null,

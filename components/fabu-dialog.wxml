@@ -1,0 +1,7 @@
+<view class="dialog" wx:if="{{show}}">
+  <view class="dialog-content flex flex-main-justify">
+    <view class="dialog-item i1" bindtap="goLink" data-url="/pages/my/pubproduct">发商品</view>
+    <view class="dialog-item i2" bindtap="goLink" data-url="/pages/post/post">发帖子</view>
+  </view>
+  <view class="dialog-close" bindtap="close"></view>
+</view>

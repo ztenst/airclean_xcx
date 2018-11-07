@@ -21,17 +21,21 @@ Page({
     $tabBar.init({
       tabIndex: 4
     });
-    if(!app.globalData.userInfo){
-      app.getUserInfo().then(res => {
-        this.setData({
-          userInfo:res
-        })
-      });
-    }else{
+    this.Global = app.Global;
+    this.Api = this.Global.Api;
+    this.Global.getUserInfo().then(obj=>{
       this.setData({
-        userInfo: app.globalData.userInfo
-      })
-    }
+        isLoad : true,
+        userInfo : obj
+      });
+      //console.log(obj);
+    });
+    this.Global.getConfig().then(obj=>{
+      console.log(obj);
+      this.setData({
+        _config : obj
+      });
+    });
   },
   toList(e){
     let type = e.currentTarget.dataset.type, url = "";
@@ -70,5 +74,15 @@ Page({
   go_map() {
     let url = "/pages/map_navigator/map_navigator";
     app.goPage(url, null, false);
+  },
+  goLink : function(e) {
+    var url = e.currentTarget.dataset.url;
+    wx.navigateTo({
+      url : url
+    });
+  },
+  onCall : function(e) {
+    var phone = e.currentTarget.dataset.phone;
+    this.Global.callPhone(phone);
   }
 });

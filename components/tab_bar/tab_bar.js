@@ -37,7 +37,7 @@ export default {
                 isShowMenuLi() {
                     let self = this;
                     self.setData({
-                        [`${SCOPE}.showMenuLi`]: !self.getComponentData().showMenuLi
+                        [`${SCOPE}.showMenuLi`]: true
                     });
                 },
                 goPostCus(){

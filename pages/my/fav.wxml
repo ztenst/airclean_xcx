@@ -1,0 +1,50 @@
+<view class="fav">
+  <view class="favNav">
+    <view class="favNav-item {{savetype == 1 ? 'ison' : ''}}" bindtap="change" data-type="1">所有商品</view>
+    <view class="favNav-item {{savetype == 2 ? 'ison' : ''}}" bindtap="change" data-type="2">所有帖子</view>
+    <view class="favNav-item {{savetype == 3 ? 'ison' : ''}}" bindtap="change" data-type="3">所有资讯</view>
+  </view>
+  <view class="bbs-list" wx:if="{{list.length > 0 && savetype != 1}}">
+    <view class="bbsItem flex {{item.image ? '' : 'nopic'}}" wx:for="{{list}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
+      <view class="bbsItem-pic flex-box0">
+        <image src="{{item.image}}" class="blockImg"/>
+      </view>
+      <view class="bbsItem-info flex flex-dir-top flex-main-justify">
+        <view class="bbsItem-title {{item.is_hot == 0 ? 'nohot' : ''}}">{{item.name}}</view>
+        <view class="bbsItem-subinfo">
+          <view class="bbsItem-view">{{item.hits}}</view>
+          <view class="bbsItem-author">作者：{{item.author}}</view>
+        </view>
+      </view>
+    </view>
+    <!--view class="bbsItem nopic">
+      <view class="bbsItem-title nohot">“小程序 · 云开发”正式上线，小程序开发从此可以零基础起步！</view>
+      <view class="bbsItem-subinfo flex flex-main-justify">
+        <view class="flex">
+          <view class="bbsItem-author">作者：Tivio</view>
+          <view class="bbsItem-view">241</view>
+        </view>
+        <view class="bbsItem-time flex-box0">2018-09-12 18</view>
+      </view>
+    </view-->
+  </view>
+  <view class="fav-list" wx:if="{{list.length > 0 && savetype == 1}}">
+      <view class="product-item productItem flex" wx:for="{{list}}" wx:key="id" bindtap="goPDetail" data-id="{{item.id}}">
+        <view class="productItem-pic flex-box0">
+          <view class="productItem-tag" wx:if="{{item.rzwords}}">{{item.rzwords}}</view>
+          <image src="{{item.image}}" class="blockImg"/>
+        </view>
+        <view class="productItem-info">
+          <view class="productItem-title productItem-l1">{{item.name}}</view>
+          <view class="productItem-l2 flex">
+            <view class="productItem-price">{{item.price}}<text class="productItem-unit">元</text></view>
+            <view class="productItem-view">{{item.hits}}</view>
+          </view>
+          <view class="productItem-l3">{{item.ts}}</view>
+          <view class="productItem-l4" wx:if="{{item.company}}">商家：{{item.company}}</view>
+        </view>
+      </view>
+  </view>
+  <view class="fav-empty" wx:if="{{isLoad == true && list.length == 0}}"></view>
+  <load-more type="{{isNeedLoadMore}}"></load-more>
+</view>

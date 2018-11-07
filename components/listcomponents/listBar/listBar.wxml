@@ -8,7 +8,7 @@
     <list list-data="{{listData}}" list-type="{{listOpts.listType}}" list-others="{{listOtherParams}}"></list>
 
 
-    <view class="loadmore">
+    <!--view class="loadmore">
         <view class="loading" wx:if="{{listScroll.hasMore}}">
             <view class="icon-loading"></view>
             <view class="loadmore__tips">加载中...</view>
@@ -16,7 +16,9 @@
         <view class="nodata" wx:else>
             <view class="loadmore__tips"></view>
         </view>
-    </view>
+    </view-->
+
+    <load-more type="{{listScroll.hasMore ? 1 : 2}}"></load-more>
 
 
 </scroll-view>

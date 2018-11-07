@@ -35,6 +35,8 @@ Component({
     isShow: false
   },
   ready() {
+    this.Global = app.Global;
+    this.Api = this.Global.Api;
     this.showDialog();
   },
   /**
@@ -51,18 +53,14 @@ Component({
     //展示弹框
     showDialog() {
       let _this = this;
-      if (!app.globalData.hasAuthUserInfo) {
-        wx.getSetting({
-          success(res) {
-            if (!res.authSetting['scope.userInfo']) {
-              _this.setData({isShow: true});
-            } else {
-              app.globalData.hasAuthUserInfo = true;
-              app.getUserOpenId();
-            }
+      wx.getSetting({
+        success(res) {
+          if (!res.authSetting['scope.userInfo']) {
+            _this.setData({isShow: true});
+          } else {
           }
-        })
-      }
+        }
+      })
     },
     /**
      * triggerEvent 组件之间通信
@@ -71,9 +69,8 @@ Component({
       var that = this;
       if (e.detail.userInfo) {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        app.globalData.userInfo = e.detail.userInfo;
         that.setData({isShow: false});
-        app.getUserOpenId();
+        app.initUser();
       } else {
         console.log(333, '执行到这里，说明拒绝了授权')
         wx.showToast({
