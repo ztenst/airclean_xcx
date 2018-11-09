@@ -7,7 +7,7 @@
       <view class="product-item productItem flex">
         <view class="productItem-pic flex-box0">
           <view class="productItem-tag"></view>
-          <image src="../../images/demo.png" class="blockImg"/>
+          <image src="{{item.image}}" class="blockImg"/>
         </view>
         <view class="productItem-info flex flex-dir-top flex-main-justify">
           <view class="productItem-title productItem-l1">{{item.name}}</view>
