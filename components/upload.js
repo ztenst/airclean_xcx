@@ -79,9 +79,10 @@ Component({
       getData : function() {
         var _ = this.Global._;
         if(this.data.images.length){
+          var image = this.data.cover == -1 ? '' : this.data.images[this.data.cover]['imageURL'];
           return {
             images : _.map(this.data.images,v=>v.imageURL),
-            image : this.data.images[this.data.cover || 0]['imageURL']
+            image : image
           }
         }else{
           return {
