@@ -181,6 +181,10 @@ class Api{
       data : data
     });
   }
-
+  //认证申明
+  getSm(){
+    var url = '/index/getSm';
+    return this.request.getRequest(url);
+  }
 }
 export default Api;

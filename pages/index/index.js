@@ -36,10 +36,23 @@ Page({
     });
   },
   go_category(e) {
-    let url = "/pages/category/category";
+    var url = "/pages/category/category";
     if (e) {
       let dataset = e.currentTarget.dataset;
-      app.goPage(url, {cid: dataset.id,py:dataset.py}, false);
+      var py = dataset.py;
+      if(py === 'xinwen'){
+        var url = '/pages/news/bbs';
+        wx.navigateTo({
+          url : url
+        });
+      } else if(py === 'luntan'){
+        var url = '/pages/bbs/bbs';
+        wx.navigateTo({
+          url : url
+        });
+      }else{
+        app.goPage(url, {cid: dataset.id,py:dataset.py}, false);
+      }
     } else {
       app.goPage(url, null, false);
     }

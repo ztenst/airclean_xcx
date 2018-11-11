@@ -6,7 +6,13 @@
 <view class="post ">
     <form action="" bindsubmit="submitForm">
         <view class="post-title">
-          <input type="number" pattern="[0-9]*"  class="post-titleInput" name="title" placeholder="标题" autocomplete="off" value="{{title}}"/>
+          <picker range="{{newsTags}}" range-key="name" bindchange="onSetCategory">
+            <input class="post-titleInput" placeholder="选择帖子分类" autocomplete="off" value="{{current['name']}}"/>
+            <input type="text" hidden="{{true}}" name="cid" value="{{current['cid']}}"/>
+          </picker>
+        </view>
+        <view class="post-title">
+          <input class="post-titleInput" name="title" placeholder="标题" autocomplete="off" value="{{title}}"/>
         </view>
         <view class="textarea-box bg-fff">
           <textarea class="text-content" placeholder="输入内容" name="content" id="" cols="30" rows="10" value="{{content}}"></textarea>

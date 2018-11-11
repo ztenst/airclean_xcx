@@ -64,12 +64,10 @@ Page({
       //初始化表单校验组件
       this.WxValidate = app.WxValidate({
           'title': {required: true}, // 标题
-          'content': {required: true, minlength: 10,}, //内容
-          'fm': {required: true}, // 封面
+          'content': {required: true, minlength: 10,} //内容
       }, {
           'title': {required: '请输入标题'}, // 标题
-          'content': {required: '请输入内容'}, //内容
-          'fm': {required: '请输入封面'}, // 封面
+          'content': {required: '请输入内容'} //内容
       });
 
       this.init();
@@ -100,7 +98,7 @@ Page({
     //获取帖子数据
     getDetail(){
       var id  = this.options.id;
-      this.Api.cusInfo({
+      return this.Api.cusInfo({
         id : id
       }).then(obj=>{
         this.setData({
@@ -108,20 +106,48 @@ Page({
           title : obj.title,
           uploadImgs : obj.images,
           currentFm : obj.image
-        })
+        });
+        return obj;
       })
     },
+    findCidIndex : function(cid) {
+      var newsTags = this.data.newsTags;
+      var index = this.Global._.findIndex(newsTags,function(v) {
+        return v.id == cid;
+      });
+      return index;
+    },
     init : function() {
-      if(this.options.id){
-        this.getDetail();
-        wx.setNavigationBarTitle({
-          title : '修改帖子'
+      this.Api.newsTags().then(obj=>{
+        this.setData({
+          newsTags : obj
         });
-      }else{
-        wx.setNavigationBarTitle({
-          title : '发布帖子'
-        });
-      }
+        if(this.options.id){
+          this.getDetail().then(obj=>{
+            var index = this.findCidIndex(obj.cid || '115');
+            console.log(index);
+            this.setData({
+              index : index,
+              current : this.data.newsTags[index]
+            });
+          });
+          wx.setNavigationBarTitle({
+            title : '修改帖子'
+          });
+        }else{
+          wx.setNavigationBarTitle({
+            title : '发布帖子'
+          });
+        }
+      });
+    },
+    onSetCategory : function(e) {
+      var index = e.detail.value;
+      var current = this.data.newsTags[index];
+      this.setData({
+        index : index,
+        current : current
+      });
     },
     /**
      * 提交表单
@@ -135,10 +161,10 @@ Page({
             this.data.toast.show(error.msg)
             return false
         }
-        if (this.data.uploadImgs.length == 0) {
-            this.data.toast.show('请上传图片')
-            return false
-        }
+        //if (this.data.uploadImgs.length == 0) {
+            //this.data.toast.show('请上传图片')
+            //return false
+        //}
         let params = Object.assign({}, formParms, {imgs: this.data.uploadImgs}, {uid: app.globalData.userInfo.id});
         if(this.options.id){
           params.id = this.options.id;

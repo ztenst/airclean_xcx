@@ -370,7 +370,7 @@ input{
 //post
 .post {
   &-title{
-    margin:50rpx 40rpx 0 40rpx;
+    margin:14rpx 40rpx 0 40rpx;
     border-bottom:1rpx solid #eee;
     padding-bottom:14rpx;
   }
@@ -1562,7 +1562,7 @@ $mc:#DC3B00;
     }
   }
   &-link{
-    font-size:#576B95;
+    color:#576B95;
   }
   &-title{
     font-size:42rpx;

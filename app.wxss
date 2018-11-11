@@ -900,10 +900,10 @@ input {
         left: 24rpx;
         top: 0; }
 .index .index-banner {
-  height: 380rpx !important; }
+  height: 300rpx !important; }
   .index .index-banner .swiper {
     width: 100%;
-    height: 380rpx !important; }
+    height: 300rpx !important; }
     .index .index-banner .swiper image {
       width: 100%; }
     .index .index-banner .swiper .wx-swiper-dots.wx-swiper-dots-horizontal {
@@ -1131,7 +1131,7 @@ input {
     color: #56cbcb; }
 
 .post-title {
-  margin: 50rpx 40rpx 0 40rpx;
+  margin: 14rpx 40rpx 0 40rpx;
   border-bottom: 1rpx solid #eee;
   padding-bottom: 14rpx; }
 .post-titleInput {
@@ -2051,7 +2051,7 @@ input {
     .myAuth-btn:after {
       display: none; }
   .myAuth-link {
-    font-size: #576B95; }
+    color: #576B95; }
   .myAuth-title {
     font-size: 42rpx;
     color: #222;

@@ -116,5 +116,11 @@ Page({
         company : obj
       })
     })
+  },
+  goLink : function() {
+    var url = '/pages/my/autharticle';
+    wx.navigateTo({
+      url : url
+    });
   }
 })

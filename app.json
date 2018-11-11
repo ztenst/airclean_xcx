@@ -14,6 +14,7 @@
     "pages/order/order",
     "pages/product/select",
     "pages/my/auth",
+    "pages/my/autharticle",
     "pages/my/pubproduct",
     "pages/my/fav",
     "pages/my/statement",
@@ -21,6 +22,8 @@
     "pages/my/bbsmanage",
     "pages/product/detail",
     "pages/bbs/detail",
+    "pages/news/detail",
+    "pages/news/bbs",
     "pages/index/dialog",
     "pages/test/demo"
   ],
