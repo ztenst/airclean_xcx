@@ -207,6 +207,74 @@
             </view-->
           </view>
         </view>
+        <view class="blank10 f7"></view>
+        <view class="hyNews">
+          <view class="hyNews-title">
+            <view class="gtitle">技术交流</view>
+          </view>
+          <view class="hyNews-list">
+            <view class="hyNewsItem flex hyNews-item" wx:for="{{index.tzs}}" bindtap="goNewsDetail" data-id="{{item.id}}">
+              <view class="hyNewsItem-pic flex-box0">
+                <image src="{{item.img}}"  class="blockImg"/>
+              </view>
+              <view class="hyNewsItem-info flex flex-dir-top flex-main-justify">
+                <view class="hyNewsItem-title">{{item.title}}</view>
+                <view class="hyNewsItem-subinfo">
+                  <view class="hyNewsItem-view">{{item.hits}}</view>
+                  <view class="hyNewsItem-author">作者：{{item.author}}</view>
+                </view>
+              </view>
+            </view>
+            <!--view class="hyNewsItem flex hyNews-item">
+              <view class="hyNewsItem-pic flex-box0">
+                <image src="../../images/demo.png"  class="blockImg"/>
+              </view>
+              <view class="hyNewsItem-info flex flex-dir-top flex-main-justify">
+                <view class="hyNewsItem-title">中国历代政治得失</view>
+                <view class="hyNewsItem-subinfo">
+                  <view class="hyNewsItem-view">241</view>
+                  <view class="hyNewsItem-author">作者：Tivio</view>
+                </view>
+              </view>
+            </view>
+            <view class="hyNewsItem flex hyNews-item">
+              <view class="hyNewsItem-pic flex-box0">
+                <image src="../../images/demo.png"  class="blockImg"/>
+              </view>
+              <view class="hyNewsItem-info flex flex-dir-top flex-main-justify">
+                <view class="hyNewsItem-title">中国历代政治得失</view>
+                <view class="hyNewsItem-subinfo">
+                  <view class="hyNewsItem-view">241</view>
+                  <view class="hyNewsItem-author">作者：Tivio</view>
+                </view>
+              </view>
+            </view>
+            <view class="hyNewsItem flex hyNews-item">
+              <view class="hyNewsItem-pic flex-box0">
+                <image src="../../images/demo.png"  class="blockImg"/>
+              </view>
+              <view class="hyNewsItem-info flex flex-dir-top flex-main-justify">
+                <view class="hyNewsItem-title">中国历代政治得失</view>
+                <view class="hyNewsItem-subinfo">
+                  <view class="hyNewsItem-view">241</view>
+                  <view class="hyNewsItem-author">作者：Tivio</view>
+                </view>
+              </view>
+            </view>
+            <view class="hyNewsItem flex hyNews-item">
+              <view class="hyNewsItem-pic flex-box0">
+                <image src="../../images/demo.png"  class="blockImg"/>
+              </view>
+              <view class="hyNewsItem-info flex flex-dir-top flex-main-justify">
+                <view class="hyNewsItem-title">中国历代政治得失</view>
+                <view class="hyNewsItem-subinfo">
+                  <view class="hyNewsItem-view">241</view>
+                  <view class="hyNewsItem-author">作者：Tivio</view>
+                </view>
+              </view>
+            </view-->
+          </view>
+        </view>
 </view>
 
 <template is="tabBar" data="{{...$tabBar }}"></template>

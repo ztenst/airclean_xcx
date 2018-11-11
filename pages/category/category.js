@@ -32,7 +32,10 @@ Page({
       listOpts: {
         listType: 'product',
         ToTop: 185,
-        bottom: 98
+        bottom: 98,
+        condition : {
+          py : options.py || res.data.tags[0].py
+        }
       },
       isLoad : true
     });
