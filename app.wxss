@@ -1910,6 +1910,10 @@ input {
     width: 52rpx;
     height: 46rpx;
     background: url(http://sysweet-demo.oss-cn-beijing.aliyuncs.com/airclean/images/i10.png) 0 0/100% 100% no-repeat; }
+  .productSelect-icon.i11 {
+    width: 48rpx;
+    height: 51rpx;
+    background: url(http://sysweet-demo.oss-cn-beijing.aliyuncs.com/airclean/images/select-10-48x51.png) 0 0/100% 100% no-repeat; }
 
 .bbsNav {
   border-bottom: 1rpx solid #eee; }

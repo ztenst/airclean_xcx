@@ -43,7 +43,7 @@
     </view>
     <view class="productSelect-item">
       <view class="productSelect-text" bindtap="onSelect" data-name="保险合作" data-py="bx">保险服务</view>
-      <view class="productSelect-icon i10"></view>
+      <view class="productSelect-icon i11"></view>
     </view>
   </view>
 </view>

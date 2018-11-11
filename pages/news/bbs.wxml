@@ -1,0 +1,52 @@
+<import src="../../components/tab_bar/tab_bar.wxml"/>
+<dialog id='dialog'
+        title='登录提示'
+        content='小程序需要您的授权才能提供更好的服务哦'
+        confirmText='知道了'>
+</dialog>
+<view class=" bbs page ">
+    <!--列表-->
+
+    <view class="ui-search-bar ">
+        <form class="ui-search-bar__form">
+            <view class="ui-search-bar__box">
+                <text class="ui-icon-search iconfont icon-search"></text>
+                <input type="search" class="ui-search-bar__input" bindinput="onSearchInput" placeholder-class="search_input_placeholder_c" placeholder="搜索" />
+                <!--text class="ui-icon-clear iconfont icon-close"></text-->
+            </view>
+        </form>
+    </view>
+    <!--列表组件-->
+    <view class="bbsNav">
+      <scroll-view class="bbsNav-scroll" scroll-x="true">
+        <view class="bbsNav-item {{cid ? '' : 'on'}}" bindtap="changeCid">全部</view>
+        <view class="bbsNav-item {{cid == item.id ? 'on':''}}" wx:for="{{newsTags}}" wx:key="id" bindtap="changeCid" data-cid="{{item.id}}">{{item.name}}</view>
+      </scroll-view>
+    </view>
+    <!--list-bar list-opts="{{listOpts}}"></list-bar-->
+  <view class="bbs-list">
+    <view class="bbsItem flex {{item.image ? '' : 'nopic'}}" wx:for="{{list}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
+      <view class="bbsItem-pic flex-box0">
+        <image src="{{item.image}}" class="blockImg"/>
+      </view>
+      <view class="bbsItem-info flex flex-dir-top flex-main-justify">
+        <view class="bbsItem-title {{item.is_hot == 0 ? 'nohot' : ''}}">{{item.name}}</view>
+        <view class="bbsItem-subinfo">
+          <view class="bbsItem-view">{{item.hits}}</view>
+          <view class="bbsItem-author">作者：{{item.author}}</view>
+        </view>
+      </view>
+    </view>
+    <!--view class="bbsItem nopic">
+      <view class="bbsItem-title nohot">“小程序 · 云开发”正式上线，小程序开发从此可以零基础起步！</view>
+      <view class="bbsItem-subinfo flex flex-main-justify">
+        <view class="flex">
+          <view class="bbsItem-author">作者：Tivio</view>
+          <view class="bbsItem-view">241</view>
+        </view>
+        <view class="bbsItem-time flex-box0">2018-09-12 18</view>
+      </view>
+    </view-->
+  </view>
+  <load-more type="{{isNeedLoadMore}}"></load-more>
+</view>

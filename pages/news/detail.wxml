@@ -1,0 +1,77 @@
+<import src="../../libs/wxParse/wxParse.wxml"/>
+<view class="bbsDetail" wx:if="{{isLoad}}">
+  <view class="bbsDetail-title">{{detail.title}}</view>
+  <view class="userInfo-info flex flex-main-justify">
+    <view class="flex">
+      <view class="userInfo-pic flex-box0">
+        <image src="{{detail.image}}" class="blockImg"></image>
+      </view>
+      <view class="userInfo-b2">
+        <view class="userInfo-name">{{detail.author}}</view>
+        <view class="userInfo-time">{{detail.time}}</view>
+      </view>
+    </view>
+    <view class="userInfo-b3 flex-box0">
+      <view class="userInfo-view">{{detail.hits}}</view>
+    </view>
+  </view>
+  <view class="bbsDetail-content editor">
+    <template is="wxParse" data="{{wxParseData:_content.nodes}}"/>
+    <!--view>
+      日，宋仲基宋慧乔大婚，十月的最后一天秋意很浓，爱也很浓。微博上都说
+    </view>
+      <image src="../../images/demo.png"></image>
+    <view>日，宋仲基宋慧乔大婚，十月的最后一天秋意很浓，爱也很浓。微博上都说</view-->
+  </view>
+  <view class="blank10 f7"></view>
+  <view class="bbsDetail-comment">
+    <view class="bbsDetail-commentTitle">所有评论</view>
+    <view class="bbsDetail-commentList" wx:if="{{detail.comments.length > 0}}">
+      <view class="bbsDetail-commentItem" wx:for="{{detail.comments}}" wx:key="id">
+        <view class="userInfo-info flex flex-main-justify iszan">
+          <view class="flex">
+            <view class="userInfo-pic flex-box0">
+              <image src="{{item.image}}" class="blockImg"></image>
+            </view>
+            <view class="userInfo-b2">
+              <view class="userInfo-name">{{item.name}}</view>
+              <view class="userInfo-time">{{item.time}}</view>
+            </view>
+          </view>
+          <view class="userInfo-b3 flex-box0">
+            <view class="userInfo-zan {{item.is_praised ? 'ison' : ''}}" bindtap="onZan" data-cid="{{item.id}}">{{item.praises}}</view>
+          </view>
+        </view>
+        <view class="bbsDetail-commentContent">{{item.content}}</view>
+      </view>
+      <!--view class="bbsDetail-commentItem">
+        <view class="userInfo-info flex flex-main-justify iszan">
+          <view class="flex">
+            <view class="userInfo-pic flex-box0">
+              <image src="../../images/demo.png" class="blockImg"></image>
+            </view>
+            <view class="userInfo-b2">
+              <view class="userInfo-name">优秀且迷人的设计师</view>
+              <view class="userInfo-time">2018-09-18 18:32</view>
+            </view>
+          </view>
+          <view class="userInfo-b3 flex-box0">
+            <view class="userInfo-zan ison">241</view>
+          </view>
+        </view>
+        <view class="bbsDetail-commentContent">屌的一批！</view>
+      </view-->
+    </view>
+    <view class="bbsDetail-commentList isEmpty" wx:if="{{!detail.comments}}">没有任何内容~快来加入讨论吧！</view>
+  </view>
+  <view class="commentBar-placeholder"></view>
+  <view class="commentBar flex">
+    <view class="commentBar-input flex-box0">
+      <input type="text" placeholder="说点什么吧..." confirm-type="send" bindconfirm="onConfirm" value="{{input}}"/>
+    </view>
+    <view class="commentBar-btn flex-box1 flex flex-box-mean">
+      <view class="commentBar-b1 flex-item isfav {{is_save == 1 ? 'ison' : ''}}" bindtap="fav">收藏</view>
+      <button class="commentBar-b2 flex-item isshare" open-type="share">分享</button>
+    </view>
+  </view>
+</view>
