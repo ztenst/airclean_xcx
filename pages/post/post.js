@@ -173,7 +173,11 @@ Page({
         api.addNews(params).then(res => {
           let data = res;
           this.data.toast.show(data.msg)
-          wx.navigateBack();
+          if(res.status === 'error'){
+            return;
+          }else{
+            wx.navigateBack();
+          }
         });
     },
 });
