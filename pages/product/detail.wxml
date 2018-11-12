@@ -1,6 +1,6 @@
 <import src="../../libs/wxParse/wxParse.wxml"/>
 <view class="pDetail" wx:if="{{isLoad}}">
-  <view class="pDetail-pic">
+  <!--view class="pDetail-pic">
     <swiper autoplay="true" >
       <swiper-item wx:for="{{detail.images}}">
         <image src="{{item}}" class="blockImg"></image>
@@ -33,12 +33,12 @@
         <view class="pDetail-contentDetailContent"><template is="wxParse" data="{{wxParseData:_content.nodes}}"/></view>
       </view>
     </view>
-  </view>
+  </view-->
   <view class="pDetail-bar flex">
     <view class="pDetail-option flex-box0 flex">
       <view class="pDetail-o isfav {{is_save == 1 ? 'ison' : ''}}" bindtap="fav">收藏</view>
-      <button class="pDetail-o istel" open-type="getUser" data-phone="{{detail.phone}}">电话</button>
+      <view class="pDetail-o istel" bindtap="onCall" data-phone="{{detail.phone}}">电话</view>
     </view>
-    <view class="pDetail-btn flex-box1" open-type="getPhoneNumber" bindgetphonenumber="onGetPhoneNumber" data-phone="{{detail.phone}}">立即购买</view>
+    <button class="pDetail-btn flex-box1" open-type="getPhoneNumber" bindgetphonenumber="onGetPhoneNumber" data-phone="{{detail.phone}}">立即购买</button>
   </view>
 </view>

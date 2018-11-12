@@ -1891,6 +1891,11 @@ $mc:#DC3B00;
     color:#FFF;
     text-align:center;
     line-height:98rpx;
+    border:0;
+    border-radius:0;
+    &:after{
+      display:none;
+    }
   }
   &-o{
     font-size:24rpx;
@@ -1918,9 +1923,6 @@ $mc:#DC3B00;
     }
     &.istel{
       background:url(#{$domain}istel.png) center 14rpx/32rpx 37rpx no-repeat;
-      &:after{
-        display:none;
-      }
     }
   }
   &-content{

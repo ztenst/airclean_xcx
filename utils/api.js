@@ -213,7 +213,7 @@ class Api{
   }
   //设置电话号码
   setPhone(data){
-    var url = '/user/setPhone';
+    var url = '/index/setPhone';
     return this.request.getRequest(url,{
       data : data
     });
