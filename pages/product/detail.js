@@ -17,7 +17,7 @@ Page({
   onCall : function(e) {
     var phone = e.currentTarget.dataset.phone;
     this.Global.callPhone(phone).then(obj=>{
-      this.Global.addLog({
+      this.Global.log({
         uid : this.data.userInfo.id,
         pid : this.options.id,
         type : 2
