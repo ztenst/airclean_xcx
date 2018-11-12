@@ -29,6 +29,31 @@ class Api{
           return Promise.reject(responseError)
         }
       });
+      this.mrequest = new WxRequest({
+          baseURL : config.host + '/api'
+      });
+      this.mrequest.interceptors.use({
+        //统一数据处理
+        response(response){
+          if(response.data.status === 'error'){
+            wx.showToast({
+              title : response.data.msg,
+              icon : 'none'
+            });
+            return Promise.reject(response);
+          }else{
+            return response.data;
+          }
+        },
+        // 统一全局拦截
+        responseError(responseError) {
+          wx.showToast({
+            title : responseError.data.msg || responseError.data,
+            icon : 'none'
+          })
+          return Promise.reject(responseError)
+        }
+      });
   }
   //全局接口
   config(){
@@ -185,6 +210,20 @@ class Api{
   getSm(){
     var url = '/index/getSm';
     return this.request.getRequest(url);
+  }
+  //设置电话号码
+  setPhone(data){
+    var url = '/user/setPhone';
+    return this.request.getRequest(url,{
+      data : data
+    });
+  }
+  //手机号解密
+  decode(data){
+    var url = '/index/decode';
+    return this.mrequest.postRequest(url,{
+      data : data
+    });
   }
 }
 export default Api;

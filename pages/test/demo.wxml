@@ -1,1 +1,2 @@
 <load-more></load-more>
+<button open-type="getPhoneNumber" bindgetphonenumber="onGetPhoneNumber">获取手机号码</button>

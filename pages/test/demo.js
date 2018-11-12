@@ -60,5 +60,27 @@ Page({
         console.log(obj);
       })
     });
+  },
+  onGetPhoneNumber : function(e) {
+    var _phone = e.currentTarget.dataset.phone;
+    console.log(_phone);
+    this.Global.getUser().then(obj=>{
+      var wxUser = app.globalData.wxUser;
+      var session_key = wxUser.session_key;
+      var user = obj;
+      var detail = e.detail;
+      if(detail.iv){
+        detail.accessKey = session_key;
+        this.Api.decode(detail).then(obj=>{
+          var phone = obj.trim();
+          this.Api.setPhone({
+            phone : phone,
+            uid : user.id
+          }).then(obj=>{
+            this.Global.cellPhone()
+          });
+        })
+      }
+    })
   }
 })
