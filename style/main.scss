@@ -1918,6 +1918,9 @@ $mc:#DC3B00;
     }
     &.istel{
       background:url(#{$domain}istel.png) center 14rpx/32rpx 37rpx no-repeat;
+      &:after{
+        display:none;
+      }
     }
   }
   &-content{
