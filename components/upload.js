@@ -72,8 +72,8 @@ Component({
             console.log('error: ' + error);
           }, {
             region: 'ECN',
-            domain: 'http://oofuaem2b.bkt.clouddn.com',
-            uptokenURL: 'http://house.jj58.com.cn/api/image/qnUpload',
+            domain: 'https://oofuaem2b.bkt.clouddn.com',
+            uptokenURL: 'https://airclean.madridwine.cn/api/image/qnUpload',
           })
       },
       getData : function() {
