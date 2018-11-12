@@ -62,8 +62,6 @@ Page({
     });
   },
   onGetPhoneNumber : function(e) {
-    var _phone = e.currentTarget.dataset.phone;
-    console.log(_phone);
     this.Global.getUser().then(obj=>{
       var wxUser = app.globalData.wxUser;
       var session_key = wxUser.session_key;
