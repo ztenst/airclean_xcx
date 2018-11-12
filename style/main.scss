@@ -1903,6 +1903,7 @@ $mc:#DC3B00;
     text-align:center;
     padding-top:54rpx;
     width:139rpx;
+    line-height:1.5;
     &.isfav{
       background:url(#{$domain}isfav.png) center 14rpx/34rpx 34rpx no-repeat;
       position:relative;
@@ -1923,6 +1924,13 @@ $mc:#DC3B00;
     }
     &.istel{
       background:url(#{$domain}istel.png) center 14rpx/32rpx 37rpx no-repeat;
+    }
+
+    &.isshare{
+      background:url(#{$domain}share.png) center 14rpx/31rpx 31rpx no-repeat;
+      &:after{
+        display:none;
+      }
     }
   }
   &-content{
