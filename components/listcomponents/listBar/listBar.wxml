@@ -20,5 +20,6 @@
 
     <load-more type="{{listScroll.hasMore ? 1 : 2}}"></load-more>
 
+    <view class="category-placeholder"></view>
 
 </scroll-view>

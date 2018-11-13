@@ -26,7 +26,7 @@ Page({
     $tabBar.init({tabIndex: 2});
     let res = await api.getActiveTags();
     this.setData({
-      py: options.py || res.data.tags[0].py,
+      py: options.py || '', 
       tags: res.data.tags,
       filters: this.getFilters(res.data.tags, options.py || res.data.tags[0].py),
       listOpts: {
@@ -34,7 +34,7 @@ Page({
         ToTop: 185,
         bottom: 98,
         condition : {
-          py : options.py || res.data.tags[0].py
+          py : options.py || ''
         }
       },
       isLoad : true

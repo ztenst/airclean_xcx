@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "资讯",
   "usingComponents": {
     "list-bar": "../../components/listcomponents/listBar/listBar",
     "dialog": "/components/dialog/dialog",

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "分类",
   "usingComponents": {
     "filter-bar": "../../components/filtercomponents/filterBar/filterBar",
     "list-bar": "../../components/listcomponents/listBar/listBar",

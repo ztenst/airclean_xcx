@@ -37,7 +37,7 @@
   <view class="pDetail-bar flex">
     <view class="pDetail-option flex-box0 flex">
       <view class="pDetail-o isfav {{is_save == 1 ? 'ison' : ''}}" bindtap="fav">收藏</view>
-      <button class="pDetail-o isshare" open-type="share" bindtap="onCall" data-phone="{{detail.phone}}">分享</button>
+      <button class="pDetail-o isshare" open-type="share">分享</button>
     </view>
     <button class="pDetail-btn flex-box1" open-type="getPhoneNumber" bindgetphonenumber="onGetPhoneNumber" data-phone="{{detail.phone}}">立即购买</button>
   </view>
