@@ -7,7 +7,7 @@
     <form action="" bindsubmit="submitForm">
         <view class="post-title">
           <picker range="{{newsTags}}" range-key="name" bindchange="onSetCategory">
-            <input class="post-titleInput" placeholder="选择帖子分类" autocomplete="off" value="{{current['name']}}"/>
+            <input class="post-titleInput" style="pointer-events:none;" placeholder="选择帖子分类" autocomplete="off" value="{{current['name']}}"/>
             <input type="text" hidden="{{true}}" name="cid" value="{{current['cid']}}"/>
           </picker>
         </view>
