@@ -169,6 +169,7 @@ Page({
         if(this.options.id){
           params.id = this.options.id;
         }
+        params.cid = this.data.current.id;
 
         api.addNews(params).then(res => {
           let data = res;
