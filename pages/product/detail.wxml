@@ -34,6 +34,7 @@
       </view>
     </view>
   </view>
+  <view class="pDetail-barplaceholder"></view>
   <view class="pDetail-bar flex">
     <view class="pDetail-option flex-box0 flex">
       <view class="pDetail-o isfav {{is_save == 1 ? 'ison' : ''}}" bindtap="fav">收藏</view>

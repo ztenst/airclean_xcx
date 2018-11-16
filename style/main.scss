@@ -1860,7 +1860,7 @@ $mc:#DC3B00;
     height:60rpx;
     width:660rpx;
     margin:30rpx auto;
-    border:1rpx solid #222;
+    border:1px solid #222;
     border-radius:6rpx;
     overflow:hidden;
   }
@@ -1882,6 +1882,9 @@ $mc:#DC3B00;
     height:98rpx;
     background:rgba(255,255,255,1);
     box-shadow:0px -1rpx 0px 0px rgba(238,238,238,1);
+  }
+  &-barplaceholder{
+    height:98rpx;
   }
   &-btn{
     height:98rpx;
