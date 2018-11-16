@@ -46,7 +46,7 @@ Page({
       var params = {
         page : this.data.page,
         cid : this.data.cid,
-        type : 2
+        type : 1
       };
       this.Api.cusList(params).then(obj=>{
         var _ = this.Global._;
