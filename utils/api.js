@@ -230,5 +230,10 @@ class Api{
       data : data
     });
   }
+  //商品标签
+  getTagArr(){
+    var url = '/product/getTagArr';
+    return this.request.getRequest(url);
+  }
 }
 export default Api;
