@@ -40,7 +40,7 @@ Page({
     },
     //帖子分类
     getNewsTag(){
-      return this.Api.newsTags();
+      return this.Api.newsTagsNew();
     },
     getData : function() {
       var params = {

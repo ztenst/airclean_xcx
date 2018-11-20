@@ -96,6 +96,11 @@ class Api{
     var url = '/cus/newsTags';
     return this.request.getRequest(url);
   }
+  //帖子分类数组
+  newsTagsNew() {
+    var url = '/cus/newsTagsNews';
+    return this.request.getRequest(url);
+  }
   //帖子列表
   cusList(data){
     var url = '/cus/list';
