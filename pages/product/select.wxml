@@ -1,7 +1,11 @@
 <view class="productSelect">
   <view class="productSelect-title">商品选择</view>
   <view class="productSelect-list">
-    <view class="productSelect-item" bindtap="onSelect" data-py="yj" data-name="药剂">
+    <view class="productSelect-item" bindtap="onSelect" data-py="{{item.py}}" data-name="{{item.name}}" wx:for="{{list}}">
+      <view class="productSelect-text">{{item.name}}</view>
+      <view class="productSelect-icon {{item.i}}"></view>
+    </view>
+    <!--view class="productSelect-item" bindtap="onSelect" data-py="yj" data-name="药剂">
       <view class="productSelect-text">药剂</view>
       <view class="productSelect-icon i1"></view>
     </view>
@@ -44,6 +48,6 @@
     <view class="productSelect-item">
       <view class="productSelect-text" bindtap="onSelect" data-name="保险合作" data-py="bx">保险服务</view>
       <view class="productSelect-icon i11"></view>
-    </view>
+    </view-->
   </view>
 </view>
