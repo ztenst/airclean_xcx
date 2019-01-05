@@ -47,6 +47,7 @@ Component({
      */
     loadMore() {
       let params = Object.assign({}, {page: this.data.page}, this.data.listOpts.condition);
+      console.log(params)
       if (!this.data.listScroll.hasMore || this.data.page === 0) return;
       if (this.data.listApi) {
         this.data.listApi(params).then(res => {

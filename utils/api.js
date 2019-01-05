@@ -15,6 +15,13 @@ class Api{
               title : response.data.msg,
               icon : 'none'
             });
+            if (response.data.msg=="请认证后操作") {
+              setTimeout(function () {
+                wx.navigateTo({
+                  url: "/pages/my/auth"
+                });
+              }, 2e3);
+            }
             return Promise.reject(response);
           }else{
             return response.data.data;
@@ -122,6 +129,12 @@ class Api{
       data : data
     });
   }
+  addSave1(data) {
+    var url = '/cus/addSave';
+    return this.request.getRequest(url, {
+      data: data
+    });
+  }
   //改变商品状态
   productChangeStatus(data){
     var url = '/product/changeStatus';
@@ -221,6 +234,30 @@ class Api{
     var url = '/index/setPhone';
     return this.request.getRequest(url,{
       data : data
+    });
+  }
+  checkCanBbs(data) {
+    var url = '/index/checkCanBbs';
+    return this.request.getRequest(url, {
+      data: data
+    });
+  }
+  checkId(data) {
+    var url = '/index/checkId';
+    return this.request.getRequest(url, {
+      data: data
+    });
+  }
+  checkCanPro(data) {
+    var url = '/index/checkCanPro';
+    return this.request.getRequest(url, {
+      data: data
+    });
+  }
+  getInfo(data) {
+    var url = '/index/getInfo';
+    return this.request.getRequest(url, {
+      data: data
     });
   }
   //手机号解密

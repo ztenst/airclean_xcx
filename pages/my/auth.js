@@ -1,11 +1,20 @@
 const app = getApp();
 Page({
   data:{
-    checked : false
+    checked : false,
+    name: '',
+    phone: '',
   },
   onLoad: function(options){
     this.Global = app.Global;
     this.Api = this.Global.Api;
+    this.Api.checkId({ uid: app.globalData.userInfo.id });
+    this.Api.getInfo({ uid: app.globalData.userInfo.id }).then(obj=>{
+      this.setData({
+        name: obj.name,
+        phone: obj.phone
+      })
+    });
     this.init();
   },
   onChange : function(e) {

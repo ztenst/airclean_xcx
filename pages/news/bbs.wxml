@@ -24,16 +24,23 @@
       </scroll-view>
     </view>
     <!--list-bar list-opts="{{listOpts}}"></list-bar-->
-  <view class="bbs-list">
+   <view class="bbs-list">
     <view class="bbsItem flex {{item.image ? '' : 'nopic'}}" wx:for="{{list}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
-      <view class="bbsItem-pic flex-box0">
+      <view wx:if="{{item.image}}" class="bbsItem-pic flex-box0">
         <image src="{{item.image}}" class="blockImg"/>
       </view>
       <view class="bbsItem-info flex flex-dir-top flex-main-justify">
         <view class="bbsItem-title {{item.is_hot == 0 ? 'nohot' : ''}}">{{item.name}}</view>
-        <view class="bbsItem-subinfo">
+        <view class="bbsItem-subinfo" wx:if="{{item.image}}">
           <view class="bbsItem-view">{{item.hits}}</view>
           <view class="bbsItem-author">作者：{{item.author}}</view>
+        </view>
+        <view class="bbsItem-subinfo flex flex-main-justify" wx:if="{{!item.image}}">
+          <view class="flex">
+            <view class="bbsItem-author">作者：{{item.author}}</view>
+            <view class="bbsItem-view">{{item.hits}}</view>
+          </view>
+          <view class="bbsItem-time flex-box0">{{item.date}}</view>
         </view>
       </view>
     </view>

@@ -58,8 +58,10 @@ Page({
       this.Global = app.Global;
       this.Api = this.Global.Api;
       this.setData({
-          toast: this.selectComponent('#toast')
+        toast: this.selectComponent('#toast')
       });
+      this.Api.checkCanBbs({ uid: app.globalData.userInfo.id});
+      
 
       //初始化表单校验组件
       this.WxValidate = app.WxValidate({
@@ -173,11 +175,17 @@ Page({
 
         api.addNews(params).then(res => {
           let data = res;
-          this.data.toast.show(data.msg)
+          console.log(data);
+          this.data.toast.show(data.msg);
           if(res.status === 'error'){
             return;
           }else{
-            wx.navigateBack();
+            
+            setTimeout(function () {
+              wx.navigateTo({
+                url: "/pages/my/bbsmanage"
+              });
+              }, 2e3);
           }
         });
     },

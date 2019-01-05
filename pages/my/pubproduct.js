@@ -5,6 +5,15 @@ Page({
   onLoad: function(options){
     this.Global = app.Global;
     this.Api = this.Global.Api;
+    this.Api.checkCanPro({ uid: app.globalData.userInfo.id }).then(res => {
+      let data = res;
+
+      if (res.status === 'error') {
+        wx.showToast({
+          title: data.msg
+        });
+      }
+    });
     this.init();
   },
   init : function() {
@@ -109,11 +118,25 @@ Page({
       });
       this.Api.addPro(params).then(obj=>{
         wx.showToast({
-          title : '发布成功'
-        });
-        setTimeout(function() {
-          wx.navigateBack();
-        },2e3);
+          title: obj.msg
+         });
+        if (obj.status === 'error') {
+          return;
+        } else {
+          setTimeout(function () {
+            wx.navigateTo({
+              url: "/pages/my/productmanage"
+            });
+          }, 2e3);
+          
+        }
+        
+        // wx.showToast({
+        //   title : '发布成功'
+        // });
+        // setTimeout(function() {
+        //   wx.navigateBack();
+        // },2e3);
       });
       //console.log(value);
       //处理数据

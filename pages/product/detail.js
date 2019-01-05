@@ -69,7 +69,7 @@ Page({
     var detail = this.data.detail;
     var title = detail.name;
     var id = detail.id;
-    this.Global.addLog({
+    this.Api.addLog({
       pid : id,
       uid : this.data.userInfo.id,
       type : 4

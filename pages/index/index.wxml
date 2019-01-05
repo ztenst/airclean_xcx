@@ -1,3 +1,4 @@
+
 <import src="../../components/tab_bar/tab_bar.wxml"/>
 
 <import src="../../components/toast/toast.wxml"/>
@@ -13,8 +14,8 @@
         <!--banner-->
         <view class="index-banner ">
             <swiper class="swiper" indicator-dots="true" autoplay="true">
-                <swiper-item wx:for="{{index.imgs}}" wx:key="x" wx:for-item="x">
-                    <image src="{{x}}" data-src="{{x}}" bindtap="onImageTap" class="blockImg"></image>
+                <swiper-item wx:for="{{index.imgs}}" wx:key="x" wx:for-index="idx" wx:for-item="x">
+                    <image src="{{x}}" data-src="{{x}}" data-id="{{index.indexIds[idx]}}" bindtap="onImageTap" class="blockImg"></image>
                 </swiper-item>
             </swiper>
         </view>
@@ -141,8 +142,9 @@
         </view>
         <view class="blank10 f7"></view>
         <view class="hyNews">
-          <view class="hyNews-title">
+          <view class="hyNews-title" style='display:flex'>
             <view class="gtitle">行业新闻</view>
+            <view style='float: right;padding-top: 15px;/*margin-bottom: -30px*/margin-left: 192px;font-size: 14px;color: #aaa;' bindtap='turnNews'>查看更多</view>
           </view>
           <view class="hyNews-list">
             <view class="hyNewsItem flex hyNews-item" wx:for="{{index.news}}" bindtap="goNewsDetail" data-id="{{item.id}}">
@@ -209,8 +211,9 @@
         </view>
         <view class="blank10 f7"></view>
         <view class="hyNews">
-          <view class="hyNews-title">
+          <view class="hyNews-title" style='display:flex'>
             <view class="gtitle">技术交流</view>
+            <view style='float: right;padding-top: 15px;/*margin-bottom: -30px*/margin-left: 192px;font-size: 14px;color: #aaa;'  bindtap='turnBbs'>查看更多</view>
           </view>
           <view class="hyNews-list">
             <view class="hyNewsItem flex hyNews-item" wx:for="{{index.tzs}}" bindtap="goNewsDetail" data-id="{{item.id}}">

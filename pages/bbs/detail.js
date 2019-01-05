@@ -5,10 +5,13 @@ Page({
   onLoad: function(options){
     this.Global = app.Global;
     this.Api = this.Global.Api;
+    this.setData({
+      toast: this.selectComponent('#toast')
+    });
     this.init();
   },
   fav : function() {
-    this.Global._fav(this);
+    this.Global._fav1(this);
   },
   onConfirm : function(e) {
     var value = e.detail.value;
@@ -31,7 +34,11 @@ Page({
     });
 
     //添加评论
-    return this.Api.addComment(new_obj);
+    this.Api.addComment(new_obj).then(obj=>{
+      if(obj.status=='error') {
+        this.data.toast.show(obj.msg);
+      }
+    });
   },
   onZan : function(e) {
     var cid = e.currentTarget.dataset.cid;
@@ -39,6 +46,8 @@ Page({
       cid : cid,
       uid : this.data.userInfo.id
     }).then(obj=>{
+      this.data.toast.show("操作成功");
+      // console.log(obj)
       this.refresh();
       //var comments = this.data.detail.comments;
       //var _ = this.Global._;

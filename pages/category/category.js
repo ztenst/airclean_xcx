@@ -43,11 +43,12 @@ Page({
   
   setFilterOpt(e) {
     let py = e.currentTarget.dataset.py;
+    
     this.setData({
       py: py,
       filters: this.getFilters(this.data.tags, py),
       condition: Object.assign({}, this.data.condition, {py: py}),
-      [`listOpts.condition`]: Object.assign({}, this.data.condition, {py: py}),
+      [`listOpts.condition`]: Object.assign({}, {py: py}),
     });
   },
   

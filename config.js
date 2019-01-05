@@ -12,8 +12,8 @@ var version = '1.0.1';
 // development and production host
 var hosts = {
     development: 'http://mall.madridwine.cn',
-    // production: 'https://airclean.madridwine.cn'
-  production: 'http://lemonxcx.com'
+    production: 'https://airclean.madridwine.cn'
+  // production: 'http://lemonxcx.com'
 };
 
 // static path

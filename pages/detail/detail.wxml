@@ -71,7 +71,7 @@
             <button class="p" open-type="share">一键分享</button>
         </view>
         <view class="btn buyNow">
-            <view class="p">立即购买</view>
+            <view class="p">立即联系</view>
         </view>
     </view>
 

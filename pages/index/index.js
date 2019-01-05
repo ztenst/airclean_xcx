@@ -16,6 +16,37 @@ Page({
   },
   onReady () {
   },
+  onImageTap(e) {
+    var id = e.currentTarget.dataset.id;
+    // id = id.substr(1, 0);
+    // console.log
+    if(id.indexOf("t")!=-1){
+      id = id.substr(1);
+      // console.log(id);
+      wx.navigateTo({
+        url: '/pages/bbs/detail?id=' + id,
+      });
+    } else if (id.indexOf("n") != -1) {
+      id = id.substr(1);
+      wx.navigateTo({
+        
+        url: '/pages/news/detail?id=' + id,
+      });
+    } else {
+      if (id.indexOf("p")!=-1) {
+        id = id.substr(1);
+        wx.navigateTo({
+          url: '/pages/product/detail?id=' + id,
+        });
+      } else {
+        wx.navigateTo({
+          url: '/pages/product/detail?id=' + e.currentTarget.dataset.id,
+        });
+      }
+      
+    }
+   
+  },
   onLoad() {
     /**
      * 初始化tabBar组件
@@ -33,6 +64,18 @@ Page({
         'index.cate2' : json.cates.slice(8,16),
         isLoad : true
       })
+    });
+  },
+  turnNews() {
+    var url = "/pages/news/bbs";
+    wx.navigateTo({
+      url: url
+    });
+  },
+  turnBbs() {
+    var url = "/pages/bbs/bbs";
+    wx.navigateTo({
+      url: url
     });
   },
   go_category(e) {

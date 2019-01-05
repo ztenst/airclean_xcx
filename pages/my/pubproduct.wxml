@@ -30,7 +30,7 @@
     <view class="formElem">
       <view class="formElem-title">联系电话</view>
       <view class="formElem-option">
-        <input class="formElem-input" type="number" placeholder="请输入手机号码" maxlength="11" name="phone" value="{{phone}}"/>
+        <input class="formElem-input" type="number" placeholder="请输入手机号码" maxlength="12" name="phone" value="{{phone}}"/>
       </view>
     </view>
     <view class="formElem">
@@ -43,7 +43,7 @@
     <view class="formElem">
       <view class="formElem-title">商家</view>
       <view class="formElem-option">
-        <input class="formElem-input" type="digit" placeholder="请输入商家" name="company" value="{{company}}"/>
+        <input class="formElem-input" type="text" placeholder="请输入商家" name="company" value="{{company}}"/>
       </view>
     </view>
     <button class="myAuth-btn" form-type="submit">提交</button>

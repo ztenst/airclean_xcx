@@ -8,7 +8,7 @@ Page({
     this.init();
   },
   fav : function() {
-    this.Global._fav(this);
+    this.Global._fav1(this);
   },
   onConfirm : function(e) {
     var value = e.detail.value;

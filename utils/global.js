@@ -115,6 +115,24 @@ class Global{
       });
     });
   }
+  _fav1(page) {
+    var userInfo = page.data.userInfo;
+    var params = {
+      uid: userInfo.id,
+      pid: page.options.id,
+      type: 2
+    };
+    page.Api.addSave1(params).then(obj => {
+      var title = obj == 1 ? '收藏成功' : '取消收藏成功';
+      wx.showToast({
+        title: title,
+        icon: 'none'
+      });
+      page.setData({
+        is_save: obj
+      });
+    });
+  }
   //拨打电话回调
   log(data){
     this.Api.addLog(data);
