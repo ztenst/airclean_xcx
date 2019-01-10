@@ -85,6 +85,12 @@ Page({
       condition: Object.assign({}, this.data.condition, {kw: e.detail.value}),
       [`listOpts.condition`]: Object.assign({}, this.data.condition, {kw: e.detail.value}),
     });
+  },
+  onShareAppMessage(res) {
+    return {
+      title: '空气净化大师-产品列表',
+      path: 'pages/category/category'
+    }
   }
 });
 

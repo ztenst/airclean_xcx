@@ -95,6 +95,12 @@ Page({
     },
     onReachBottom : function() {
       this.loadmore();
+    },
+  onShareAppMessage(res) {
+    return {
+      title: '空气净化大师-论坛',
+      path: 'pages/bbs/bbs'
     }
+  }
 })
 ;

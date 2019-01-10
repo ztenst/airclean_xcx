@@ -29,7 +29,7 @@
       </view>
     </view>
     <view class="myAuth-check">
-        <label bindtap="onChange"><checkbox checked="{{checked}}"></checkbox>已阅读并同意<span class="myAuth-link" catchtap="goLink">《申明》</span></label>
+        <label bindtap="onChange"><checkbox checked="{{checked}}"></checkbox>已阅读并同意<span class="myAuth-link" catchtap="goLink">《空气净化大师认证及使用声明》</span></label>
     </view>
     <button class="myAuth-btn {{checked ? '' : 'disabled'}}" form-type="submit">提交</button>
   </view>

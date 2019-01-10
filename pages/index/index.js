@@ -39,6 +39,7 @@ Page({
           url: '/pages/product/detail?id=' + id,
         });
       } else {
+        if (id!='0')
         wx.navigateTo({
           url: '/pages/product/detail?id=' + e.currentTarget.dataset.id,
         });

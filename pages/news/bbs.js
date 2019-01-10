@@ -95,6 +95,12 @@ Page({
     },
     onReachBottom : function() {
       this.loadmore();
+  },
+  onShareAppMessage(res) {
+    return {
+      title: '空气净化大师-行业新闻',
+      path: 'pages/news/bbs'
     }
+  }
 })
 ;

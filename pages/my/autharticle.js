@@ -1,6 +1,7 @@
 const app = getApp();
 Page({
   data:{
+    ct: '',
   },
   init : function() {
     this.Api.getSm().then(obj=>{
