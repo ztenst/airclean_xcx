@@ -8,8 +8,8 @@
     </swiper>
   </view>
   <view class="pDetail-price">
-    <view class="pDetail-np">{{detail.price}}<span class="pDetail-unit">元</span></view>
-    <view class="pDetail-op">{{detail.old_price}}元</view>
+    <view class="pDetail-np">{{detail.price}}<span class="pDetail-unit">{{detail.price!='价格电询'?'元':''}}</span></view>
+    <view class="pDetail-op" wx-if="{{detail.price!='价格电询'}}">{{detail.old_price}}元</view>
   </view>
   <view class="pDetail-wrapper">
     <view class="pDetail-title">{{detail.name}}</view>

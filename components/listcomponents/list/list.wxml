@@ -9,7 +9,7 @@
           <view class="productItem-info">
             <view class="productItem-title productItem-l1">{{item.name}}</view>
             <view class="productItem-l2 flex">
-              <view class="productItem-price">{{item.price}}<text class="productItem-unit">元</text></view>
+              <view class="productItem-price">{{item.price}}<text class="productItem-unit">{{item.price!='价格电询'?'元':''}}</text></view>
               <view class="productItem-view">{{item.hits}}</view>
             </view>
             <view class="productItem-l3">{{item.ts}}</view>
