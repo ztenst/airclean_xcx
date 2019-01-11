@@ -1717,21 +1717,27 @@ $mc:#DC3B00;
     padding:0 40rpx;
   }
   &-item{
-    height:40rpx;
     line-height:40rpx;
     margin-bottom:40rpx;
+  }
+  &-h1{
+    max-height:80rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
   &-name{
     font-size:28rpx;
     color:#222;
     font-weight:bold;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
+    display:inline;
   }
   &-action{
     font-size:28rpx;
     color:#222;
+    display:inline;
   }
   &-time{
     margin-left:46rpx;

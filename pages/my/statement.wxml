@@ -8,10 +8,11 @@
   </view>
   <view class="statement-list">
     <view class="statement-item flex flex-main-justify" wx:for="{{list}}" wx:key="id">
-      <view class="flex">
+      <view class="flex-box1 statement-h1">
         <view class="statement-name">{{item.name}}</view>
-        <view class="statement-action">{{item.words}}</view>
+        <view class="statement-action">{{item.words}}{{item.words}}{{item.words}}</view>
       </view>
+
       <view class="statement-time flex-box0">{{item.time}}</view>
     </view>
     <!--view class="statement-item flex flex-main-justify">
