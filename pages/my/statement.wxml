@@ -12,8 +12,7 @@
         <view class="statement-name">{{item.name}}</view>
         <view class="statement-action">{{item.words}}</view>
       </view>
-
-      <view class="statement-time flex-box0">{{item.time}}</view>
+      <view class="statement-time flex-box0">{{item.time}}</view>.index .index-banner
     </view>
     <!--view class="statement-item flex flex-main-justify">
       <view class="flex-box1 flex">
