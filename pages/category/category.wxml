@@ -5,7 +5,7 @@
         confirmText='知道了'>
 </dialog>
 
-<view class="page category" wx:if="{{isLoad}}">
+<view class="page category">
     <block wx:if="{{!focused}}">
         <view class="slide-nav">
             <scroll-view scroll-x class="slide">
