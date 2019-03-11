@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "空气净化专家",
+  "navigationBarTitleText": "空气净化大师",
   "usingComponents": {
     "list": "/components/listcomponents/list/list",
     "dialog": "/components/dialog/dialog",
