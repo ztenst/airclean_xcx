@@ -1437,8 +1437,12 @@ $mc:#DC3B00;
     color:#222;
     font-weight:600;
     line-height:44rpx;
-    height:44rpx;
+    max-height:88rpx;
     overflow:hidden;
+    text-overflow: ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
     &.nohot{
       &:before{
         display:none;
