@@ -51,7 +51,7 @@ Page({
       this.Api.cusList(params).then(obj=>{
         var _ = this.Global._;
         var new_obj = {
-          list : _.union(obj.list,this.data.list),
+          list : _.union(this.data.list,obj.list),
           page : params.page + 1
         };
         if(obj.page >= obj.page_count){
